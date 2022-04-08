@@ -13,6 +13,7 @@ import bootstrap from 'bootstrap';
 import Home from './Home';
 import { Provider } from 'react-redux';
 import store from './store'
+import NavbarComp from './Navbar';
 // import Scroll from './Scroll'
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
   <BrowserRouter>
 
   {/* <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} /> */}
-<Navbar/>
+<NavbarComp/>
 <Routes>
 <Route exact path="/" element={<Home/>}/>
 <Route path="/handbags" element={<Handbags/>}/>
