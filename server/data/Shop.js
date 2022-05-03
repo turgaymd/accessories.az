@@ -57,4 +57,4 @@ const shop=[
     }
 
 ]
-export default shop;
+module.exports=shop;

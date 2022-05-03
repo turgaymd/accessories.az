@@ -1,5 +1,5 @@
-import mongoose from "mongoose"
-import bcrypt from "bcryptjs"
+const mongoose =require("mongoose")
+const bcrypt =require("bcryptjs")
 const userSchema=mongoose.Schema(
 { 
     name:{
@@ -37,4 +37,4 @@ const salt=await bcrypt.genSalt(10)
 this.password=await bcrypt.hash(this.password,salt)
 })
 const User = mongoose.model("User", userSchema)
-export default User;
+module.exports=User;

@@ -1,7 +1,6 @@
-import express from "express"
-import asyncHandler from "express-async-handler"
-import Product from "./../Models/ProductModel.js"
-import Shop from "../Models/ShopModel.js"
+const express=require("express")
+const asyncHandler =require("express-async-handler")
+const Shop =require("./../Models/ShopModel.js")
 const shopRouter=express.Router()
 shopRouter.get(
     "/",
@@ -22,4 +21,4 @@ shopRouter.get(
         }
     })
 )
-export default shopRouter;
+module.exports=shopRouter;

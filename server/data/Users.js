@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+const bcrypt =require("bcryptjs");
 const users=[
     {
         name:"Turgay",
@@ -13,4 +13,4 @@ const users=[
     }
 
 ]
-export default users;
+module.exports=users;

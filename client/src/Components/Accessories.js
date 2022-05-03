@@ -89,9 +89,9 @@ return(
        <a><i className='icon'><GoCommentDiscussion/></i>65</a>
         </div>
         </div>
-        <div className="col-md-2 ins text-center" >
+        <div className="col-md-2 ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-2.jpg"></img>
-        <div className='instagram-content text-center'>
+        <div className='instagram-content'>
           <a> <i className='icon'><BsHeart/></i>466</a>
        <a><i className='icon'><GoCommentDiscussion/></i>65</a>
         </div>

@@ -1,11 +1,11 @@
-import express  from "express";
-import User from "./Models/UserModel.js";
-import users from "./data/Users.js";
-import products from "./data/Product.js";
-import shop from "./data/Shop.js"
-import Shop from "./Models/ShopModel.js";
-import Product from "./Models/ProductModel.js"
-import asyncHandler from "express-async-handler";
+const express =require("express");
+const User =require("./Models/UserModel.js");
+const users =require("./data/Users.js");
+const products =require("./data/Product.js");
+const shop =require("./data/Shop.js")
+const Shop =require("./Models/ShopModel.js");
+const Product =require ("./Models/ProductModel.js");
+const asyncHandler =require("express-async-handler");
 
 const ImportData=express.Router()
 
@@ -33,4 +33,4 @@ ImportData.post(
     res.send({ImportShop});
 })
 );
-export default ImportData;
+module.exports= ImportData;

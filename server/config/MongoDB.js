@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose=require("mongoose")
 
 const connectDatabase=async()=>{
 try{
@@ -13,4 +13,4 @@ console.log("database connection failed")
 process.exit(1)
 }
 }
-export default connectDatabase
+module.exports=connectDatabase

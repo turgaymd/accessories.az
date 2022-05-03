@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+const mongoose =require("mongoose")
 const shopSchema=mongoose.Schema({
 name:{
     type:String,
@@ -22,4 +22,4 @@ timestamps:true
 }
 )
 const Shop=mongoose.model("Shop",shopSchema)
-export default Shop;
+module.exports= Shop;
