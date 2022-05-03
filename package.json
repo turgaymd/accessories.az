@@ -1,8 +1,0 @@
-{
-    "name":"node",
-    "start":"npm start",
-    "engines":{
-    "node":"14.18.0"
-
-}
-}
