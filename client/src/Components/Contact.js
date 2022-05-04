@@ -1,29 +1,28 @@
 
-import React from "react";
-const form_endpoint="";
-class Contact extends React.Component{
-//     const [submit,setSubmit]=useState(false);
-//     const handleSubmit=()=>{ 
-// setTimeout(()=>{
-//     setSubmit(true);
-// },100);
-//     }
-//     if(submit){
-//         return(
-//             <>
-//             <div>Thank You!</div>
-//             <div>We will be in touch soon</div>
-//             </>
-//         )
-//     }
-    // constructor(props){
-    //     super(props)
-    //         this.state={
-    //             Your_message:"your message"
-    //     }
-    //     }
-    
-render(){
+import React, { useState } from "react";
+import {useRef } from "react";
+import emailjs from "@emailjs/browser"
+const Result=()=>{
+  return(
+    <>
+    <p> Your message has been   successfully sent.I will contact you soon</p>
+      </>
+  )
+}
+const Contact=()=>{
+  const [result,showResult]=useState(false)
+  const form=useRef()
+  const sendEmail=(e)=>{
+    e.preventDefault();
+  emailjs.sendForm('service_c2mz4fp', 'template_qlewx5f', form.current, 'wIZ861omrA8UV6ipT')
+  .then((result) => {
+      console.log(result.text);
+  }, (error) => {
+      console.log(error.text);
+  });
+  e.target.reset();
+  showResult(true);
+}
 return(
   <>
      <div className='des'>
@@ -34,21 +33,26 @@ return(
           <div className="col-md-6">
       <div className='card cardd'>
           <h4 className='pt-5'>Get In Touch </h4>
-          <form action={form_endpoint} method="POST" target='_blank'>
+          <form ref={form} onSubmit={sendEmail}>
               <div className='row d-flex'>       
             <div className='col-lg-6'>
-              <input type="text" className='form-control' placeholder="Name" name="name" required></input>
+              <label>Name</label>
+              <br/>
+              <input type="text" className="form-control" name="user_name" required></input>
               </div>            
             <div className='col-lg-6'>
-          <input type="email" className='form-control' placeholder="Email" name="email" required></input>
+            <label>Email</label>
+            <br/>
+          <input type="email" className="form-control"  name="user_email" required></input>
           </div>    
           </div> 
-          <div className='col-lg-12 mt-3'>
-          <input type="text" className='form-control ' placeholder="Subject" name="subject" required></input>
-          </div>
-        <textarea className="form-control mt-3" placeholder="Your message"/>
+          <label className="mt-3">Message</label>
+        <textarea className="form-control mt-3" name="message"/>
           <div className='text-center'>
-          <button className='submit' type='submit'>Send</button>
+      <button className="submit" type="submit">Send</button>
+          </div>
+          <div className="row">
+            {result ? <Result/> : null}
           </div>
           </form>
       </div>
@@ -62,6 +66,5 @@ return(
       </div>
 </>
 )
-}
 }
 export default Contact;

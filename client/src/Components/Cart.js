@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom'
 import { addToCart, remove_Cart } from '../store/actions/CartAction'
 import {PayPalButton } from "react-paypal-button-v2"
 const Cart=({match,location})=>{
-    const dispatch=useDispatch()
+    window.scrollTo(0,0);
     const productId=match.params.id;
     const qty=location.search ? Number(location.search.split("=")[1]) : 1;
-    const cart=useSelector((state)=>state.cart)
-    const {cartItems} =cart
-    const total =cartItems.reduce((a,i)=>a+i.qty * i.price, 0).toFixed(2)
+    const cart=useSelector((state)=>state.cart);
+    const {cartItems} =cart;
+    const total =cartItems.reduce((a,i)=>a+ i.qty * i.price, 0).toFixed(2);
+    const dispatch=useDispatch();
     useEffect(()=>{
         if(productId){
             dispatch(addToCart(productId,qty))
@@ -20,9 +21,6 @@ const Cart=({match,location})=>{
     },[dispatch,productId,qty])
     const removecart=(id)=>{
         dispatch(remove_Cart(id))
-    }
-    const paypals={
-        
     }
     return(
         <>
@@ -52,7 +50,7 @@ const Cart=({match,location})=>{
                 <th></th>
             </tr>
             </thead>
-            <tbody key={item.id}>
+            <tbody key={item._id}>
                 <tr>
                     <td className='product-col'> <div className="product"><figure className='product-media'>
 <a className='product-image'>
@@ -66,14 +64,18 @@ const Cart=({match,location})=>{
                            <span className="" >{item.price}.00</span>
                              </div></td>
                     <td className="quantity-col text-center"> <div className='detailss'>
-                    <span className='dec' onClick={()=>dispatch({type:'DEC',payload:item.id})}><BsDash/></span>  
-                    <span className="quantity">{qty}</span>
-                   <span className='inc' onClick={()=>dispatch({type:'INC',payload:item.id})}><BsPlus/></span>  
+    <select value={item.qty} onChange={(e)=>dispatch(addToCart(item.product,Number(e.target.value)))}>
+   <option>1</option>
+   <option>2</option>
+   <option>3</option>
+   <option>4</option>
+   <option>5</option>
+ </select>
                   
                     </div></td>
                     <td className='total-col'>
                     <div className="total-prize">
-                                {item.price*qty}.00
+                                {item.price*item.qty}.00
                                 </div>
                     </td>
                     <td className='remove-col'>    <button className="btn-remove" onClick={()=>removecart(item.product)}>
@@ -87,6 +89,10 @@ const Cart=({match,location})=>{
                                </>
                              
                 ))}
+                <div className='total d-flex justify-content-center'>
+                    <span className='sub'>total : </span>
+                    <span className='total-price'>${total}</span>
+                </div>
                  {/* <div className='checkout text-center'><Link to="/checkout"><button className='btn btn-success'>Go to checkout</button></Link></div> */}
                  <div className='container text-center'>
                      <div className='row'>

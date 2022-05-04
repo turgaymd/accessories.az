@@ -44,6 +44,7 @@ return(
     ${product.price}
   </div>
 </div>
+
 </>
           )
         })}

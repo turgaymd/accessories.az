@@ -12,7 +12,6 @@ var NavbarComp=()=>{
   const {cartItems} =cart;
   const userLogin=useSelector((state)=>state.userLogin);
   const {userInfo}=userLogin;
-
     const iconstyle={
         fontSize:24,
     }
@@ -38,6 +37,7 @@ return (
         <Nav className="me-auto">
           <Nav.Link href="/" className='ydb'>Home</Nav.Link>
           <Nav.Link href="/accessories" className='ydb'>Accessories</Nav.Link>
+          <Nav.Link href="/holiday_shop" className='ydb'>Holiday_shop</Nav.Link>
           <Nav.Link href="/contact" className='ydb'>Contact us</Nav.Link>
           {
             userInfo ? (

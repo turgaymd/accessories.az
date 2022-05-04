@@ -19,11 +19,6 @@ import Loading from './LoadingError/Loading';
     e.preventDefault()
     history.push(`/cart/${productId}?qty=${qty}`)
   }
-  const decQuantity=()=>{
-    if(qty>1){
-        setQty(qty-1)
-    }
-  }
 // const [product,setProduct]=useState({})
 // useEffect(()=>{
 //   const fetchproduct=async()=>{
@@ -83,9 +78,14 @@ return(
 <div className="descr"><p>{product.desc}</p>
     </div>
     <div className='pr-quantity'>
-      <span className='dec' onClick={decQuantity}><BsDash/></span>
-      <span className='quantity'>{qty}</span>
-      <span className='inc' onClick={()=>setQty(qty+1)}><BsPlus/></span>
+      <span className="quantity-title">Quantity</span>
+ <select value={qty} onChange={(e)=>setQty(e.target.value)}>
+   <option>1</option>
+   <option>2</option>
+   <option>3</option>
+   <option>4</option>
+   <option>5</option>
+ </select>
       </div>  
     <div className='add mt-2'>
 <button className='btn' onClick={HandleCart}>Add to Card</button>

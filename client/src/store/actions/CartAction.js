@@ -5,7 +5,7 @@ export const addToCart=(id,qty)=>async(dispatch,getState)=>{
     dispatch({
         type:Add_cart,
         payload:{
-            product:data.id,
+            product:data._id,
             name:data.name,
             image:data.image,
             price:data.price,
@@ -15,22 +15,22 @@ export const addToCart=(id,qty)=>async(dispatch,getState)=>{
     })
     localStorage.setItem("cartItems",JSON.stringify(getState().cart.cartItems))
 }
-// export const addToCart1=(id,qty)=>async(dispatch,getState)=>{
-//     const{data}=await axios.get(`/api/shop/${id}`)
+export const addToCart1=(id,qty)=>async(dispatch,getState)=>{
+    const{data}=await axios.get(`/api/shop/${id}`)
 
-//     dispatch({
-//         type:Add_cart,
-//         payload:{
-//             product:data.id,
-//             name:data.name,
-//             image:data.image,
-//             price:data.price,
-//             qty,
+    dispatch({
+        type:Add_cart,
+        payload:{
+            product:data._id,
+            name:data.name,
+            image:data.image,
+            price:data.price,
+            qty,
 
-//         }
-//     })
-//     localStorage.setItem("cartItems",JSON.stringify(getState().cart.cartItems))
-// }
+        }
+    })
+    localStorage.setItem("cartItems",JSON.stringify(getState().cart.cartItems))
+}
 export const remove_Cart=(id)=>(dispatch,getState)=>{
     dispatch({
         type:Rem_cart,

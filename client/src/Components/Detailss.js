@@ -5,25 +5,31 @@ import { Link } from 'react-router-dom';
 import { showDetailss } from '../store/actions/ProductAction';
 import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
+import { addToCart1 } from '../store/actions/CartAction';
+export const Adcart=(product)=>{
+  return {
+      type:"Add_cart",
+      payload:product
+  }
+}
  const Detailss =({history,match})=>{
   const [qty,setQty]=useState(1)
   const productId=match.params.id;
   const dispatch=useDispatch()
+  const addProduct=(product)=>{
+    dispatch(Adcart(product))
+  }
+  
   const productDetailss=useSelector((state)=>state.productDetailss); 
   const{loading,error,product}=productDetailss;
   useEffect(()=>{
     dispatch(showDetailss(productId));
   },[dispatch,productId]);
 
-  const HandleCart=(e)=>{
-    e.preventDefault()
-    history.push(`/cart/${productId}?qty=${qty}`)
-  }
-  const decQuantity=()=>{
-    if(qty>1){
-        setQty(qty-1)
-    }
-  }
+  // const HandleCart=(e)=>{
+  //   e.preventDefault()
+  //   history.push(`/cart/${productId}?qty=${qty}`)
+  // }
 // const [product,setProduct]=useState({})
 // useEffect(()=>{
 //   const fetchproduct=async()=>{
@@ -83,12 +89,17 @@ return(
 <div className="descr"><p>{product.desc}</p>
     </div>
     <div className='pr-quantity'>
-      <span className='dec' onClick={decQuantity}><BsDash/></span>
-      <span className='quantity'>{qty}</span>
-      <span className='inc' onClick={()=>setQty(qty+1)}><BsPlus/></span>
+    <span className="quantity-title">Quantity</span>
+    <select value={qty} onChange={(e)=>setQty(e.target.value)}>
+   <option>1</option>
+   <option>2</option>
+   <option>3</option>
+   <option>4</option>
+   <option>5</option>
+ </select>
       </div>  
     <div className='add mt-2 d-flex align-items-center justify-content-center'>
-<button className='btn' onClick={HandleCart}>Add to Card</button>
+<button className='btn'onClick={()=>addProduct(product)}>Add to Card</button>
 </div>
     </div>
     </div>
@@ -96,7 +107,7 @@ return(
 )    
 }
     </div>
-    <div className='new text-center'><h3 className='arrivals'>New Arrivals</h3></div>
+    <div className='new text-center'><h3 className='arrivals'>Coming Soon Products</h3></div>
     <div className='container arrival'>
       <div className='row'>
         <div className='col-md-3 text-center'>

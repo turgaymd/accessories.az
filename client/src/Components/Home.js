@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Home=({match})=>{
  const  imagestyle ={
-  backgroundImage:`url("banner.jpg")`
+  backgroundImage:`url("banner.jpg")`,
 }
     return (
 <>
@@ -47,7 +47,7 @@ const Home=({match})=>{
               <div className='best_title'>Silver Gold Tone Waves Drop Pendant</div>
               <div className='best_price'>$331.00</div>
               <div className='product_bootom text-center'>
-            <Link to={`/details/4}`}><button className='btn btn-dark text-center'>Add to cart</button></Link>
+              <Link to={"/products/6272192d6503a86dd1419597"}><button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const Home=({match})=>{
               <div className='best_title'>Sterling Silver Tassel Drop Earrings</div>
               <div className='best_price'>$355.00</div>
               <div className='product_bootom text-center'>
-              <button className='btn btn-dark text-center'>Add to cart</button>
+              <Link to="/products/6272192d6503a86dd1419596"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ const Home=({match})=>{
               <div className='best_title'>Nude Statement Tassel Drop Earrings</div>
               <div className='best_price'>$265.00</div>
               <div className='product_bootom text-center'>
-              <button className='btn btn-dark text-center'>Add to cart</button>
+              <Link to="/products/6272192d6503a86dd1419599"><button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ const Home=({match})=>{
               <div className='best_title'>Sterling Silver Star Ring</div>
               <div className='best_price'>$370.00</div>
             <div className='product_bootom text-center'>
-              <button className='btn btn-dark text-center'>Add to cart</button>
+             <Link to="/products/6272192d6503a86dd1419598"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
           </div>
         </div>
