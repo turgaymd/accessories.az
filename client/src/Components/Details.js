@@ -96,7 +96,7 @@ return(
 )    
 }
     </div>
-    <div className='new text-center'><h3 className='arrivals'>New Arrivals</h3></div>
+    <div className='new text-center'><h3 className='arrivals'>Coming Soon Products</h3></div>
     <div className='container arrival'>
       <div className='row'>
         <div className='col-md-3 text-center'>

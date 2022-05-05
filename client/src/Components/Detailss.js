@@ -5,62 +5,22 @@ import { Link } from 'react-router-dom';
 import { showDetailss } from '../store/actions/ProductAction';
 import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
-import { addToCart1 } from '../store/actions/CartAction';
-export const Adcart=(product)=>{
-  return {
-      type:"Add_cart",
-      payload:product
-  }
-}
  const Detailss =({history,match})=>{
   const [qty,setQty]=useState(1)
   const productId=match.params.id;
   const dispatch=useDispatch()
-  const addProduct=(product)=>{
-    dispatch(Adcart(product))
-  }
-  
+
   const productDetailss=useSelector((state)=>state.productDetailss); 
   const{loading,error,product}=productDetailss;
   useEffect(()=>{
     dispatch(showDetailss(productId));
   },[dispatch,productId]);
 
-  // const HandleCart=(e)=>{
-  //   e.preventDefault()
-  //   history.push(`/cart/${productId}?qty=${qty}`)
-  // }
-// const [product,setProduct]=useState({})
-// useEffect(()=>{
-//   const fetchproduct=async()=>{
-//     const {data}=await axios.get(`api/products/${match.params.id}`);
-//     setProduct(data);
-//   }
-//   fetchproduct();
-// },[match])
-
-
-// const dispatch=useDispatch()
-// useEffect(()=>{
-// dispatch({
-//     type:'jewellery',id})
-// },[id])
-
-// const decQuantity=()=>{
-//   if(quantity>1){
-//       setQuantity(quantity-1)
-//   }
-// }
-// useEffect(()=>{
-//     dispatch({
-//         type:'jewellery',id})
-//     },[id],)
-  // const fetchproduct=async()=>{
-//     const {data}=await axios.get(`/api/products/${(id)}`)
-//     setProduct(data)
-//   }
-//   fetchproduct()
-// },[id])
+  const HandleCart=(e)=>{
+    e.preventDefault()
+    history.push(`/cart/${productId}?qty=${qty}`)
+  }
+   
 return(
   <>
     <div className='container mb-5'>
@@ -99,7 +59,7 @@ return(
  </select>
       </div>  
     <div className='add mt-2 d-flex align-items-center justify-content-center'>
-<button className='btn'onClick={()=>addProduct(product)}>Add to Card</button>
+<button className='btn'onClick={HandleCart}>Add to Card</button>
 </div>
     </div>
     </div>

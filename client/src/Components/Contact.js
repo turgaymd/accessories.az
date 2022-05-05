@@ -26,7 +26,7 @@ const Contact=()=>{
 return(
   <>
      <div className='des'>
-      <h2 className='page-title'>Contact</h2>
+      <h2 className='page-title'>Contact Us</h2>
       </div>
       <div className="container contact mt-4">
       <div className="row">

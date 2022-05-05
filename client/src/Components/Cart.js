@@ -4,7 +4,7 @@ import {useEffect} from "react"
 import{BsDash,BsPlus} from "react-icons/bs"
 import{VscChromeClose} from "react-icons/vsc"
 import { Link } from 'react-router-dom'
-import { addToCart, remove_Cart } from '../store/actions/CartAction'
+import { addToCart1,addToCart,remove_Cart } from '../store/actions/CartAction'
 import {PayPalButton } from "react-paypal-button-v2"
 const Cart=({match,location})=>{
     window.scrollTo(0,0);
@@ -18,7 +18,11 @@ const Cart=({match,location})=>{
         if(productId){
             dispatch(addToCart(productId,qty))
         }
+        if(productId){
+            dispatch(addToCart1(productId,qty))
+        }
     },[dispatch,productId,qty])
+  
     const removecart=(id)=>{
         dispatch(remove_Cart(id))
     }
