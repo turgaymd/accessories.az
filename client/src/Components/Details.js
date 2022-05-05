@@ -1,6 +1,6 @@
 import React, {useState,useEffect } from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-import{BsDash,BsPlus} from "react-icons/bs"
+import {MdAddShoppingCart} from "react-icons/md"
 import { Link } from 'react-router-dom';
 import { showDetails } from '../store/actions/ProductAction';
 import Message from './LoadingError/error';
@@ -74,11 +74,11 @@ return(
         <div className='price text-center'>
       {product.price}.00
         </div>
-        </div> 
-<div className="descr"><p>{product.desc}</p>
+        <div className="descr">
+<h6>Description</h6>
+  <p>{product.desc}</p>
     </div>
-    <div className='pr-quantity'>
-      <span className="quantity-title">Quantity</span>
+  <span className="quantity-title">Quantity</span>
  <select value={qty} onChange={(e)=>setQty(e.target.value)}>
    <option>1</option>
    <option>2</option>
@@ -86,9 +86,9 @@ return(
    <option>4</option>
    <option>5</option>
  </select>
-      </div>  
-    <div className='add mt-2'>
-<button className='btn' onClick={HandleCart}>Add to Card</button>
+        </div>  
+    <div className='add'>
+<button className='btn' onClick={HandleCart}><MdAddShoppingCart/> Add to Cart</button>
 </div>
     </div>
     </div>
@@ -99,26 +99,26 @@ return(
     <div className='new text-center'><h3 className='arrivals'>Coming Soon Products</h3></div>
     <div className='container arrival'>
       <div className='row'>
-        <div className='col-md-3 text-center'>
+        <div className='col-md-3 text-center new'>
       <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101061-2_823x.jpg?v=1650308606"></img>
-      <div className='product-title'>Terrace Drop Earnings</div>
+      <div className='product-titlen'>Terrace Drop Earnings</div>
       <div className='product-prize text-center'>$40.00 </div>
         </div>
-        <div className='col-md-3 text-center'>
+        <div className='col-md-3 text-center new'>
           <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101028-1_823x.jpg?v=1647540053"></img>
-          <div className='product-title'>Terrace Drop Earnings</div>
+          <div className='product-titlen'>Terrace Drop Earnings</div>
           <div className='product-prize text-center'>$30.00
           </div>
           </div>
-          <div className='col-md-3 text-center'>
+          <div className='col-md-3 text-center new'>
           <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L201009-2__61837_823x.jpg?v=1645115940"></img>
-          <div className='product-title'>Terrace Drop Earnings</div>
+          <div className='product-titlen'>Terrace Drop Earnings</div>
           <div className='product-prize text-center'>$50.00
           </div>
           </div>
-          <div className='col-md-3 text-center'>
+          <div className='col-md-3 text-center new'>
           <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101015-2_823x.jpg?v=1646760639"></img>
-          <div className='product-title'>Daisy Post Earnings</div>
+          <div className='product-titlen'>Daisy Post Earnings</div>
           <div className='product-prize text-center'>$60.00
           </div>
       </div>

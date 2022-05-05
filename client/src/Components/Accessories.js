@@ -4,6 +4,7 @@ import  { useEffect, useState }  from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {showProducts} from '../store/actions/ProductAction';
 import {Link} from "react-router-dom"
+import {MdAddShoppingCart} from "react-icons/md"
 import axios from 'axios';
 import {BsHeart} from "react-icons/bs"
 import {GoCommentDiscussion} from "react-icons/go"
@@ -40,7 +41,7 @@ return(
 <div className='col-md-3 yess' key={product._id}>
 <img src={`${product.image}`} className="card-img img-fluid"></img>
   <div className='hidden justify-content-center'>
-  <Link to={`/products/${product._id}`}> <button className='btn text-center'>Add to Cart</button></Link>
+  <Link to={`/products/${product._id}`}> <button className='btn text-center'><MdAddShoppingCart/>   Add to Cart</button></Link>
   </div>
   <div className='product-titles text-center'>
     {product.name}

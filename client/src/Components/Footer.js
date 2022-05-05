@@ -35,7 +35,7 @@ var Footer=()=>{
           <div className="col-md-3">
             <div className="footer-menu">
             <div className="title">
-                <h4 className="text-center">   About</h4>
+                <h4> About</h4>
                 </div>
                 <ul>
                  <li><a>Our Brand</a> </li>
@@ -51,8 +51,8 @@ var Footer=()=>{
                 <h4>Contact</h4>
             </div>
                 <ul>
-                <li><strong>Email:</strong>Accessorize@gmail.com</li>
-                <li><strong>Phone:</strong>+994(70)511067700</li>
+                <li><strong>Email:   </strong>Accessorize@gmail.com</li>
+                <li><strong>  Phone:   </strong>+994(70)5110677</li>
                 </ul>
                 <div className="social-media">
                 <a href=""><BsInstagram/></a>

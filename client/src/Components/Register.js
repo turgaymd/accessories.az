@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { register } from "../store/actions/UserAction";
 import Message from "./LoadingError/error";
 import Loading from "./LoadingError/Loading";
-const Register=(location,history)=>{
+const Register=({location,history})=>{
 const[name,setName]=useState("")
 const[email,setEmail]=useState("")
 const[password,setPassword]=useState("")

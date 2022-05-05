@@ -8,13 +8,16 @@ const {notFound,errorHandler}=require("./Middleware/Errors.js")
 const dotenv=require("dotenv")
 const connectDatabase=require("./config/MongoDB.js")
 dotenv.config()
-connectDatabase()
+connectDatabase({
+    useNewUrlParser:true
+})
 const app=express();
 app.use(express.json())
+app.use("/api/users", userRouter);
 app.use("/api/import", ImportData);
-app.use("/api/products", productRouter)
-app.use("/api/shop/", shopRouter)
-app.use("/api/users", userRouter)
+app.use("/api/products", productRouter);
+app.use("/api/shop", shopRouter);
+
 
 const path=require("path")
 if (process.env.NODE_ENV === 'production'){

@@ -21,5 +21,8 @@ desc:{
 timestamps:true
 }
 )
+shopSchema.pre("save",async function(next){
+})
 const Shop=mongoose.model("Shop",shopSchema)
+Shop.save;
 module.exports= Shop;

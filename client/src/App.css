@@ -9,11 +9,6 @@
   box-sizing:border-box;
 
 }
-/* .me-auto a{
-     font-family:'Poppins,sans-serif'; 
-  color: rgba(0,0,0,.55);
-  text-decoration: 2px #0000 wavy;
-} */
 .cart-empty{
   margin-top:10%;
 }
@@ -133,14 +128,15 @@ min-width:100px ;
 }
 .navbar-menu{
   display:flex;
+  color: #404040;
+  flex-wrap: nowrap;
   list-style: none;
 
 }
 .navbar-menu li{
-  flex:2vh;
+  flex:1vh;
   flex-flow: row-reverse;
   cursor:pointer;
-  padding-top:10px;
 }
 .navbar-menu li:hover{
 border-bottom: 1px solid  black ;
@@ -152,12 +148,11 @@ border-bottom: 1px solid  black ;
 cursor:pointer;
 }
 .footer{
-  /* display:flex; */
-  background-color: antiquewhite;
+  background-color: #fff8e6;
 
 }
 .footer-menu{
-  margin:30px;
+  margin:15px;
 }
 .footer-menu .title{
   text-align: center;
@@ -179,12 +174,13 @@ border-bottom:1px solid black;
   align-items: center;
   justify-items: center;
   justify-content: center;
+
 }
 .social-media a {
-padding:15px;
+padding-left:40px;
 text-align: center;
 color: #555;
-font-size:18px;
+font-size:20px;
 }
 .social-media a:hover{
   opacity:0.5;
@@ -203,26 +199,19 @@ font-size:18px;
   transition: all 0.4s ease;
   display: none;
 }
-.footers{
-  margin-top:5px;
-  background-color: antiquewhite;
-  margin-top:19%; 
-
-}
 .topnavbar{
-  background-color:#f9eae1;
-  max-height:100%;
+  background-color:	#f9eae1;
 }
 .footer-bottom{
-  background-color:grey ;
-  margin-bottom:-13px;
-  border-bottom:2px solid grey;
-  padding-top:15px;
+  background-color:#fff8e6;
+  margin-bottom:-12px;
+  border-top:2px solid #f9eae1 ;
 }
 .footer-bottom p{
   text-align: center;
   padding-top:15px;
   padding-bottom: 10px;
+
 }
 h2,p{
   text-align: center;
@@ -294,10 +283,14 @@ input:hover
 p{
   color:black;
 }
+.bestt{
+  margin-top:10px;
+}
 .best_sellers{
-  letter-spacing: -.01em;
+  letter-spacing: .8rem;
+  color: rosybrown;
   line-height:1.35;
- font-family:'Poppins';
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .col-md-3:hover{
   border:1px solid #eeee;
@@ -362,17 +355,18 @@ h5{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .desc{
-  background-color:  #782626;;
+  background-color:  #ae7c7c;
+  margin-top: -20px;
 }
 .desc h2{
-  padding-top:5px;
+  padding-top:15px;
+  letter-spacing: 0.5rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color:whitesmoke;
-  /* color: green; */
 }
 .desc p{
   color: aliceblue;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .yess{
   position:relative;
@@ -399,14 +393,22 @@ letter-spacing: 2px;
 width: 93%;
 border-style: none;
 }
+.yess:hover>.product-titles{
+  transform: translateY(5px);
+}
 .product-title{
-  color:inherit;
+  color:#555;
   font-style: 'Arial';
   font-weight: 500;
   line-height: 1.55;
 }
 .product-titles:hover{
   color:#c96;
+
+}
+.product-titles{
+  padding-top:5%;
+  color: #333;
 }
 .burger{
  display: none;
@@ -444,24 +446,25 @@ object-fit:cover;
   border-radius: 50%;
 
 } */
-.descr{
-  line-height:1.57;
-padding-top: 10px;
-font-weight: 300;
+.descr h6{
+  color: #1cc0a0;
+  font-size: 30px;
+}
+.descr p{
+  float: left;
+  line-height:1.5em;
 letter-spacing: 0;
-color: #777;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-/* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+color: #555;
+font-family: 'Roboto';
 }
 .add{
-  margin-top:-30px;
+  margin-top:-20px;
 }
 .price{
-  font-size:2.4rem;
-  color:#c96;
+  font-size:1.7rem;
 }
 .price::before{
-  content:'$';
+  content:'$ ';
 }
 .likes{
   font-size:2.2rem;
@@ -590,21 +593,32 @@ position: absolute;
 }
 .product-title{
   color:#333;
-  font-family: 'Poppins,sans-serif';
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 1.2rem;
   line-height: 1.25;
   font-weight: 400;
-text-align: center;
- margin-left:30px;
+  text-align: center;
+  padding-bottom:5%;
 
 }
-.col-md-3{
-padding:20px;
+.product-titlen{
+  padding-top: 10px;
+  color:#12777d;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  font-weight: 400;
+  text-align: center;
+
 }
 .arrival .col-md-3 img{
   object-fit: cover;
   width: 85%;
   height: auto;
+}
+.product-prize{
+  color:#1cc0a0;
+  font-size: 1.4rem;
 }
 .product-price span{
   font-size: 1.5rem;
@@ -760,6 +774,7 @@ font-weight: 300;
   letter-spacing: 4px;
   color:#d69f7e;
   font-weight: 800;
+  padding-bottom: 30px;
 }
 .icon {
   margin-right:1rem;
@@ -844,13 +859,14 @@ margin-bottom:40px;
 }
 .add .btn{
   border-style: none;
-  background: #e6a247;
+  background: coral;
   box-shadow: 0 3px 13px -2px rgba(0,0,0,.15);
-  padding:0.7rem;
+letter-spacing: .3em;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-radius: 4px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #ffff;
-  justify-content: space-around;
   transition: 0.4s;
   width:auto;
 }
@@ -912,8 +928,8 @@ iframe{
   padding-left: 20px;
 }
 .quantity-title{
-  padding-right:20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding-right:50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #777;
   font-size: 1.5rem;
 }
