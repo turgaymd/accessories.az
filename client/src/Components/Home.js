@@ -40,10 +40,10 @@ const Home=({match})=>{
  </div>
         <div className='container bestt'>
         <h2 className='best_sellers'>Best Sellers</h2>
-        <div className='row products'>
-          <div className='col-md-3'>
+        <div className='row  d-flex products'>
+          <div className='col-3'>
             <div className='best1'>
-              <div className='img_frame'> <img  className="text-center" src="https://d-themes.com/react_asset_api/molla/uploads/product_5_c7ed2cd058.jpg"></img></div>
+              <div className='img_frame'> <img src="https://d-themes.com/react_asset_api/molla/uploads/product_5_c7ed2cd058.jpg"></img></div>
               <div className='best_title'>Silver Gold Tone Waves Drop Pendant</div>
               <div className='best_price'>$331.00</div>
               <div className='product_bootom text-center'>
@@ -51,7 +51,7 @@ const Home=({match})=>{
               </div>
             </div>
           </div>
-          <div className='col-md-3'>
+          <div className='col-3'>
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_6_5923626931.jpg"></img></div>
@@ -62,7 +62,7 @@ const Home=({match})=>{
               </div>
             </div>
           </div>
-          <div className='col-md-3'>
+          <div className='col-3'>
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_8_488732ddff.jpg"></img></div>
@@ -73,7 +73,7 @@ const Home=({match})=>{
               </div>
             </div>
           </div>
-          <div className='col-md-3'>
+          <div className='col-3'>
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_9_32068f7ca1.jpg"></img></div>
@@ -94,7 +94,7 @@ const Home=({match})=>{
      <p className="banner-txt text-center mb-2 mb-lg-3">  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
 malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis
 facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
-<Link to="/accessories"><button className="seeProducts_button text-center mb-3">See products</button></Link> 
+<Link to="/accessories"><button className="seeProducts_button mb-3">See more</button></Link> 
       </div>
       </section>
       </>

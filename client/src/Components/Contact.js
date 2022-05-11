@@ -29,12 +29,12 @@ return(
       <h2 className='page-title'>Contact Us</h2>
       </div>
       <div className="container contact mt-4">
-      <div className="row">
+      <div className="row d-flex justify-content-center">
           <div className="col-md-6">
-      <div className='card cardd'>
+      <div className='card cardd mt-5'>
           <h4 className='pt-5'>Get In Touch </h4>
           <form ref={form} onSubmit={sendEmail}>
-              <div className='row d-flex'>       
+              <div className='row d-flex justify-content-center'>       
             <div className='col-lg-6'>
               <label>Name</label>
               <br/>
@@ -57,10 +57,8 @@ return(
           </form>
       </div>
       </div>
-      <div className="col-md-6">
-      <div className="">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48627.62268861599!2d49.78739417910156!3d40.38167419999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307df041db0e89%3A0xc10506025e79ca02!2sAmelie%20couture!5e0!3m2!1saz!2s!4v1651352292518!5m2!1saz!2s" width="700" height="560"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <div className="col-md-6 mt-5">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48627.62268861599!2d49.78739417910156!3d40.38167419999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307df041db0e89%3A0xc10506025e79ca02!2sAmelie%20couture!5e0!3m2!1saz!2s!4v1651352292518!5m2!1saz!2s"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
       </div>
       </div>

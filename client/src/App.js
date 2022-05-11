@@ -1,7 +1,7 @@
 
 import './App.css';
 import Footer from './Components/Footer';
-import {Switch, Route,} from "react-router-dom";
+import {Switch, Route} from "react-router-dom";
 import Holiday_shop from './Components/Holiday_shop'
 import Accessories from './Components/Accessories';
 import Home from './Components/Home';
@@ -30,7 +30,7 @@ const App=()=>{
 <Route path="/products/:id" component={Details}/>
 <Route path="/shop/:id" component={Detailss}/>
 </Switch>
- <Footer/> 
+<Footer/> 
  </>
   );
 }

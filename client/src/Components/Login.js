@@ -24,7 +24,7 @@ const submitHandler=(e)=>{
     dispatch(login(email,password));
 };
 return (
-<div className="container d-flex flex-column justify-content-center align-items-center mt-5">
+<div className="container d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
 {error && <Message variant="alert-danger">{error}</Message>}
 {loading && <Loading/>}
 <form className="Login col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>

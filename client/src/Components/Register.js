@@ -25,7 +25,6 @@ const submitHandler=(e)=>{
 return (
 <div className="registers">
 <div className="container d-flex flex-column justify-content-center align-items-center mt-5 register">
-{/* <img src="https://iephosting.com/app/views/client/bootstrap/images/graphic8.svg" id="imageAsBackground" alt="" /> */}
 <h2 className="page-title">Register </h2>
 {error && <Message variant="alert-danger">{error}</Message>}
 {loading && <Loading/>}

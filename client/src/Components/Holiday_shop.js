@@ -33,10 +33,10 @@ return(
       {shop.map(product=>{
         return (
           <>
-<div className='col-md-3 yess' key={product._id}>
+<div className='col-3 yess' key={product._id}>
 <img src={`${product.image}`} className="card-img img-fluid"></img>
   <div className='hidden justify-content-center'>
-  <Link to={`/shop/${product._id}`}><button className='btn text-center'><MdAddShoppingCart/>   Add to Cart</button></Link>
+  <Link to={`/shop/${product._id}`}><button className='btn text-center'><MdAddShoppingCart fontSize={24}/>   Add to Cart</button></Link>
   </div>
   <div className='product-titles text-center'>
     {product.name}

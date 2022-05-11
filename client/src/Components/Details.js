@@ -19,40 +19,10 @@ import Loading from './LoadingError/Loading';
     e.preventDefault()
     history.push(`/cart/${productId}?qty=${qty}`)
   }
-// const [product,setProduct]=useState({})
-// useEffect(()=>{
-//   const fetchproduct=async()=>{
-//     const {data}=await axios.get(`api/products/${match.params.id}`);
-//     setProduct(data);
-//   }
-//   fetchproduct();
-// },[match])
 
-
-// const dispatch=useDispatch()
-// useEffect(()=>{
-// dispatch({
-//     type:'jewellery',id})
-// },[id])
-
-// const decQuantity=()=>{
-//   if(quantity>1){
-//       setQuantity(quantity-1)
-//   }
-// }
-// useEffect(()=>{
-//     dispatch({
-//         type:'jewellery',id})
-//     },[id],)
-  // const fetchproduct=async()=>{
-//     const {data}=await axios.get(`/api/products/${(id)}`)
-//     setProduct(data)
-//   }
-//   fetchproduct()
-// },[id])
 return(
   <>
-    <div className='container mb-5'>
+    <div className='container-fluid mb-5'>
     <h2 className='page-title'>Cart Details Page</h2>
     {
       loading ?
@@ -77,7 +47,6 @@ return(
         <div className="descr">
 <h6>Description</h6>
   <p>{product.desc}</p>
-    </div>
   <span className="quantity-title">Quantity</span>
  <select value={qty} onChange={(e)=>setQty(e.target.value)}>
    <option>1</option>
@@ -87,8 +56,9 @@ return(
    <option>5</option>
  </select>
         </div>  
+        </div>
     <div className='add'>
-<button className='btn' onClick={HandleCart}><MdAddShoppingCart/> Add to Cart</button>
+<button className='btn' onClick={HandleCart}><MdAddShoppingCart fontSize={24}/> Add to Cart</button>
 </div>
     </div>
     </div>
@@ -99,24 +69,24 @@ return(
     <div className='new text-center'><h3 className='arrivals'>Coming Soon Products</h3></div>
     <div className='container arrival'>
       <div className='row'>
-        <div className='col-md-3 text-center new'>
+        <div className='col-3'>
       <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101061-2_823x.jpg?v=1650308606"></img>
       <div className='product-titlen'>Terrace Drop Earnings</div>
       <div className='product-prize text-center'>$40.00 </div>
         </div>
-        <div className='col-md-3 text-center new'>
+        <div className='col-3'>
           <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101028-1_823x.jpg?v=1647540053"></img>
-          <div className='product-titlen'>Terrace Drop Earnings</div>
+          <div className='product-titlen'>Terrace Gold Earnings</div>
           <div className='product-prize text-center'>$30.00
           </div>
           </div>
-          <div className='col-md-3 text-center new'>
+          <div className='col-3'>
           <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L201009-2__61837_823x.jpg?v=1645115940"></img>
-          <div className='product-titlen'>Terrace Drop Earnings</div>
+          <div className='product-titlen'>Terrace Drop Necklace</div>
           <div className='product-prize text-center'>$50.00
           </div>
           </div>
-          <div className='col-md-3 text-center new'>
+          <div className='col-3'>
           <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101015-2_823x.jpg?v=1646760639"></img>
           <div className='product-titlen'>Daisy Post Earnings</div>
           <div className='product-prize text-center'>$60.00

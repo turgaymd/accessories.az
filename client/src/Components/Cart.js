@@ -1,13 +1,15 @@
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import {useEffect} from "react"
+import {useState,useEffect} from "react"
 import{BsDash,BsPlus} from "react-icons/bs"
 import{VscChromeClose} from "react-icons/vsc"
 import { Link } from 'react-router-dom'
 import { addToCart1,addToCart,remove_Cart } from '../store/actions/CartAction'
 import {PayPalButton } from "react-paypal-button-v2"
+import axios from 'axios'
 const Cart=({match,location})=>{
     window.scrollTo(0,0);
+    const [show,setShow]=useState(false)
     const productId=match.params.id;
     const qty=location.search ? Number(location.search.split("=")[1]) : 1;
     const cart=useSelector((state)=>state.cart);
@@ -25,6 +27,29 @@ const Cart=({match,location})=>{
   
     const removecart=(id)=>{
         dispatch(remove_Cart(id))
+    }
+    useEffect(()=>{
+        const pay=async()=>{
+            const{data:clientId}=await axios.get("/api/config/paypal")
+            const script=document.createElement("script");
+            script.type="text/javascript";
+            script.src="https://www.paypal.com/sdk/js?client-id=${clientId}";
+            script.async=true;
+            script.onload=()=>{
+                setShow(true)
+            }
+            document.body.appendChild(script)
+        }
+        if(!productId){
+
+        }
+        else{
+
+        }
+    })
+    const successPayment=(payresult)=>{
+        dispatch(productOrder(productId,payresult))
+
     }
     return(
         <>
@@ -97,18 +122,15 @@ const Cart=({match,location})=>{
                     <span className='sub'>total : </span>
                     <span className='total-price'>${total}</span>
                 </div>
-                 {/* <div className='checkout text-center'><Link to="/checkout"><button className='btn btn-success'>Go to checkout</button></Link></div> */}
-                 <div className='container text-center'>
+                 <div className='container text-center pay'>
                      <div className='row'>
-               <div className='paypal text-center mt-5'><PayPalButton amount={145}/></div>  
+               <div className='paypal text-center mt-5'><PayPalButton amount={total} onSuccess={successPayment}/></div>  
                </div>         
                </div>    
 </>
-
     )
    
 }    
-
             </div>
      
         

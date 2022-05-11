@@ -38,10 +38,10 @@ return(
       {products.map(product=>{
         return (
           <>
-<div className='col-md-3 yess' key={product._id}>
-<img src={`${product.image}`} className="card-img img-fluid"></img>
-  <div className='hidden justify-content-center'>
-  <Link to={`/products/${product._id}`}> <button className='btn text-center'><MdAddShoppingCart/>   Add to Cart</button></Link>
+<div className='col-3 yess' key={product._id}>
+<img src={`${product.image}`} className="card-img img-responsive"></img>
+<div className='hidden justify-content-center'>
+  <Link to={`/products/${product._id}`}> <button className='btn text-center'><MdAddShoppingCart fontSize={24}/>   Add to Cart</button></Link>
   </div>
   <div className='product-titles text-center'>
     {product.name}
@@ -49,6 +49,7 @@ return(
   <div className='product-prize text-center'>
     ${product.price}
   </div>
+  
 </div>
           </>
         )
@@ -59,42 +60,42 @@ return(
       </div>
       </section>
       </div>
-      <section className="container instagram">
+      <section className="instagram">
         <h2>Shop By Instagram</h2>
-        <div className='row social text-center'>
-      <div className="col-md-2 ins" >
+        <div className='flex-container social'>
+      <div className="flex-item ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg"></img>
         <div className='instagram-content'>
-          <a> <i className='icon'><BsHeart/></i>466</a>
-       <a><i className='icon'><GoCommentDiscussion/></i>65</a>
+          <a> <i className='icon'><BsHeart/></i>550</a>
+       <a><i className='icon'><GoCommentDiscussion/></i>50</a>
         </div>
         </div>
-        <div className=" col-md-2 ins" >
+        <div className="flex-item ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-3.jpg"></img>
         <div className='instagram-content'>
-          <a> <i className='icon'><BsHeart/></i>466</a>
-       <a><i className='icon'><GoCommentDiscussion/></i>65</a>
+          <a> <i className='icon'><BsHeart/></i>766</a>
+       <a><i className='icon'><GoCommentDiscussion/></i>80</a>
         </div>
         </div>
-        <div className="col-md-2 ins" >
+        <div className="flex-item ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-4.jpg"></img>
         <div className='instagram-content'>
-          <a> <i className='icon'><BsHeart/></i>466</a>
-       <a><i className='icon'><GoCommentDiscussion/></i>65</a>
+          <a> <i className='icon'><BsHeart/></i>460</a>
+       <a><i className='icon'><GoCommentDiscussion/></i>30</a>
         </div>
         </div>
-        <div className="col-md-2 ins">
+        <div className="flex-item ins">
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-5.jpg"></img>
         <div className='instagram-content'>
           <a> <i className='icon'><BsHeart/></i>466</a>
        <a><i className='icon'><GoCommentDiscussion/></i>65</a>
         </div>
         </div>
-        <div className="col-md-2 ins" >
+        <div className="flex-item ins">
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-2.jpg"></img>
         <div className='instagram-content'>
-          <a> <i className='icon'><BsHeart/></i>466</a>
-       <a><i className='icon'><GoCommentDiscussion/></i>65</a>
+          <a> <i className='icon'><BsHeart/></i>567</a>
+       <a><i className='icon'><GoCommentDiscussion/></i>45</a>
         </div>
         </div>
         </div>
