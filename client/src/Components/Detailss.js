@@ -48,7 +48,9 @@ return(
 <h6>Description</h6>
   <p>{product.desc}</p>
     </div>
-  <span className="quantity-title">Quantity</span>
+ </div>
+ <div className='addd'>
+ <span className="quantity-title">Quantity</span>
  <select value={qty} onChange={(e)=>setQty(e.target.value)}>
    <option>1</option>
    <option>2</option>
@@ -56,12 +58,12 @@ return(
    <option>4</option>
    <option>5</option>
  </select>
-        </div>  
-    <div className='add'>
+ </div>
+ <div className='ad mt-2'>
 <button className="btn" onClick={HandleCart}><MdAddShoppingCart fontSize={24}/> Add to Cart</button>
 </div>
-    </div>
-    </div>
+ </div>
+ </div>
   </>
 )    
 }

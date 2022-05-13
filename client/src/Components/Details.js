@@ -6,7 +6,7 @@ import { showDetails } from '../store/actions/ProductAction';
 import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
  const Details =({history,match})=>{
-  const [qty,setQty]=useState(1)
+  const [qty,setQty]=useState()
   const productId=match.params.id;
   const dispatch=useDispatch()
   const productDetails=useSelector((state)=>state.productDetails); 
@@ -47,6 +47,8 @@ return(
         <div className="descr">
 <h6>Description</h6>
   <p>{product.desc}</p>
+  </div>
+  </div> 
   <span className="quantity-title">Quantity</span>
  <select value={qty} onChange={(e)=>setQty(e.target.value)}>
    <option>1</option>
@@ -54,15 +56,13 @@ return(
    <option>3</option>
    <option>4</option>
    <option>5</option>
- </select>
-        </div>  
-        </div>
-    <div className='add'>
+ </select>  
+  <div className='ad mt-2'>
 <button className='btn' onClick={HandleCart}><MdAddShoppingCart fontSize={24}/> Add to Cart</button>
 </div>
-    </div>
-    </div>
-  </>
+</div>
+</div>  
+</>
 )    
 }
     </div>
