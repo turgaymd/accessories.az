@@ -1,6 +1,7 @@
 const express=require("express")
 const asyncHandler =require("express-async-handler")
 const Shop =require("./../Models/ShopModel.js")
+const {protect,admin}=require("../Middleware/AuthMiddleware.js")
 const shopRouter=express.Router()
 shopRouter.get(
     "/",
@@ -20,5 +21,14 @@ shopRouter.get(
             throw new Error("Product was not found")
         }
     })
+)
+shopRouter.get(
+    "/all",
+    protect,
+    admin,
+asyncHandler(async (req, res)=>{
+    const products=await Shop.find({}).sort({_id: -1});
+    res.json(products);
+   })
 )
 module.exports=shopRouter;

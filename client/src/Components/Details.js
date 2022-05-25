@@ -6,7 +6,7 @@ import { showDetails } from '../store/actions/ProductAction';
 import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
  const Details =({history,match})=>{
-  const [qty,setQty]=useState()
+  const [qty,setQty]=useState(1)
   const productId=match.params.id;
   const dispatch=useDispatch()
   const productDetails=useSelector((state)=>state.productDetails); 

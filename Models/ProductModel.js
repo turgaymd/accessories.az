@@ -22,7 +22,7 @@ timestamps:true
 }
 )
 productSchema.pre("save",async function(next){
+    next()
 })
 const Product=mongoose.model("Product",productSchema)
-Product.Save;
 module.exports= Product;
