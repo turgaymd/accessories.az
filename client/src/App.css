@@ -35,6 +35,9 @@ a{
   font-size: calc(10px + 1.8vmin);
   color: white;
 }
+.carousel-item{
+  height:620px !important;
+}
 .topnavbar{
   background-color:	#F5F5F7;
 }
