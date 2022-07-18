@@ -40,7 +40,7 @@ const Home=({})=>{
 }
     return (
 <>
-<MDBCarousel showControls showIndicators dark fade>
+<MDBCarousel>
       <MDBCarouselInner >
         <MDBCarouselItem className='active'>
           <MDBCarouselElement src='https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='...' />
@@ -132,7 +132,7 @@ const Home=({})=>{
               <div className='best_title'>Sterling Silver Star Ring</div>
               <div className='best_price'>$370.00</div>
             <div className='product_bootom text-center'>
-             <Link to="/products/"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
+             <Link to="/products/62d50a31df809f4b6ead7aa0"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
           </div>
         </div>
