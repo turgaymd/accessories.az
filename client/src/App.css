@@ -8,7 +8,15 @@
   box-sizing:border-box !important;
 
 }
-*, ::after, ::before {
+
+img{
+  vertical-align: middle;
+}
+a{
+  text-decoration: none;
+  color:#333;
+}
+::after, ::before {
   box-sizing: border-box;
 }
 ::selection{
@@ -19,7 +27,7 @@
   background-color: #282c34;
   background-image: url(/public/welcome.webp);
   background-size: cover;
-  min-height: 100vh;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +36,10 @@
   color: white;
 }
 .topnavbar{
-  background-color:	#f9eae1;
+  background-color:	#F5F5F7;
+}
+.navbar-light .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%280, 0, 0, 0.55%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e") !important;
 }
 .navbar{
   display:flex;
@@ -61,7 +72,7 @@ border-bottom: 1px solid  black ;
 h2,p{
   text-align: center;
   padding-bottom:10px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 .desc{
   margin-bottom:-20px;
@@ -84,11 +95,12 @@ h2,p{
   font-weight:bold;
   border-style:none ;
   border-radius: 50%;
-  border-color:#f9eae1;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
+  border-color:#F5F5F7;
   outline: none;
   right:0;
   color:#282c34;
-  background-color:#f9eae1 ;
+  background-color:#F5F5F7 ;
   position: absolute;
 
 }
@@ -204,20 +216,25 @@ font-size:2rem;
   box-shadow: 0px 15px 20px rgba(229, 110, 46, 0.4);
 }
 
-
-
-
 footer{
-  background-color: #fff8e6;
-  overflow-x: hidden;
-  margin-top: 80px !important;
+ min-height:300px; 
+ position:relative;
+ width: 100%;
+ left:0;
+ bottom:0;
+padding-bottom: 5px !important; 
+background-color: #F5F5F7;
+
+}
+.shop img{
+    max-height: 18rem;
+    object-fit: cover;
+    border-radius: 4%;
+    width: 70% !important;
 
 
 }
 
-/* .footer-menu{
-  margin:15px;
-} */
 .footer-menu .title{
   text-align: center;
   padding-top:40px;
@@ -266,14 +283,14 @@ font-size:20px;
 }
 
 .footer-bottom{
-  background-color:#fff8e6;
-  border-top:2px solid #f9eae1 ;
+  background-color:#F5F5F7;
+  border-top:2px solid #F5F5F7 ;
 
 }
 .footer-bottom p{
   text-align: center;
   padding-top:15px;
-  padding-bottom: 10px;
+
 
 }
 
@@ -370,24 +387,28 @@ h5{
   padding:20px;
 }
 .hidden{
-  visibility: hidden;
+  /* visibility: hidden; */
   text-align: center;
   left:0;
   right:0;
-  background-color: #333;
+  
+  margin-top: 10px;
 }
 
-.yess:hover>.hidden button{
-visibility: visible;
+.hidden a{
+/* visibility: visible; */
+margin-top:10px;
+margin-bottom: 20px;
 width: 100%;
-transition: ease-in-out .25s;
+max-height: 20px;
 color:white;
-background-color: #d69f7e;
-text-align: center;
 letter-spacing: 2px;
-transform: translateY(-100%);
 border-style: none;
-font-size: 15px;
+font-size: 14px;
+}
+.hidden a button{
+  background-color: #d69f7e;
+  color: white;
 }
 .product-title{
   color:#555;
@@ -400,7 +421,6 @@ font-size: 15px;
 
 }
 .product-titles{
-  padding-top:5%;
   color: #333;
 }
 .burger{
@@ -409,20 +429,13 @@ font-size: 15px;
   left:5px;
   top:30px;
 }
-.details-image{
-  text-align: center;
-}
-.details-image img{
-  background-size: cover;
-  width:40%;
-  height:40%;
-  min-width:350px;
-}
-.product-details{
-  height:160px;
-  width:100%;
 
-}
+
+.product-count{
+margin-left:20%;
+margin-right:20%;
+
+} 
 .product-name{
   font-weight: 400;
   letter-spacing: -.025em;
@@ -483,7 +496,7 @@ font-family: 'Roboto';
 }
 .cart-title{
   text-transform: uppercase;
-  margin-left:-50px;
+  /* margin-left:-50px; */
 }
 .product-title{
   font-size: 20px;
@@ -493,12 +506,17 @@ font-family: 'Roboto';
  font-weight: bold;
  text-align: center;
 }
-.row{
+/* .row{
   margin-left:20px;
-}
+} */
 .row .tables{
   border-bottom: 1px solid silver;
   border-top: 1px solid silver;
+}
+.content-header{
+  display: flex;
+align-items: center;
+justify-content: space-between;
 }
 .total-prize{
 color:#c96;
@@ -753,7 +771,6 @@ border-style: none;
   font-size:18px;
   font-weight: 700;
   letter-spacing: 0.3rem;
-  /* border:2px solid #ffffff; */
   padding:0.7rem 2rem;
   background-color: #ff8a80;
 }
@@ -825,7 +842,7 @@ margin-bottom:40px;
   color:#ffff;
 }
 .des{
-  background-color: #f7f7f7;
+  background-color: #dcdcde;
   padding-top:20px;
   padding-bottom:15px;
 }
@@ -878,4 +895,121 @@ border: 1px solid #c1c1c1;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #777;
   font-size: 1.5rem;
+}
+.order-box{
+  height:80px;
+  width:80px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.order-details{
+  background:#e5fee9;
+  padding:30px 0;
+}
+.order{
+  margin:40px 0;
+  border-bottom: 2px solid #f3f3f3;
+}
+.order-image img{
+  width:150px;
+  height:100px;
+}
+.flex-box{
+  padding:15px 25px;
+  border-bottom:2px solid #f3f3f3;
+}
+.product-count{
+  border:2px solid #f3f3f3;
+  border-radius: 5px;;
+}
+.product-count .btn{
+  width:100%;
+}
+
+.details{
+  border:1px solid #dadada;
+
+}
+.details-image img{
+  width:100%;
+  height:348px;
+}
+.card-details{
+  display:flex;
+}
+.details-image button{
+  position:relative;
+  display:block;
+  flex:0 0 25%;
+  max-width:19%;
+
+}
+
+.product-gallery li{
+    width: 95px;
+    height: 114px;
+    list-style:none;
+    border: 1px solid #eeee;
+}
+.product-gallery li img{
+  width: 100%;
+  height:auto;
+}
+.details p{
+  color:#777;
+}
+.rating select{
+  margin-left: 20px;
+}
+.navbar-toggler-icon{
+background-image: cover !important;
+}
+
+.hero-about{
+  height:350px;
+  background-image: url("https://preview.colorlib.com/theme/abcbook/assets/img/hero/xh2_hero2.jpg.pagespeed.ic.uw-cq9l-93.webp");
+}
+.about-banner h2{
+font-size: 400;
+font-size: 50px;
+font-family: 'Playfair Display',serif;
+line-height: 1.4;
+}
+.about-img img{
+  width: 100%;
+  height: 400px;
+}
+.about p{
+color:#777;
+letter-spacing: 0;
+font-weight: 300;
+}
+.logos{
+  margin-left:18%;
+}
+.brand {
+  min-height: 0;
+  display: flex;
+  margin-bottom:3rem !important;
+}
+.brand img{
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+.brands-text h2{
+  line-height: 1.5;
+  font-family:'Playfair Display';
+}
+.brands-text p{
+  color:#777;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.rcs_buttonSet{
+display: none !important;
 }

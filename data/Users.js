@@ -10,6 +10,7 @@ const users=[
         name:"User",
         email:"User@gmail.com",
         password:"User1441",
+        isAdmin:false,
     }
 
 ]

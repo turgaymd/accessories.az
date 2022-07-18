@@ -13,23 +13,34 @@ import Login from './Components/Login';
 import Register from './Components/Register.js';
 import Detailss from './Components/Detailss';
 import Contact from './Components/Contact';
+import Orders from './Components/Orders';
+import Order from './Components/OrderDetail';
+import PrivateRouter from './PrivateRouter';
+import About from './Components/About';
 const App=()=>{
   return (
     <>
+  <div className='mb-4 '>
 <NavbarComp/>
 <Switch>
 <Route exact path="/" component={Home}/> 
+<Route exact path="/about" component={About}/> 
 <Route exact path="/search/:keyword" component={Accessories}/> 
+<Route exact path="/page/:pagenumber" component={Accessories}/> 
+<Route exact path="/search/:keyword/page/:pageNumber" component={Accessories}/> 
 <Route exact path="/accessories" component={Accessories} />
 <Route path="/holiday_shop" component={Holiday_shop}/>
 <Route path="/contact" component={Contact}/>
 <Route path="/cart/:id?" component={Cart}/>
-<Route path="/checkout" component={Checkout}/>
 <Route path="/login" component={Login}/>
 <Route path="/register" component={Register}/>
 <Route path="/products/:id" component={Details}/>
 <Route path="/shop/:id" component={Detailss}/>
+<PrivateRouter path="/checkout" component={Checkout}/>
+<PrivateRouter path="/placeorder" component={Orders}/>
+<PrivateRouter path="/order/:id" component={Order}/>
 </Switch>
+</div>
 <Footer/> 
  </>
   );

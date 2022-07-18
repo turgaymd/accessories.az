@@ -4,6 +4,7 @@ const ImportData=require("./DataImport")
 const productRouter=require("./Routes/ProductRouter.js")
 const shopRouter=require("./Routes/ShopRouter.js")
 const userRouter=require("./Routes/UserRoute.js")
+const orderRouter=require("./Routes/OrderRouter.js")
 const {notFound,errorHandler}=require("./Middleware/Errors.js")
 const dotenv=require("dotenv")
 const connectDatabase=require("./config/MongoDB.js")
@@ -15,8 +16,13 @@ const app=express();
 app.use(express.json())
 app.use("/api/import", ImportData);
 app.use("/api/products", productRouter)
-app.use("/api/shop", shopRouter)
 app.use("/api/users", userRouter)
+app.use("/api/orders",orderRouter)
+app.use("/api/shop", shopRouter)
+app.use("/api/config/paypal", (req,res)=>{
+    res.send(process.env.PAYPAL_CLIENT_ID)
+})
+
 
 const path=require("path")
 if (process.env.NODE_ENV === 'production'){
@@ -28,9 +34,7 @@ app.get("*", (req, res) => {
 
 app.use(notFound);
 app.use(errorHandler);
-app.get("/api/config/paypal",(req,res)=>{
-    res.send(process.env.PAYPAL_CLIENT_ID)
-})
+
 app.get("/",(req,res)=>{
     res.send("API is running on this port")
 })

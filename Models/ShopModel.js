@@ -16,6 +16,14 @@ price:{
 desc:{
     type:String,
     required:true,
+},
+long_desc:{
+    type:String,
+    required:true
+},
+countInStock:{
+    type:Number,
+    required:true
 }
 },{
 timestamps:true

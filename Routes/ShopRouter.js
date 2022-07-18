@@ -11,6 +11,16 @@ shopRouter.get(
     })
 )
 shopRouter.get(
+    "/all",
+    protect,
+    admin,
+asyncHandler(async (req, res)=>{
+    const products=await Shop.find({}).sort({_id: -1});
+    res.json(products);
+   })
+)
+module.exports=shopRouter;
+shopRouter.get(
     "/:id",
     asyncHandler(async (req,res)=>{
         const shop=await Shop.findById(req.params.id)
@@ -22,13 +32,3 @@ shopRouter.get(
         }
     })
 )
-shopRouter.get(
-    "/all",
-    protect,
-    admin,
-asyncHandler(async (req, res)=>{
-    const products=await Shop.find({}).sort({_id: -1});
-    res.json(products);
-   })
-)
-module.exports=shopRouter;

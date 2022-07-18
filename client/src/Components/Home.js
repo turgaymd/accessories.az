@@ -1,30 +1,82 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Home=({match})=>{
+import {
+  MDBCarousel,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBCarouselElement,
+} from 'mdb-react-ui-kit';
+
+
+
+
+//https://preview.colorlib.com/#capitalshop
+
+// margin to tune the textbox
+
+
+let dotsSetting = {
+  placeOn: "beneath",
+  style: {
+    dotSize: "5px",
+    currDotColor: "rgba(155, 108, 27, 0.5)",
+    marginTop: "0px"
+  }
+};
+
+// let customSlideCpnts = data.map((item, index) => (
+//   <div className="row">
+//   <Link to={"/page" + index} key={index}>
+//     <div className="col-lg-12">
+//     <img src={item.imgSrc} />
+//     </div>
+//   </Link>
+//   </div>
+
+// ));
+const Home=({})=>{
  const  imagestyle ={
   backgroundImage:`url("banner.jpg")`,
 }
     return (
 <>
-<header className="App-header">
-<h3 className="titlel"> Best Accessories here</h3>
-<Link to="/holiday_shop"><button className='btnn text-center'> Shop Now</button></Link>
-</header>
+<MDBCarousel showControls showIndicators dark fade>
+      <MDBCarouselInner >
+        <MDBCarouselItem className='active'>
+          <MDBCarouselElement src='https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='...' />
+        </MDBCarouselItem>
+        <MDBCarouselItem>
+          <MDBCarouselElement src='https://images.unsplash.com/photo-1537832816519-689ad163238b?crop=faces%2Cedges&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU3ODY2ODA3&amp;ixlib=rb-1.2.1&amp;q=60&amp;w=1200&amp;auto=format&amp;h=630&amp;mark-w=64&amp;mark-align=top%2Cleft&amp;mark-pad=50&amp;blend-mode=normal&amp;blend-alpha=10&amp;blend-w=1&amp;mark=https%3A%2F%2Fimages.unsplash.com%2Fopengraph%2Flogo.png&amp;blend=000000' alt='...' />
+        </MDBCarouselItem>
+        <MDBCarouselItem>
+          <MDBCarouselElement src='https://images.unsplash.com/photo-1558191053-8edcb01e1da3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='...' />
+        </MDBCarouselItem>
+      </MDBCarouselInner>
+    </MDBCarousel>
+{/* <div className="container-fluid">
+      <CarouselSlider
+        slideCpnts={customSlideCpnts}
+        manner={{ circular: false,autoSliding:{interval:"1s"}}}
+        sliderBoxStyle={sliderBoxStyle}
+        dotsSetting={dotsSetting}
+        itemsStyle={itemsStyle}
+      />
+    </div> */}
 <div className='container discover'>
 <div className='row justify-content-center'>
 <div className='col-md-4 shop'>
 <img src="handbags1.jpg" className="img-fluid"></img>
-<h5>Discover Holiday Shop</h5>
+<h5>Discover handbags</h5>
 <div className="product-action"><div className='text-center'>
-<Link to='/holiday_shop'><button className='btn btn-danger shops'>Shop Now</button></Link>
+<Link to='/accessories'><button className='btn btn-danger shops'>Shop Now</button></Link>
 </div>
 </div>
 </div>
 <div className='col-md-4 shop'>
-<img src="https://www.accessorize.com/on/demandware.static/-/Library-Sites-accessorize-content-global/default/dw1aaa932f/home/2022/mar/28032022_UK/D1440-SEO3.jpg" className="img-fluid"></img>
-<h5>Discover  Accessories</h5>
+<img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" className="img-fluid w-100"></img>
+<h5>Discover Earrings</h5>
 <div className="product-action"><div className='text-center'>
-<Link to='/accessories'><button className='btn btn-secondary shops'>Shop Now</button></Link>
+<Link to='/page/3'><button className='btn btn-secondary shops'>Shop Now</button></Link>
 </div>
 </div>
 </div>
@@ -32,13 +84,13 @@ const Home=({match})=>{
 <img src="https://www.accessorize.com/on/demandware.static/-/Library-Sites-accessorize-content-global/default/dw08fd81ba/home/2022/mar/28032022_UK/D1440-SEO2.jpg" className="img-fluid"></img>
 <h5>Discover Jewellery</h5>
 <div className="product-action"><div className='text-center'>
-<Link to='/accessories'><button className='btn btn-success shops'>Shop Now</button></Link>
+<Link to='/page/2'><button className='btn btn-success shops'>Shop Now</button></Link>
 </div>
 </div>
 </div>
 </div>
  </div>
-        <div className='container bestt'>
+        <div className='container bestt mt-4'>
         <h2 className='best_sellers'>Best Sellers</h2>
         <div className='row  d-flex products'>
           <div className='col-3'>
@@ -47,7 +99,7 @@ const Home=({match})=>{
               <div className='best_title'>Silver Gold Tone Waves Drop Pendant</div>
               <div className='best_price'>$331.00</div>
               <div className='product_bootom text-center'>
-              <Link to={"/products/6272192d6503a86dd1419597"}><button className='btn btn-dark text-center'>Shop Now</button></Link>
+              <Link to="/products/62d50a31df809f4b6ead7a9f"><button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
@@ -58,7 +110,7 @@ const Home=({match})=>{
               <div className='best_title'>Sterling Silver Tassel Drop Earrings</div>
               <div className='best_price'>$355.00</div>
               <div className='product_bootom text-center'>
-              <Link to="/products/6272192d6503a86dd1419596"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
+              <Link to="/products/62d50a31df809f4b6ead7a9e"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
@@ -69,7 +121,7 @@ const Home=({match})=>{
               <div className='best_title'>Nude Statement Tassel Drop Earrings</div>
               <div className='best_price'>$265.00</div>
               <div className='product_bootom text-center'>
-              <Link to="/products/6272192d6503a86dd1419599"><button className='btn btn-dark text-center'>Shop Now</button></Link>
+              <Link to="/products/62d50a31df809f4b6ead7aa1"><button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
@@ -80,7 +132,7 @@ const Home=({match})=>{
               <div className='best_title'>Sterling Silver Star Ring</div>
               <div className='best_price'>$370.00</div>
             <div className='product_bootom text-center'>
-             <Link to="/products/6272192d6503a86dd1419598"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
+             <Link to="/products/"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
               </div>
           </div>
         </div>
@@ -94,7 +146,7 @@ const Home=({match})=>{
      <p className="banner-txt text-center mb-2 mb-lg-3">  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
 malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis
 facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
-<Link to="/accessories"><button className="seeProducts_button mb-3">See more</button></Link> 
+<Link to="/about"><button className="seeProducts_button mb-3">See more</button></Link> 
       </div>
       </section>
       </>

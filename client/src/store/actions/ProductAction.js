@@ -4,14 +4,19 @@ import {
     Pro_fail,
     Pro_det_req,
     Pro_det_fail,
-    Pro_det_success
+    Pro_det_success,
+    Pro_rev_req,
+    Pro_rev_success,
+    Pro_rev_fail,
+
 }
 from "../constants/Productsconstant"
 import axios from "axios";
+import { logout } from "./UserAction";
 export const showProducts=(keyword=" ")=>async(dispatch)=>{
     try{
         dispatch({type:Pro_req})
-        const{data}=await axios.get(`/api/products?keyword=${keyword}`)
+        const{data}=await axios.get(`/api/products?keyword=${keyword}`);
         dispatch({type:Pro_success,payload:data});
     }
     catch(error){
@@ -58,8 +63,11 @@ export const showDetails=(id)=>async(dispatch)=>{
     }
 }
 export const showDetailss=(id)=>async(dispatch)=>{
+
+       
     try{
         dispatch({type:Pro_det_req})
+       
         const{data}=await axios.get(`/api/shop/${id}`);
         dispatch({type:Pro_det_success,payload:data});
     }
@@ -70,6 +78,36 @@ export const showDetailss=(id)=>async(dispatch)=>{
             error.response && error.response.data.message
             ? error.response.data.message
             : error.message
+        });
+
+    }
+}
+export const showReviews=(productId,review)=>async(dispatch,getState)=>{
+    try{ dispatch({type:Pro_rev_req})
+        const {
+            userLogin:{userInfo},
+        }=getState();
+
+        const config={
+            headers:{
+                "Content-Type":"application/json",
+                Authorization: `Bearer ${userInfo.token}`,
+            }
+        };
+        await axios.post(`/api/products/${productId}/review`,review,config);
+        dispatch({type:Pro_rev_success});
+    }
+    catch(error){
+        const message= error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message
+        if(message === "Not authorized,token failed"){
+        dispatch(logout());
+        }
+        dispatch({
+            type:Pro_rev_fail,
+            payload:message,
+           
         });
 
     }

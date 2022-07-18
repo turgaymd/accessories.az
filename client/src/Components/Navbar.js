@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {BsHandbag,BsSearch} from 'react-icons/bs'
 import {Container,Navbar,Nav,NavDropdown} from "react-bootstrap"
 import { logout } from '../store/actions/UserAction';
-var NavbarComp=()=>{
+var NavbarComp=({match})=>{
   const dispatch=useDispatch()
   const [keyword,setKeyword]=useState()
   let history =useHistory();
@@ -31,13 +31,13 @@ return (
     <div className='topnavbar' style={{color:"black"}}>
  <Navbar bg="" expand="lg" className='navv'>
     <Container>
-      <Navbar.Brand href="#home"></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link href="/" className='ydb'>Home</Nav.Link>
           <Nav.Link href="/accessories" className='ydb'>Accessories</Nav.Link>
-          <Nav.Link href="/holiday_shop" className='ydb'>Holiday shop</Nav.Link>
+          <Nav.Link href="/about" className='ydb'>About</Nav.Link>
+          {/* <Nav.Link href="/holiday_shop" className='ydb'>Holiday shop</Nav.Link> */}
           <Nav.Link href="/contact" className='ydb'>Contact us</Nav.Link>
           {
             userInfo ? (

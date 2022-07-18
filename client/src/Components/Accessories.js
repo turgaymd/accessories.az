@@ -1,17 +1,17 @@
 import React  from 'react'
-import Home from './Home';
 import  { useEffect, useState }  from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {showProducts} from '../store/actions/ProductAction';
 import {Link} from "react-router-dom"
 import {MdAddShoppingCart} from "react-icons/md"
-import axios from 'axios';
 import {BsHeart} from "react-icons/bs"
 import {GoCommentDiscussion} from "react-icons/go"
 import Loading from './LoadingError/Loading';
 import Message from './LoadingError/error';
+import Pagination from './Pagination';
 const Accessories=({match})=>{
   const keyword=match.params.keyword;
+  // const pagenumber=match.params.pagenumber;
   const dispatch=useDispatch()
   const productList=useSelector((state)=>state.productList)
   const{loading,error,products}=productList;
@@ -35,16 +35,18 @@ return(
                :
         (
           <>
-      {products.map(product=>{
+      {products.map((product)=>{
         return (
           <>
 <div className='col-3 yess' key={product._id}>
-<img src={`${product.image}`} className="card-img img-responsive"></img>
-<div className='hidden justify-content-center'>
-  <Link to={`/products/${product._id}`}> <button className='btn text-center'><MdAddShoppingCart fontSize={24}/>   Add to Cart</button></Link>
+<img src={`${product.mainImage}`} className="card-img img-responsive"></img>
+<div className='hidden'>
+  <a>
+  <Link to={`/products/${product._id}`}> <button className='btn text-center'><MdAddShoppingCart fontSize={24}/>Add to Cart</button></Link>
+  </a>
   </div>
-  <div className='product-titles text-center'>
-    {product.name}
+  <div className='product-titlen text-center text-truncate'>
+    <a>{product.name}</a>
   </div>
   <div className='product-prize text-center'>
     ${product.price}
@@ -54,9 +56,11 @@ return(
           </>
         )
       })}
+      {/* <Pagination pages={pages} page={page} keyword={keyword ? keyword : ""}/> */}
     </>
         )
 }
+
       </div>
       </section>
       </div>
