@@ -11,16 +11,15 @@ import  Details from "./Components/Details"
 import Checkout from './Components/Checkout';
 import Login from './Components/Login';
 import Register from './Components/Register.js';
-import Detailss from './Components/Detailss';
 import Contact from './Components/Contact';
 import Orders from './Components/Orders';
 import Order from './Components/OrderDetail';
 import PrivateRouter from './PrivateRouter';
 import About from './Components/About';
+import NotFound from './Components/NotFound';
 const App=()=>{
   return (
     <>
-  <div className='mb-4 '>
 <NavbarComp/>
 <Switch>
 <Route exact path="/" component={Home}/> 
@@ -35,13 +34,13 @@ const App=()=>{
 <Route path="/login" component={Login}/>
 <Route path="/register" component={Register}/>
 <Route path="/products/:id" component={Details}/>
-<Route path="/shop/:id" component={Detailss}/>
+<Route path="*" component={NotFound}/>
 <PrivateRouter path="/checkout" component={Checkout}/>
 <PrivateRouter path="/placeorder" component={Orders}/>
 <PrivateRouter path="/order/:id" component={Order}/>
 </Switch>
-</div>
 <Footer/> 
+
  </>
   );
 }

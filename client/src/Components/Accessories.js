@@ -38,7 +38,7 @@ return(
       {products.map((product)=>{
         return (
           <>
-<div className='col-3 yess' key={product._id}>
+<div className='col-lg-3 col-6 yess' key={product._id}>
 <img src={`${product.mainImage}`} className="card-img img-responsive"></img>
 <div className='hidden'>
   <a>

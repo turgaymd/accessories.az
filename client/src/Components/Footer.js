@@ -3,7 +3,9 @@ import {BsInstagram,BsFacebook,BsPinterest} from 'react-icons/bs'
 import {FaTwitter} from 'react-icons/fa'
 const Footer=()=>{
  return(
-        <footer className="container-fluid">
+    <div>
+        <footer className="footer">
+            <div className="container">
             <div className="row">
             <div className="col-md-3">
         <div className="footer-menu">
@@ -61,11 +63,13 @@ const Footer=()=>{
                </div>
             </div>
             </div>
-            </div>
-        <div className="footer-bottom">
+            <div className="footer-bottom mt-4">
             <p>© 2022 ACCESSORIZE BRANDS LTD. All rights reserved.</p>
         </div>
+            </div>
+            </div>
         </footer>
+        </div>
      
    
  )   

@@ -5,7 +5,7 @@
 *{
   padding:0;
   margin:0;
-  box-sizing:border-box !important;
+  box-sizing:border-box ;
 
 }
 
@@ -220,17 +220,21 @@ font-size:2rem;
 }
 
 footer{
- min-height:300px; 
- position:relative;
- width: 100%;
- left:0;
- bottom:0;
-padding-bottom: 5px !important; 
-background-color: #F5F5F7;
+ background-color: #F5F5F7;
+ margin-top:100px;
 
 }
+@media screen  and (max-width:768px){
+  .media{
+    min-height:130px;
+  }
+  .carousel {
+max-height: 300px;
+  }
+}
+
 .shop img{
-    max-height: 18rem;
+    max-height: 10rem;
     object-fit: cover;
     border-radius: 4%;
     width: 70% !important;
@@ -240,7 +244,8 @@ background-color: #F5F5F7;
 
 .footer-menu .title{
   text-align: center;
-  padding-top:40px;
+  margin-top: 20px;
+
 }
 .footer-menu ul{
   list-style: none;
@@ -254,6 +259,7 @@ background-color: #F5F5F7;
 .footer-menu ul li a:hover{
 border-bottom:1px solid black;
 }
+
 .social-media{
   display:flex;
   align-items: center;
@@ -262,7 +268,7 @@ border-bottom:1px solid black;
 
 }
 .social-media a {
-padding-left:40px;
+padding-left:1rem;
 text-align: center;
 color: #555;
 font-size:20px;
@@ -270,7 +276,7 @@ font-size:20px;
 .social-media a:hover{
   opacity:0.5;
 }
-.scroll{
+/* .scroll{
   display: inline-block;
   width:50px;
   height:50px;
@@ -283,20 +289,14 @@ font-size:20px;
   z-index: 99;
   transition: all 0.4s ease;
   display: none;
-}
+} */
 
 .footer-bottom{
   background-color:#F5F5F7;
-  border-top:2px solid #F5F5F7 ;
-
 }
 .footer-bottom p{
   text-align: center;
-  padding-top:15px;
-
-
 }
-
 .bestt{
   margin-top:10px;
 }
@@ -334,11 +334,10 @@ visibility: visible;
   border-style: none;
   font-size: normal;
   border-radius: 0%;
-  background-color: transparent;
-  border:.2rem transparent;
-  border-bottom:2px solid #333 ;
+border-radius:50px;
+
   margin-top:10px;
-  color: #333;
+ 
   letter-spacing: 2px;
 }
 h4{
@@ -362,9 +361,12 @@ h4{
 
 }
 .shop:hover>.product-action{
-  transform: translateY(-150%);
+  transform: translateY(-190%);
+
   visibility: inherit;
   text-align: center;
+  transition-delay: 0ms;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 h5{
   padding-top:10px;
@@ -1015,4 +1017,12 @@ font-weight: 300;
 }
 .rcs_buttonSet{
 display: none !important;
+}
+.error img{
+  height: 300px;
+  object-fit: contain;
+}
+.error h4{
+  font-family: "Josefin Sans",sans-serif;
+
 }

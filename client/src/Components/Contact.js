@@ -2,15 +2,11 @@
 import React, { useState } from "react";
 import {useRef } from "react";
 import emailjs from "@emailjs/browser"
-const Result=()=>{
-  return(
-    <>
-    <p> Your message has been   successfully sent.I will contact you soon</p>
-      </>
-  )
-}
+import SweetAlert2 from 'react-sweetalert2';
+ 
 const Contact=()=>{
   const [result,showResult]=useState(false)
+  const [swalProps, setSwalProps] = useState({});
   const form=useRef()
   const sendEmail=(e)=>{
     e.preventDefault();
@@ -23,6 +19,14 @@ const Contact=()=>{
   e.target.reset();
   showResult(true);
 }
+function handleClick(){
+  setSwalProps({
+      show: true,
+      title: 'Message sent successfully'
+  }); 
+}
+
+
 return(
   <>
      <div className='des'>
@@ -49,10 +53,10 @@ return(
           <label className="mt-3">Message</label>
         <textarea className="form-control mt-3" name="message"/>
           <div className='text-center'>
-      <button className="submit" type="submit">Send</button>
+      <button className="submit" type="submit" onClick={handleClick}>Send</button>
           </div>
           <div className="row">
-            {result ? <Result/> : null}
+            {result ?   <SweetAlert2 {...swalProps}/>: null}
           </div>
           </form>
       </div>

@@ -92,47 +92,55 @@ const Home=({})=>{
  </div>
         <div className='container bestt mt-4'>
         <h2 className='best_sellers'>Best Sellers</h2>
-        <div className='row  d-flex products'>
-          <div className='col-3'>
+        <div className='row products'>
+          <div className='col-md-3'>
             <div className='best1'>
               <div className='img_frame'> <img src="https://d-themes.com/react_asset_api/molla/uploads/product_5_c7ed2cd058.jpg"></img></div>
+              <div class="media">
               <div className='best_title'>Silver Gold Tone Waves Drop Pendant</div>
               <div className='best_price'>$331.00</div>
+              </div>
               <div className='product_bootom text-center'>
-              <Link to="/products/62d50a31df809f4b6ead7a9f"><button className='btn btn-dark text-center'>Shop Now</button></Link>
+              <Link to="/products/62d50a31df809f4b6ead7a9f"><button className='btn btn-danger text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
-          <div className='col-3'>
+          <div className='col-md-3'>
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_6_5923626931.jpg"></img></div>
+              <div class="media">
               <div className='best_title'>Sterling Silver Tassel Drop Earrings</div>
               <div className='best_price'>$355.00</div>
+              </div>
               <div className='product_bootom text-center'>
-              <Link to="/products/62d50a31df809f4b6ead7a9e"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
+              <Link to="/products/62d50a31df809f4b6ead7a9e"> <button className='btn btn-danger text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
-          <div className='col-3'>
+          <div className='col-md-3'>
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_8_488732ddff.jpg"></img></div>
+              <div class="media">
               <div className='best_title'>Nude Statement Tassel Drop Earrings</div>
               <div className='best_price'>$265.00</div>
+              </div>
               <div className='product_bootom text-center'>
-              <Link to="/products/62d50a31df809f4b6ead7aa1"><button className='btn btn-dark text-center'>Shop Now</button></Link>
+              <Link to="/products/62d50a31df809f4b6ead7aa1"><button className='btn btn-danger text-center'>Shop Now</button></Link>
               </div>
             </div>
           </div>
-          <div className='col-3'>
+          <div className='col-md-3'>
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_9_32068f7ca1.jpg"></img></div>
+              <div class="media">
               <div className='best_title'>Sterling Silver Star Ring</div>
               <div className='best_price'>$370.00</div>
+              </div>
             <div className='product_bootom text-center'>
-             <Link to="/products/62d50a31df809f4b6ead7aa0"> <button className='btn btn-dark text-center'>Shop Now</button></Link>
+             <Link to="/products/62d50a31df809f4b6ead7aa0"> <button className='btn btn-danger text-center'>Shop Now</button></Link>
               </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
 import Rating from './Rating';
+import Footer from './Footer';
 const Details = ({ history, match }) => {
 
 
@@ -191,12 +192,14 @@ const Details = ({ history, match }) => {
                       )}
                     </div>
                   </div>
+                
 
                 </>
               )
         }
-
+ 
       </div>
+     
     </>
    
     // <div className='new text-center'><h3 className='arrivals'>Coming Soon Products</h3></div>
