@@ -25,7 +25,6 @@ a{
 }
 .App-header {
   background-color: #282c34;
-  background-image: url(/public/welcome.webp);
   background-size: cover;
  
   display: flex;
@@ -35,8 +34,22 @@ a{
   font-size: calc(10px + 1.8vmin);
   color: white;
 }
-.carousel-item{
-  height:620px !important;
+/* .carousel-item{
+  height:320px !important;
+} */
+.home{
+  width: 96%;
+  margin:0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.home .card{
+  background-color: darkseagreen;
+
+}
+.home img{
+  object-fit: cover;
 }
 .topnavbar{
   background-color:	#F5F5F7;

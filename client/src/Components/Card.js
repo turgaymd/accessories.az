@@ -4,17 +4,11 @@ import React from "react";
 const Card = ({title, description,image}) => {
   return (
     <div className="card">
-      <div className="card__top">
+         <h2 className="text-white pt-3 pb-3">{title}</h2>
+
         <img
           src={image}
         />
-        <div className="card__topInfo mb-2 mt-5">
-          <h2>{title}</h2>
-        </div>
-      </div>
-    
-  
-  
     </div>
   );
 };

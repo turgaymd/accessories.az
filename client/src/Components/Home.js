@@ -7,27 +7,27 @@ import Card from "./Card";
 
 const Carousel=()=>{
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 3000,
     autoplay:true,
+    breaking:1400,
     slidesToShow: 1,
     slidesToScroll: 3,
+ 
   };
 
   const slider = React.useRef(null);
 
   return (
     <div className='carouselCards'>
-        
-       <div className='carousel__slider pb-3 mb-2'>
+       <div className='carousel__slider'>
       <Slider  ref={slider} {...settings}>
-        <div> <Card title='5 days left to enroll' description='IBPS PO & SBI PO live coaching in English Batc...' image='https://images.unsplash.com/photo-1537832816519-689ad163238b?crop=faces%2Cedges&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU3ODY2ODA3&ixlib=rb-1.2.1&q=60&w=1200&auto=format&h=630&mark-w=64&mark-align=top%2Cleft&mark-pad=50&blend-mode=normal&blend-alpha=10&blend-w=1&mark=https%3A%2F%2Fimages.unsplash.com%2Fopengraph%2Flogo.png&blend=000000' /></div>
-        <div> <Card title='Starts in 15days' description='Civil Junior Engineer Live Coaching Batch 2' /></div>
-        <div> <Card title='Batch closes in 2days'  description='UPSC CSS - 2 2021 Live Coaching Batch 3'image="https://images.unsplash.com/photo-1558191053-8edcb01e1da3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" /></div>
-
+        <div> <Card title='Trend bags' description='IBPS PO & SBI PO live coaching in English Batc...' image='home1.webp' /></div>
+        <div> <Card title='Awesome Accessories' description='Civil Junior Engineer Live Coaching Batch 2' image='homw2.webp'/></div>
+        <div> <Card title='Dream Jewellery'  description='UPSC CSS - 2 2021 Live Coaching Batch 3' image='home3.webp' /></div>
       </Slider> 
-      </div>
+    </div>
     </div>
   )
 }
@@ -38,9 +38,11 @@ const Home=({})=>{
 }
     return (
 <>
+<div className="home container-fluid">
+<Carousel/>
+</div>
 
 <div className='container discover'>
-<Carousel/>
 <div className='row justify-content-center'>
 <div className='col-md-4 shop'>
 <img src="handbags1.jpg" className="img-fluid"></img>
@@ -74,7 +76,7 @@ const Home=({})=>{
           <div className='col-md-3'>
             <div className='best1'>
               <div className='img_frame'> <img src="https://d-themes.com/react_asset_api/molla/uploads/product_5_c7ed2cd058.jpg"></img></div>
-              <div class="media">
+              <div className="media">
               <div className='best_title'>Silver Gold Tone Waves Drop Pendant</div>
               <div className='best_price'>$331.00</div>
               </div>
@@ -87,7 +89,7 @@ const Home=({})=>{
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_6_5923626931.jpg"></img></div>
-              <div class="media">
+              <div className="media">
               <div className='best_title'>Sterling Silver Tassel Drop Earrings</div>
               <div className='best_price'>$355.00</div>
               </div>
@@ -100,7 +102,7 @@ const Home=({})=>{
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_8_488732ddff.jpg"></img></div>
-              <div class="media">
+              <div className="media">
               <div className='best_title'>Nude Statement Tassel Drop Earrings</div>
               <div className='best_price'>$265.00</div>
               </div>
@@ -113,7 +115,7 @@ const Home=({})=>{
             <div className='best1'>
             <div className='img_frame'>
               <img src="https://d-themes.com/react_asset_api/molla/uploads/product_9_32068f7ca1.jpg"></img></div>
-              <div class="media">
+              <div className="media">
               <div className='best_title'>Sterling Silver Star Ring</div>
               <div className='best_price'>$370.00</div>
               </div>
