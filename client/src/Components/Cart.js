@@ -5,6 +5,7 @@ import{VscChromeClose} from "react-icons/vsc"
 import { Link } from 'react-router-dom'
 import { addToCart1,addToCart,remove_Cart } from '../store/actions/CartAction'
 const Cart=({match,location})=>{
+    
     window.scrollTo(0,0);
     const productId=match.params.id;
     const qty=location.search ? Number(location.search.split("=")[1]) : 1;
@@ -12,6 +13,10 @@ const Cart=({match,location})=>{
     const {cartItems} =cart;
     const total =cartItems.reduce((a,i)=>a+ i.qty * i.price, 0).toFixed(2);
     const dispatch=useDispatch();
+
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin;
+
     useEffect(()=>{
         if(productId){
             dispatch(addToCart(productId,qty))
@@ -95,7 +100,11 @@ const Cart=({match,location})=>{
                              
                 ))}
                 <div className='checkout d-flex justify-content-center'>
-                 <Link to="/checkout"><button className='btn btn-success'>Continue to checkout</button></Link> 
+              {userInfo ? <Link to="/checkout"><button className='btn btn-success'>Continue to checkout</button></Link> : (
+                <div> 
+                   <Link to='/login'><button className='btn btn-danger'>Please login to continue</button></Link> 
+                </div>
+              )}   
                 </div>
 </>
     )

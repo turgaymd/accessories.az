@@ -1,68 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  MDBCarousel,
-  MDBCarouselInner,
-  MDBCarouselItem,
-  MDBCarouselElement,
-} from 'mdb-react-ui-kit';
+import Slider from 'react-slick-slider'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Card from "./Card";
 
+const Carousel=()=>{
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 3000,
+    autoplay:true,
+    slidesToShow: 1,
+    slidesToScroll: 3,
+  };
 
+  const slider = React.useRef(null);
 
+  return (
+    <div className='carouselCards'>
+        
+       <div className='carousel__slider pb-3 mb-2'>
+      <Slider  ref={slider} {...settings}>
+        <div> <Card title='5 days left to enroll' description='IBPS PO & SBI PO live coaching in English Batc...' image='https://images.unsplash.com/photo-1537832816519-689ad163238b?crop=faces%2Cedges&cs=tinysrgb&fit=crop&fm=jpg&ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU3ODY2ODA3&ixlib=rb-1.2.1&q=60&w=1200&auto=format&h=630&mark-w=64&mark-align=top%2Cleft&mark-pad=50&blend-mode=normal&blend-alpha=10&blend-w=1&mark=https%3A%2F%2Fimages.unsplash.com%2Fopengraph%2Flogo.png&blend=000000' /></div>
+        <div> <Card title='Starts in 15days' description='Civil Junior Engineer Live Coaching Batch 2' /></div>
+        <div> <Card title='Batch closes in 2days'  description='UPSC CSS - 2 2021 Live Coaching Batch 3'image="https://images.unsplash.com/photo-1558191053-8edcb01e1da3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" /></div>
 
-//https://preview.colorlib.com/#capitalshop
+      </Slider> 
+      </div>
+    </div>
+  )
+}
 
-// margin to tune the textbox
-
-
-let dotsSetting = {
-  placeOn: "beneath",
-  style: {
-    dotSize: "5px",
-    currDotColor: "rgba(155, 108, 27, 0.5)",
-    marginTop: "0px"
-  }
-};
-
-// let customSlideCpnts = data.map((item, index) => (
-//   <div className="row">
-//   <Link to={"/page" + index} key={index}>
-//     <div className="col-lg-12">
-//     <img src={item.imgSrc} />
-//     </div>
-//   </Link>
-//   </div>
-
-// ));
 const Home=({})=>{
  const  imagestyle ={
   backgroundImage:`url("banner.jpg")`,
 }
     return (
 <>
-<MDBCarousel>
-      <MDBCarouselInner >
-        <MDBCarouselItem className='active'>
-          <MDBCarouselElement src='https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='...' />
-        </MDBCarouselItem>
-        <MDBCarouselItem>
-          <MDBCarouselElement src='https://images.unsplash.com/photo-1537832816519-689ad163238b?crop=faces%2Cedges&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU3ODY2ODA3&amp;ixlib=rb-1.2.1&amp;q=60&amp;w=1200&amp;auto=format&amp;h=630&amp;mark-w=64&amp;mark-align=top%2Cleft&amp;mark-pad=50&amp;blend-mode=normal&amp;blend-alpha=10&amp;blend-w=1&amp;mark=https%3A%2F%2Fimages.unsplash.com%2Fopengraph%2Flogo.png&amp;blend=000000' alt='...' />
-        </MDBCarouselItem>
-        <MDBCarouselItem>
-          <MDBCarouselElement src='https://images.unsplash.com/photo-1558191053-8edcb01e1da3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' alt='...' />
-        </MDBCarouselItem>
-      </MDBCarouselInner>
-    </MDBCarousel>
-{/* <div className="container-fluid">
-      <CarouselSlider
-        slideCpnts={customSlideCpnts}
-        manner={{ circular: false,autoSliding:{interval:"1s"}}}
-        sliderBoxStyle={sliderBoxStyle}
-        dotsSetting={dotsSetting}
-        itemsStyle={itemsStyle}
-      />
-    </div> */}
+
 <div className='container discover'>
+<Carousel/>
 <div className='row justify-content-center'>
 <div className='col-md-4 shop'>
 <img src="handbags1.jpg" className="img-fluid"></img>

@@ -340,7 +340,7 @@ export const ProductsDetailssReducer=(
     }
 }
 export const ProductsDetailsReducer=(
-    state={product:{reviews:[],}},action)=>{
+    state={product:{reviews:[]}},action)=>{
     switch(action.type){ 
            case Pro_det_req:
             return {...state,loading:true};

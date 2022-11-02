@@ -34,10 +34,10 @@ const App=()=>{
 <Route path="/login" component={Login}/>
 <Route path="/register" component={Register}/>
 <Route path="/products/:id" component={Details}/>
-<Route path="*" component={NotFound}/>
-<PrivateRouter path="/checkout" component={Checkout}/>
-<PrivateRouter path="/placeorder" component={Orders}/>
-<PrivateRouter path="/order/:id" component={Order}/>
+{/* <Route path="*" component={NotFound}/> */}
+<Route path="/checkout" component={Checkout}/>
+<Route path="/placeorder" component={Orders}/>
+<Route path="/order/:id" component={Order}/>
 </Switch>
 <Footer/> 
 

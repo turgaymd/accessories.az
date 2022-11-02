@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { MdAddShoppingCart } from "react-icons/md"
 import { Link } from 'react-router-dom';
-import { showDetails } from '../store/actions/ProductAction';
+import { showDetails, showReviews } from '../store/actions/ProductAction';
 import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
 import Rating from './Rating';
 import Footer from './Footer';
+import SweetAlert2 from 'react-sweetalert2';
 const Details = ({ history, match }) => {
 
 
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
+  const [showSwal,setShowSwal]=useState({})
   const productId = match.params.id;
   const dispatch = useDispatch()
 
@@ -27,8 +29,10 @@ const Details = ({ history, match }) => {
   const { loading: loadingReview, error: errorReview, success: successReview } = productReview;
 
   useEffect(() => {
+    // e.preventDefault()
     if (successReview) {
-      alert("Review submitted");
+      alert("Review Submitted")
+      // console.log("Review submitted");
       setRating(0);
       setComment("");
       dispatch({ type: Pro_rev_reset });
@@ -42,29 +46,39 @@ const Details = ({ history, match }) => {
   }
 
   const sumbitHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    dispatch(showReviews(productId,{
+      rating,comment
+    }))
+   
   }
+// function handleClick(){
+//   setShowSwal({
+//     show:true,
+//     title:'Comment is written successsfully'
 
+//   })
+// }
 
-  const [imgb, setImgb] = useState(false)
-  const changeImage = (e) => {
-    e.preventDefault()
-    const fullImg = document.getElementById("mainImg")
-    var smallImg = document.querySelectorAll(".small")
-    fullImg.src = smallImg[1].src
-  }
-  const changeImagel = (e) => {
-    e.preventDefault()
-    const fullImg = document.getElementById("mainImg")
-    var smallImg = document.querySelectorAll(".small")
-    fullImg.src = smallImg[2].src
-  }
-  const changeImager = (e) => {
-    e.preventDefault()
-    const fullImg = document.getElementById("mainImg")
-    var smallImg = document.querySelectorAll(".small")
-    fullImg.src = smallImg[0].src
-  }
+  // const [imgb, setImgb] = useState(false)
+  // const changeImage = (e) => {
+  //   e.preventDefault()
+  //   const fullImg = document.getElementById("mainImg")
+  //   var smallImg = document.querySelectorAll(".small")
+  //   fullImg.src = smallImg[1].src
+  // }
+  // const changeImagel = (e) => {
+  //   e.preventDefault()
+  //   const fullImg = document.getElementById("mainImg")
+  //   var smallImg = document.querySelectorAll(".small")
+  //   fullImg.src = smallImg[2].src
+  // }
+  // const changeImager = (e) => {
+  //   e.preventDefault()
+  //   const fullImg = document.getElementById("mainImg")
+  //   var smallImg = document.querySelectorAll(".small")
+  //   fullImg.src = smallImg[0].src
+  // }
   return (
     <>
 
@@ -81,14 +95,14 @@ const Details = ({ history, match }) => {
                   <div className='row'>
                     <div className='col-md-7 card-details'>
                       <div className='product-gallery'>
-                        <ul className='small-img'>
+                        {/* <ul className='small-img'>
                           <li><img src={product.mainImage} alt="product.name" onClick={changeImager} className="small" /></li>
                           <li><img src={product.smallImage} onClick={changeImage} className="small" /></li>
                           <li><img src={product.smallImage2} onClick={changeImagel} className="small" /></li>
-                        </ul>
+                        </ul> */}
                       </div>
                       <div className='details-image'>
-                        <img src={product.mainImage} alt="product.name" id="mainImg" onChange={(e) => setImgb(e.target.value)} />
+                        <img src={product.mainImage} alt="product.name" id="mainImg"  />
                       </div>
                     </div>
                     <div className='col-md-5'>
@@ -113,7 +127,7 @@ const Details = ({ history, match }) => {
                           </div>
                           <div className='flex-box d-flex justify-content-between align-items-center'>
                             <h6>Reviews</h6>
-                           <Rating value={product.rating} text={ `${product.numReviews} reviews`}/>
+                           <Rating value={product.rating} text={ `${product.numReviews} reviews` } />
                           </div>
                           {
                             product.countInStock > 0 ? (
@@ -172,11 +186,14 @@ const Details = ({ history, match }) => {
                           </div>
                           <div className='my-4'>
                             <strong>Comment</strong>
-                            <textarea row="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)}></textarea>
+                            <textarea row="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
                           </div>
                           <div className='my-3'>
-                            <button disabled={loadingReview} className='col-12 bg-black border-0 p-3 rounded text-white'>Submit</button>
+                            <button disabled={loadingReview} className='col-12 bg-black border-0 p-3 rounded text-white' type='submit'>Submit</button>
                           </div>
+                          {/* <div className='row'>
+                            {comment ? <SweetAlert2 {...showSwal}/> : null }
+                          </div> */}
                         </form>
                       ) : (
                         <div className='my-3'>
@@ -195,41 +212,13 @@ const Details = ({ history, match }) => {
                 
 
                 </>
-              )
-        }
+              )}
  
       </div>
      
     </>
    
-    // <div className='new text-center'><h3 className='arrivals'>Coming Soon Products</h3></div>
-    // <div className='container arrival'>
-    //   <div className='row'>
-    //     <div className='col-3'>
-    //   <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101061-2_823x.jpg?v=1650308606"></img>
-    //   <div className='product-titlen'>Terrace Drop Earnings</div>
-    //   <div className='product-prize text-center'>$40.00 </div>
-    //     </div>
-    //     <div className='col-3'>
-    //       <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101028-1_823x.jpg?v=1647540053"></img>
-    //       <div className='product-titlen'>Terrace Gold Earnings</div>
-    //       <div className='product-prize text-center'>$30.00
-    //       </div>
-    //       </div>
-    //       <div className='col-3'>
-    //       <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L201009-2__61837_823x.jpg?v=1645115940"></img>
-    //       <div className='product-titlen'>Terrace Drop Necklace</div>
-    //       <div className='product-prize text-center'>$50.00
-    //       </div>
-    //       </div>
-    //       <div className='col-3'>
-    //       <img src="https://cdn.shopify.com/s/files/1/0627/7388/7215/products/L101015-2_823x.jpg?v=1646760639"></img>
-    //       <div className='product-titlen'>Daisy Post Earnings</div>
-    //       <div className='product-prize text-center'>$60.00
-    //       </div>
-    //   </div>
-    //   </div>
-    // </div>
+    
 
   )
 }
