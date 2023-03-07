@@ -15,7 +15,6 @@ const Details = ({ history, match }) => {
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
-  const [showSwal,setShowSwal]=useState({})
   const productId = match.params.id;
   const dispatch = useDispatch()
 
@@ -31,7 +30,7 @@ const Details = ({ history, match }) => {
   useEffect(() => {
     // e.preventDefault()
     if (successReview) {
-      alert("Review Submitted")
+      alert("Review Submitted");
       // console.log("Review submitted");
       setRating(0);
       setComment("");
@@ -48,7 +47,8 @@ const Details = ({ history, match }) => {
   const sumbitHandler = (e) => {
     e.preventDefault();
     dispatch(showReviews(productId,{
-      rating,comment
+      rating,
+      comment,
     }))
    
   }
@@ -81,7 +81,6 @@ const Details = ({ history, match }) => {
   // }
   return (
     <>
-
       <div className='container mb-5'>
         <h2 className='page-title'>Cart Details Page</h2>
         {

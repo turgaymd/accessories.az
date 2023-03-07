@@ -355,7 +355,7 @@ export const ProductsDetailsReducer=(
                return state;
     }
 }
-export const ProductsReviewReducer=(state={},action)=>{
+export const ProductsReviewReducer=(state={ },action)=>{
     switch(action.type){ 
         case Pro_rev_req:
             return {loading:true};

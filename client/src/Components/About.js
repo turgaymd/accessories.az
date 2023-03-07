@@ -7,7 +7,7 @@ const About=()=>{
             <div className="col-md-12">
                 <div className="hero-about d-flex justify-content-center align-items-center">
                     <div className="about-banner">
-                    <h2 className="text-white">About</h2>
+                    <h2 className="text-info ">About us</h2>
                 </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@ Since 1984 we’ve offered affordable accessories that can be stacked and styled
 We're committed to giving back and supporting the community.<br/> One of the ways we do this is working with charities that support women. We’re also constantly improving our sustainability efforts by making conscious choices with the materials we use and our production processes.</p>
                 </div>
                 <div className="col-md-6 about-img">
-                    <img src="https://www.accessorize.com/on/demandware.static/-/Library-Sites-accessorize-content-global/default/dwe65220c3/landing/our-brand/2020/jul/30072020_UK/Hello_1440x1660-min.jpg"/>
+                    <img src="https://images.unsplash.com/photo-1547713044-6681f3daa9e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"/>
                 </div>
             </div>
         </div>

@@ -9,7 +9,9 @@ const products=[
         smallImage2:"https://www.accessorize.com/dw/image/v2/BDLV_PRD/on/demandware.static/-/Sites-accessorize-master-catalog/default/dwe5231f4f/images/large/02_38101612_3.jpg?sw=1000&sh=1281&sm=cut",
         desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
         longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-        countInStock:7
+        countInStock:7,
+        numReviews:5,
+        rating:3,
        },
        {
         // id:"2",
@@ -21,7 +23,9 @@ const products=[
       
         desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
         longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-        countInStock:6
+        countInStock:6,
+        numReviews:2,
+        rating:1  ,
        },
        {
         // id:"3",
@@ -33,7 +37,9 @@ const products=[
       
         desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
         longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-        countInStock:5
+        countInStock:5,
+        numReviews:4,
+        rating:3,
        },
        {
         // id:"4",
@@ -45,7 +51,9 @@ const products=[
    
         desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
         longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-        countInStock:5
+        countInStock:5,
+        numReviews:2,
+        rating:2,
        },
        {
         // id:"5",
@@ -58,7 +66,9 @@ const products=[
    
         desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
         longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-        countInStock:7
+        countInStock:7,
+        numReviews:1,
+        rating:2,
        },
        {
         // id:"6",
@@ -71,7 +81,11 @@ const products=[
    
         desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
         longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-        countInStock:6
+        countInStock:6,
+        numReviews:1,
+        rating:3,
+        
+        
        },
        {
     //    id:"7",
@@ -83,7 +97,9 @@ const products=[
          smallImage2:"https://www.accessorize.com/dw/image/v2/BDLV_PRD/on/demandware.static/-/Sites-accessorize-master-catalog/default/dw4f0cd22a/images/large/02_38400512_3.jpg?sw=1000&sh=1281&sm=cut",
        desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
        longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-       countInStock:5
+       countInStock:5,
+       numReviews:1,
+       rating:1,
     },
 
  {
@@ -97,7 +113,9 @@ const products=[
    
         desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver", 
         longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-        countInStock:7
+        countInStock:7,
+        numReviews:1,
+        rating:3,
     },
         {
             // id:"9",
@@ -110,7 +128,9 @@ const products=[
          
             desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
             longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-            countInStock:6
+            countInStock:6,
+            numReviews:2,
+            rating:1,
            },
            {
             // id:"10",
@@ -124,6 +144,8 @@ const products=[
             desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
             longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
             countInStock:5,
+            numReviews:1,
+            rating:3,
            },
            {
             // id:"11",
@@ -136,7 +158,9 @@ const products=[
          
             desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
             longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-            countInStock:7
+            countInStock:7,
+            numReviews:2,
+            rating:2,
            },
            {
             // id:"12",
@@ -149,7 +173,9 @@ const products=[
             
             desc:"We're loving the linked look this season, so we're taking it into the new year with a sparkly twist! Designed in shiny metal with paved crystal embellishments.Non-refundable. Silver",
             longDesc:"Part of the Z by Accessorize collection.These gold-plated hoops are sure to add a touch of glamour to your evening look. Designed to hug the ears, they're a sure snug fit, finished with pretty pearls swinging off the base.Non-refundable.",
-            countsInStock:5
+            countsInStock:5,
+            numReviews:1,
+            rating:2,
            },
            {
             // id:"13",

@@ -5,7 +5,7 @@ const Footer=()=>{
  return(
     <div>
         <footer className="footer">
-            <div className="container">
+            <div className="container-fluid">
             <div className="row">
             <div className="col-md-3">
         <div className="footer-menu">

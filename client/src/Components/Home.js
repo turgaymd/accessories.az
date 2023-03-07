@@ -13,7 +13,7 @@ const Carousel=()=>{
     autoplay:true,
     breaking:1400,
     slidesToShow: 1,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
  
   };
 
@@ -24,7 +24,7 @@ const Carousel=()=>{
        <div className='carousel__slider'>
       <Slider  ref={slider} {...settings}>
         <div> <Card title='Trend bags' description='IBPS PO & SBI PO live coaching in English Batc...' image='home1.webp' /></div>
-        <div> <Card title='Awesome Accessories' description='Civil Junior Engineer Live Coaching Batch 2' image='homw2.webp'/></div>
+        <div> <Card title='Awesome Accessories' description='Civil Junior Engineer Live Coaching Batch 2' image='home4.webp'/></div>
         <div> <Card title='Dream Jewellery'  description='UPSC CSS - 2 2021 Live Coaching Batch 3' image='home3.webp' /></div>
       </Slider> 
     </div>

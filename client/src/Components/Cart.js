@@ -3,7 +3,7 @@ import { useSelector,useDispatch } from 'react-redux'
 import {useState,useEffect} from "react"
 import{VscChromeClose} from "react-icons/vsc"
 import { Link } from 'react-router-dom'
-import { addToCart1,addToCart,remove_Cart } from '../store/actions/CartAction'
+import { addToCart,remove_Cart } from '../store/actions/CartAction'
 const Cart=({match,location})=>{
     
     window.scrollTo(0,0);
@@ -20,9 +20,6 @@ const Cart=({match,location})=>{
     useEffect(()=>{
         if(productId){
             dispatch(addToCart(productId,qty))
-        }
-        if(productId){
-            dispatch(addToCart1(productId,qty))
         }
     },[dispatch,productId,qty])
   

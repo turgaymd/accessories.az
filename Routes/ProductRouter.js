@@ -8,11 +8,9 @@ const {admin,protect} =require("../Middleware/AuthMiddleware.js")
  productRouter.get(
      "/",
      asyncHandler(async (req,res)=>{
-        const pageSize=4;
-        const page=Number(req.query.pageNumber) || 1;
+        // const pageSize=4;
+        // const page=Number(req.query.pageNumber) || 1;
         
-      
-    
         const keyword=req.query.keyword
          ? {
             name:{
@@ -21,7 +19,7 @@ const {admin,protect} =require("../Middleware/AuthMiddleware.js")
             },
         }
         :{};
-        const count=await Product.countDocuments({...keyword})
+        // const count=await Product.countDocuments({...keyword})
         const products=await Product.find({ ...keyword })
         res.json(products)
     })
@@ -64,10 +62,10 @@ productRouter.post(
         if(product){
             const alreadyReviewed=product.reviews.find(
                 (r)=>r.user.toString()===req.user._id.toString()
-            )
+            );
             if(alreadyReviewed){
-                res.status(400)
-                throw new Error("product already reviewed")
+                res.status(400);
+                throw new Error("Product already reviewed");
             }
             const review={
                 name:req.user.name,
@@ -78,8 +76,9 @@ productRouter.post(
             product.reviews.push(review)
             product.numReviews=product.reviews.length
             product.rating=
-            product.reviews.reduce((acc,item)=>item.rating+acc,0)/product.reviews.length;
-            await product.save
+            product.reviews.reduce((acc,item)=>item.rating+acc,0) /
+            product.reviews.length;
+            await product.save()
             res.status(201).json({message:"Review added for a product"})
         }else{
             res.status(404)

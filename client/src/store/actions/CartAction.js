@@ -16,23 +16,23 @@ export const addToCart=(id,qty)=>async(dispatch,getState)=>{
     })
     localStorage.setItem("cartItems",JSON.stringify(getState().cart.cartItems))
 }
-export const addToCart1=(id,qty)=>async(dispatch,getState)=>{
-    const{data}=await axios.get(`/api/shop/${id}`)
+// export const addToCart1=(id,qty)=>async(dispatch,getState)=>{
+//     const{data}=await axios.get(`/api/shop/${id}`)
 
-    dispatch({
-        type:Add_cart,
-        payload:{
-            product:data._id,
-            name:data.name,
-            mainImage:data.mainImage,
-            price:data.price,
-            countInStock:data.countInStock,
-            qty,
+//     dispatch({
+//         type:Add_cart,
+//         payload:{
+//             product:data._id,
+//             name:data.name,
+//             mainImage:data.mainImage,
+//             price:data.price,
+//             countInStock:data.countInStock,
+//             qty,
 
-        }
-    })
-    localStorage.setItem("cartItems",JSON.stringify(getState().cart.cartItems))
-}
+//         }
+//     })
+//     localStorage.setItem("cartItems",JSON.stringify(getState().cart.cartItems))
+// }
 export const remove_Cart=(id)=>(dispatch,getState)=>{
     dispatch({
         type:Rem_cart,

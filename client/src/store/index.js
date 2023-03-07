@@ -7,9 +7,9 @@ import { userLoginReducer, userRegisterReducer } from "./reducers/UserReducer";
 import { createOrder, paymentOrder, showOrder } from "./reducers/OrderReducer";
 const reducer=combineReducers({
    productList:ProductsReducer,
-   productLists:ProductsReducerss,
+//    productLists:ProductsReducerss,
    productDetails:ProductsDetailsReducer,
-   productDetailss:ProductsDetailssReducer,
+//    productDetailss:ProductsDetailssReducer,
    productReview:ProductsReviewReducer,
    cart:CartReducer,
    userLogin:userLoginReducer,

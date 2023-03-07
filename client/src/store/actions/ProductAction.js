@@ -62,26 +62,26 @@ export const showDetails=(id)=>async(dispatch)=>{
 
     }
 }
-export const showDetailss=(id)=>async(dispatch)=>{
+// export const showDetailss=(id)=>async(dispatch)=>{
 
        
-    try{
-        dispatch({type:Pro_det_req})
+//     try{
+//         dispatch({type:Pro_det_req})
        
-        const{data}=await axios.get(`/api/shop/${id}`);
-        dispatch({type:Pro_det_success,payload:data});
-    }
-    catch(error){
-        dispatch({
-            type:Pro_det_fail,
-            payload:
-            error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message
-        });
+//         const{data}=await axios.get(`/api/shop/${id}`);
+//         dispatch({type:Pro_det_success,payload:data});
+//     }
+//     catch(error){
+//         dispatch({
+//             type:Pro_det_fail,
+//             payload:
+//             error.response && error.response.data.message
+//             ? error.response.data.message
+//             : error.message
+//         });
 
-    }
-}
+//     }
+// }
 export const showReviews=(productId,review)=>async(dispatch,getState)=>{
     try{ dispatch({type:Pro_rev_req})
         const {
