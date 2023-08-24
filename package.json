@@ -13,7 +13,7 @@
     "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "engines": {
-    "node": "14.18.0"
+    "node": "18.16.0"
 },
   "author": "",
   "license": "ISC",
