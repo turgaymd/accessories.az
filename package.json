@@ -10,7 +10,7 @@
     "start": "node server.js",
     "start-client":"npm start --prefix client",
     "server":"nodemon server.js --ignore './client/'",
-    "dev":"concurrently \"npm run server\" \"npm run client\""
+    "dev":"concurrently \"npm run server\" \"npm run start-client\""
   },
   "engines": {
     "node": "18.16.0"
