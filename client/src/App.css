@@ -34,9 +34,7 @@ a{
   font-size: calc(10px + 1.8vmin);
   color: white;
 }
-/* .carousel-item{
-  height:320px !important;
-} */
+
 .home{
   width: 96%;
   margin:0;
@@ -88,7 +86,6 @@ border-bottom: 1px solid  black ;
 h2,p{
   text-align: center;
   padding-bottom:10px;
-  /* text-transform: uppercase; */
 }
 .desc{
   margin-bottom:-20px;
@@ -238,9 +235,6 @@ footer{
 
 }
 @media screen  and (max-width:768px){
-  .media{
-    min-height:130px;
-  }
   .carousel {
 max-height: 300px;
   }
@@ -984,10 +978,6 @@ border: 1px solid #c1c1c1;
 .rating select{
   margin-left: 20px;
 }
-.navbar-toggler-icon{
-background-image: cover !important;
-}
-
 .hero-about{
   height:350px;
   background-image: url("https://images.unsplash.com/photo-1486308510493-aa64833637bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1229&q=80");
