@@ -7,8 +7,6 @@ import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
 import Rating from './Rating';
-import Footer from './Footer';
-import SweetAlert2 from 'react-sweetalert2';
 const Details = ({ history, match }) => {
 
 

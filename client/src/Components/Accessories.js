@@ -41,9 +41,7 @@ return(
 <div className='col-lg-3 col-6 yess' key={product._id}>
 <img src={`${product.mainImage}`} className="card-img img-responsive"></img>
 <div className='hidden'>
-
   <Link to={`/products/${product._id}`}> <button className='btn text-center'><MdAddShoppingCart fontSize={24}/>Add to Cart</button></Link>
-
   </div>
   <div className='product-titlen text-center text-truncate'>
     <a>{product.name}</a>

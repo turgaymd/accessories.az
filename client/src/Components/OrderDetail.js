@@ -9,7 +9,7 @@ import Message from "./LoadingError/error";
 import Loading from "./LoadingError/Loading";
 import axios from "axios";
 import { PayOrder } from "../store/actions/OrderAction";
-import {PayPalButton} from "react-paypal-button-v2"
+// import {PayPalButton} from "react-paypal-button-v2"
 
 const Order=({match})=>{
 
@@ -200,7 +200,8 @@ setSdkReady(true);
                             <Loading/>
                         ) :
                         (
-                            <PayPalButton amount={400} onSuccess={successPayment}/>
+                            // <PayPalButton amount={400} onSuccess={successPayment}/>
+                            <h2>Pay for now</h2>
                         )
                     }
                  </div>
