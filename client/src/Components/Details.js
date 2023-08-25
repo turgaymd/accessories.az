@@ -7,12 +7,15 @@ import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
 import Rating from './Rating';
+import SweetAlert2 from "react-sweetalert2"
+import showSwal from "react-swal"
 const Details = ({ history, match }) => {
 
 
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
+
   const productId = match.params.id;
   const dispatch = useDispatch()
 
@@ -26,10 +29,8 @@ const Details = ({ history, match }) => {
   const { loading: loadingReview, error: errorReview, success: successReview } = productReview;
 
   useEffect(() => {
-    // e.preventDefault()
     if (successReview) {
       alert("Review Submitted");
-      // console.log("Review submitted");
       setRating(0);
       setComment("");
       dispatch({ type: Pro_rev_reset });
@@ -37,7 +38,7 @@ const Details = ({ history, match }) => {
     dispatch(showDetails(productId));
   }, [dispatch, productId, successReview]);
 
-  const HandleCart = (e) => {
+  const handleCart = (e) => {
     e.preventDefault()
     history.push(`/cart/${productId}?qty=${qty}`)
   }
@@ -50,33 +51,7 @@ const Details = ({ history, match }) => {
     }))
    
   }
-// function handleClick(){
-//   setShowSwal({
-//     show:true,
-//     title:'Comment is written successsfully'
 
-//   })
-// }
-
-  // const [imgb, setImgb] = useState(false)
-  // const changeImage = (e) => {
-  //   e.preventDefault()
-  //   const fullImg = document.getElementById("mainImg")
-  //   var smallImg = document.querySelectorAll(".small")
-  //   fullImg.src = smallImg[1].src
-  // }
-  // const changeImagel = (e) => {
-  //   e.preventDefault()
-  //   const fullImg = document.getElementById("mainImg")
-  //   var smallImg = document.querySelectorAll(".small")
-  //   fullImg.src = smallImg[2].src
-  // }
-  // const changeImager = (e) => {
-  //   e.preventDefault()
-  //   const fullImg = document.getElementById("mainImg")
-  //   var smallImg = document.querySelectorAll(".small")
-  //   fullImg.src = smallImg[0].src
-  // }
   return (
     <>
       <div className='container mb-5'>
@@ -89,64 +64,65 @@ const Details = ({ history, match }) => {
               :
               (
                 <>
-                  <div className='row'>
-                    <div className='col-md-7 card-details'>
-                      <div className='product-gallery'>
-                        {/* <ul className='small-img'>
-                          <li><img src={product.mainImage} alt="product.name" onClick={changeImager} className="small" /></li>
-                          <li><img src={product.smallImage} onClick={changeImage} className="small" /></li>
-                          <li><img src={product.smallImage2} onClick={changeImagel} className="small" /></li>
-                        </ul> */}
-                      </div>
-                      <div className='details-image'>
-                        <img src={product.mainImage} alt="product.name" id="mainImg"  />
-                      </div>
-                    </div>
-                    <div className='col-md-5'>
-                      <div className='product-details'>
-                        <h4 className='product-name'><strong>{product.name}</strong></h4>
-                        <p>{product.desc}</p>
-                        <div className='product-count col-md-7'>
-                          <div className='flex-box d-flex justify-content-between align-items-center'>
-                            <h6>Price</h6>
-                            <span>${product.price}</span>
-                          </div>
-                          <div className='flex-box d-flex justify-content-between align-items-center'>
-                            <h6>Status</h6>
-                            {
-                              product.countInStock > 0 ? (
-                                <span>In Stock</span>
-                              ) :
-                                (
-                                  <span>Unavailable</span>
-                                )
-                            }
-                          </div>
-                          <div className='flex-box d-flex justify-content-between align-items-center'>
-                            <h6>Reviews</h6>
-                           <Rating value={product.rating} text={ `${product.numReviews} reviews` } />
-                          </div>
-                          {
-                            product.countInStock > 0 ? (
-                              <>
-                                <div className='flex-box d-flex justify-content-between align-items-center'>
-                                  <h6>Quantity</h6>
-                                  <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                                    {[...Array(product.countInStock).keys()].map((x) => (
-                                      <option key={x + 1} value={x + 1}>{x + 1}</option>
-                                    )
-                                    )}
-                                  </select>
-                                </div>
-                                <button className='btn btn-dark' onClick={HandleCart}><MdAddShoppingCart fontSize={24} /> Add to Cart</button>
-                              </>
-                            ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                
+                   
+                  
+                    {
+                          product ? (
+                            <>
+                            <div className='row'>
+                       
+                            <div className='col-md-7 card-details'>
+                            <div className='details-image'>
+                            <img src={product.mainImage} alt={product.name}  />
 
-                  <div className='row my-5'>
+                            </div>
+                            </div>
+   <div className='col-md-5'>
+   <div className='product-details'>
+     <h4 className='product-name'><strong>{product.name}</strong></h4>
+     <p>{product.desc}</p>
+     <div className='product-count col-md-7'>
+       <div className='flex-box d-flex justify-content-between align-items-center'>
+         <h6>Price</h6>
+         <span>${product.price}</span>
+       </div>
+       <div className='flex-box d-flex justify-content-between align-items-center'>
+         <h6>Status</h6>
+         {
+           product.countInStock > 0 ? (
+             <span>In Stock</span>
+           ) :
+             (
+               <span>Unavailable</span>
+             )
+         }
+       </div>
+       <div className='flex-box d-flex justify-content-between align-items-center'>
+         <h6>Reviews</h6>
+        <Rating value={product.rating} text={ `${product.numReviews} reviews` } />
+       </div>
+       {
+         product.countInStock > 0 ? (
+           <>
+             <div className='flex-box d-flex justify-content-between align-items-center'>
+               <h6>Quantity</h6>
+               <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                 {[...Array(product.countInStock).keys()].map((x) => (
+                   <option key={x + 1} value={x + 1}>{x + 1}</option>
+                 )
+                 )}
+               </select>
+             </div>
+             <button className='btn btn-dark' onClick={handleCart}><MdAddShoppingCart fontSize={24} /> Add to Cart</button>
+           </>
+         ) : null}
+     </div>
+   </div>
+ </div>
+ </div>
+ 
+ <div className='row my-5'>
                     <div className='col-md-6'>
                       <h6 className='mt-2'>Reviews</h6>
                       {product.reviews.length === 0 && (
@@ -183,14 +159,14 @@ const Details = ({ history, match }) => {
                           </div>
                           <div className='my-4'>
                             <strong>Comment</strong>
-                            <textarea row="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
+                            <textarea rows="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
                           </div>
                           <div className='my-3'>
                             <button disabled={loadingReview} className='col-12 bg-black border-0 p-3 rounded text-white' type='submit'>Submit</button>
                           </div>
-                          {/* <div className='row'>
+                          <div className='row'>
                             {comment ? <SweetAlert2 {...showSwal}/> : null }
-                          </div> */}
+                          </div>
                         </form>
                       ) : (
                         <div className='my-3'>
@@ -206,6 +182,23 @@ const Details = ({ history, match }) => {
                       )}
                     </div>
                   </div>
+ </>
+                            )
+                          
+                          
+                          :(
+                            <Loading/>
+                          )
+                        }
+                      
+                 
+            
+                       
+                    
+                 
+                 
+               
+
                 
 
                 </>

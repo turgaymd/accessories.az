@@ -17,9 +17,8 @@ name:{
     type:String,
     required:true,
 },
-        mainImage:{ type:String,required:true},
-        smallImage:{ type:String,required:false},
-        smallImage2:{type:String,required:false},
+        image:{ type:String,required:true},
+        
 price:{
     type:Number,
     required:true,
