@@ -6,12 +6,13 @@ import { showDetails, showReviews } from '../store/actions/ProductAction';
 import Message from './LoadingError/error';
 import Loading from './LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
+import moment from "moment"
 import Rating from './Rating';
 import SweetAlert2 from "react-sweetalert2"
 import showSwal from "react-swal"
 const Details = ({ history, match }) => {
 
-
+  const [alertShow,setAlertShow]=useState(false)
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
@@ -34,6 +35,7 @@ const Details = ({ history, match }) => {
       setRating(0);
       setComment("");
       dispatch({ type: Pro_rev_reset });
+    
     }
     dispatch(showDetails(productId));
   }, [dispatch, productId, successReview]);
@@ -53,7 +55,6 @@ const Details = ({ history, match }) => {
   }
 
   return (
-    <>
       <div className='container mb-5'>
         <h2 className='page-title'>Cart Details Page</h2>
         {
@@ -64,9 +65,6 @@ const Details = ({ history, match }) => {
               :
               (
                 <>
-                
-                   
-                  
                     {
                           product ? (
                             <>
@@ -129,9 +127,9 @@ const Details = ({ history, match }) => {
                         <Message variant={"alert-info mt-3"}>No reviews</Message>
                       )}
                       {product.reviews.map((review) => (
-                        <div key={review._id} className="mb-md-3 bg-light p-3 shadow-sm rounded">
+                        <div key={review._id} className="mb-md-3 bg-light p-3 shadow-sm rounded d-flex flex-column">
                           <strong>{review.name}</strong>
-                          <span>{review.createdAt}</span>
+                          <span>{moment(review.createdAt).calendar()}</span>
                           <div className='alert alert-info mt-3'>
                             {review.comment}
                           </div>
@@ -148,7 +146,7 @@ const Details = ({ history, match }) => {
                         <form onSubmit={sumbitHandler}>
                           <div className='my-4 rating'>
                             <strong>Rating</strong>
-                            <select className='ml-5' value={rating} onChange={(e) => setRating(e.target.value)}>
+                            <select className='col-12 p-2 mt-2 bg-light border-0 rounded' value={rating} onChange={(e) => setRating(e.target.value)}>
                               <option value="">Select ...</option>
                               <option value="1">1 - Poor</option>
                               <option value="2">2 - Fair</option>
@@ -191,22 +189,12 @@ const Details = ({ history, match }) => {
                           )
                         }
                       
-                 
-            
-                       
-                    
-                 
-                 
-               
-
                 
-
                 </>
               )}
  
       </div>
      
-    </>
    
     
 
