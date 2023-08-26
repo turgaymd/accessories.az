@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {BsHandbag,BsSearch} from 'react-icons/bs'
-import {Container,Navbar,Nav,NavDropdown} from "react-bootstrap"
+import {Container,Navbar,Nav,NavDropdown, Form,Button} from "react-bootstrap"
 import { logout } from '../store/actions/UserAction';
 var NavbarComp=({match})=>{
   const dispatch=useDispatch()
@@ -53,12 +53,16 @@ return (
           }
         
         </Nav> 
-  <form onSubmit={submitHandler}>
-  <div className='search-box'>
-  <button className="btn-search"><BsSearch style={iconstyle}/></button>
-  <input type="text" placeholder='Search ...' className='input-search' onChange={(e)=>setKeyword(e.target.value)}></input>
-  </div>
-  </form>
+        <Form className='d-flex' onSubmit={submitHandler}>
+          <Form.Control
+          type='search'
+          placeholder='Search'
+          className='me-2'
+          aria-label='Search'
+          onChange={(e)=>setKeyword(e.target.value)}
+          />
+    <Button variant="outline-success">Search</Button>
+        </Form>
   <span className='basket'>
   <Link to="/cart" style={{color:"black"}}><BsHandbag/></Link><span className="quant">{cartItems.length}</span>
   </span>

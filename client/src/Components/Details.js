@@ -129,6 +129,7 @@ const Details = ({ history, match }) => {
                       {product.reviews.map((review) => (
                         <div key={review._id} className="mb-md-3 bg-light p-3 shadow-sm rounded d-flex flex-column">
                           <strong>{review.name}</strong>
+                          <Rating value={review.rating}/>
                           <span>{moment(review.createdAt).calendar()}</span>
                           <div className='alert alert-info mt-3'>
                             {review.comment}

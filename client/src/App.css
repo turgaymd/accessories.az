@@ -58,6 +58,9 @@ a{
 .navbar{
   display:flex;
 }
+.navbar-collapse{
+  gap: 10px;
+}
 .navbar-menu{
   display:flex;
   color: #404040;

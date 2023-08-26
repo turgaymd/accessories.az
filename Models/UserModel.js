@@ -1,5 +1,6 @@
 const mongoose =require("mongoose")
 const bcrypt =require("bcryptjs")
+mongoose.set('strictQuery', false)
 const userSchema=mongoose.Schema(
 { 
 name:{

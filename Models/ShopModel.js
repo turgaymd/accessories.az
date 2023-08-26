@@ -1,4 +1,5 @@
 const mongoose =require("mongoose")
+mongoose.set('strictQuery', false)
 const shopSchema=mongoose.Schema({
 name:{
     type:String,
