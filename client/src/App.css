@@ -404,12 +404,10 @@ h5{
   padding:20px;
 }
 .hidden{
-  /* visibility: hidden; */
   text-align: center;
   left:0;
-  right:0;
-  
-  margin-top: 10px;
+  right:0;  
+  margin-top: 20px;
 }
 
 .hidden a{

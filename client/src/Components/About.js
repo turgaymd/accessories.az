@@ -7,7 +7,7 @@ const About=()=>{
             <div className="col-md-12">
                 <div className="hero-about d-flex justify-content-center align-items-center">
                     <div className="about-banner">
-                    <h2 className="text-info ">About us</h2>
+                    <h2 className="text-info "></h2>
                 </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@ const About=()=>{
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
-<h2 className="text-info mt-3">Our brand</h2>
+<h2 className="text-info mt-3">About us</h2>
 <p>At Accessorize we’re dedicated to offering accessories that enable all women to express themselves, helping you feel confident in your everyday.
 <br/><br/>
 Since 1984 we’ve offered affordable accessories that can be stacked and styled, with everything from jewellery and hair accessories to bags and seasonal favourites.Our accessories are an effortless style solution to refresh your look - they’re the accessories that make the outfit.
