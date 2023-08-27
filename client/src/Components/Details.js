@@ -64,16 +64,14 @@ const Details = ({ history, match }) => {
             )
               :
               (
-                <>
+                <> 
                     {
                           product ? (
                             <>
-                            <div className='row'>
-                       
+                            <div className='row'>       
                             <div className='col-md-7 card-details'>
                             <div className='details-image'>
                             <img src={product.mainImage} alt={product.name}  />
-
                             </div>
                             </div>
    <div className='col-md-5'>
@@ -192,8 +190,8 @@ const Details = ({ history, match }) => {
                       
                 
                 </>
-              )}
- 
+               )}
+  
       </div>
      
    

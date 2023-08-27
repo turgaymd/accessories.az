@@ -1,5 +1,6 @@
 const mongoose =require("mongoose")
 mongoose.set('strictQuery', false)
+
 const reviewSchema=mongoose.Schema({
     name:{type:String,required:true},
     rating:{type:Number,required:true},
@@ -18,7 +19,10 @@ name:{
     type:String,
     required:true,
 },
-        image:{ type:String,required:true},
+mainImage:{
+     type:String,
+     required:true
+    },
         
 price:{
     type:Number,
