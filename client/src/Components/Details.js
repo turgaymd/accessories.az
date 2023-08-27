@@ -69,10 +69,12 @@ const Details = ({ history, match }) => {
                           product ? (
                             <>
                             <div className='row'>       
-                            <div className='col-md-7 card-details'>
+                            <div className='col-md-4 card-details'>
                             <div className='details-image'>
                             <img src={product.mainImage} alt={product.name}  />
                             </div>
+                            </div>
+                            <div className='col-md-3'>
                             </div>
    <div className='col-md-5'>
    <div className='product-details'>
