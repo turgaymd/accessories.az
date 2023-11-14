@@ -8,12 +8,14 @@ const orderRouter=require("./Routes/OrderRouter.js")
 const {notFound,errorHandler}=require("./Middleware/Errors.js")
 const dotenv=require("dotenv")
 const connectDatabase=require("./config/MongoDB.js")
+const cors=require('cors')
 dotenv.config()
 connectDatabase({
     useNewUrlParser:true
 })
 const app=express();
 app.use(express.json())
+app.use(cors())
 app.use("/api/import", ImportData);
 app.use("/api/products", productRouter)
 app.use("/api/users", userRouter)
@@ -28,6 +30,7 @@ const path=require("path")
 if (process.env.NODE_ENV === 'production'){
 app.use(express.static(path.join(__dirname, "client", "build")))
 app.get("*", (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true")
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 }
