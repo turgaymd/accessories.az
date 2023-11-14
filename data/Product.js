@@ -182,7 +182,7 @@ const products=[
             name:"Sterling Silver Tassel Drop Earrings",
             price:355,
             
-               mainImage:"https://d-themes.com/react_asset_api/molla/uploads/product_6_5923626931.jpg",
+               mainImage:"silver_earrings.jfif",
                smallImage:"https://d-themes.com/react_asset_api/molla/uploads/product_6_2_f9bf15d3d8.jpg",
                smallImage2:"https://d-themes.com/react_asset_api/molla/uploads/product_6_2_f9bf15d3d8.jpg",
             
@@ -196,7 +196,7 @@ const products=[
             name:"Silver Gold Tone Waves Drop Pendant",
             price:331,
             
-               mainImage:"https://d-themes.com/react_asset_api/molla/uploads/product_5_c7ed2cd058.jpg",
+               mainImage:"silver_gold.webp",
                smallImage:"https://d-themes.com/react_asset_api/molla/uploads/product_5_2_0ee8b86d30.jpg",
                smallImage2:"https://d-themes.com/react_asset_api/molla/uploads/product_5_2_0ee8b86d30.jpg",
             
@@ -209,7 +209,7 @@ const products=[
             name:"Sterling Silver Star Ring",
             price:370,
             
-               mainImage:"https://d-themes.com/react_asset_api/molla/uploads/product_9_32068f7ca1.jpg",
+               mainImage:"star_ring.jpg",
                smallImage:"https://d-themes.com/react_asset_api/molla/uploads/product_9_2_436b9fcd4c.jpg",
                smallImage2:"https://d-themes.com/react_asset_api/molla/uploads/product_9_2_436b9fcd4c.jpg",
             
@@ -222,7 +222,7 @@ const products=[
             name:"Nude Statement Tassel Drop Earrings",
             price:26,
             
-               mainImage:"https://d-themes.com/react_asset_api/molla/uploads/product_8_488732ddff.jpg",
+               mainImage:"nude_earrings.jpg",
                smallImage:"https://d-themes.com/react_asset_api/molla/uploads/product_8_2_c710f2f901.jpg",
                smallImage2:"https://d-themes.com/react_asset_api/molla/uploads/product_8_2_c710f2f901.jpg",
             

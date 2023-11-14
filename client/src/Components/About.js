@@ -29,62 +29,7 @@ We're committed to giving back and supporting the community.<br/> One of the way
             </div>
         </div>
     </div>
-    <div className="container mt-4">
-        <div className="row">
-            <div className="col-lg-5">
-<div className="brands-text">
-        <h2>The world's premium design brands in one destination.</h2>
-<p>Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nis.</p>
-            </div>
-            </div>
-            <div className="col-lg-7 mt-3">
-            <div className="logos ">
-                <div className="row justify-content-center">
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/1.png"/></a>
-                    </div>
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/2.png"/></a>
-                    </div>
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/3.png"/></a>
-                    </div>
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/4.png"/></a>
-                    </div>
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/5.png"/></a>
-                    </div>
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/6.png"/></a>
-                    </div>
-                     
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/9.png"/></a>
-                    </div>
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/8.png"/></a>
-                    </div>
-                    <div className="col-6 col-sm-4">
-                        <a className="brand"><img src="https://d-themes.com/react/molla/demo-25/images/brands/7.png"/></a>
-                    </div>
-                   
-                   
-                 
-                  
-                  
-                    
-                
-                   
-                </div>
-                
-            </div>
-         
 
-            </div>
-        </div>
-
-    </div>
     </>
 
         )
