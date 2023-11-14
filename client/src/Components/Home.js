@@ -111,7 +111,7 @@ const Home=({})=>{
           <div className='col-md-3'>
             <div className='best1'>
             <div className='img_frame'>
-              <img src="https://d-themes.com/react_asset_api/molla/uploads/product_9_32068f7ca1.jpg" crossOrigin="anonymous" alt="product_9"></img></div>
+              <img src="https://d-themes.com/react_asset_api/molla/uploads/product_9_32068f7ca1.jpg"  alt="product_9"></img></div>
               <div className="media">
               <div className='best_title'>Sterling Silver Star Ring</div>
               <div className='best_price'>$370.00</div>
