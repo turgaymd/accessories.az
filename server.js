@@ -27,13 +27,13 @@ app.use("/api/config/paypal", (req,res)=>{
 
 
 const path=require("path")
-if (process.env.NODE_ENV === 'production'){
-app.use(express.static(path.resolve(__dirname, "client", "build")))
-app.get("*", (req, res) => {
-    res.setHeader("Access-Control-Allow-Credentials","true")
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
-}
+// if (process.env.NODE_ENV === 'production'){
+// app.use(express.static(path.resolve(__dirname, "client", "build")))
+// app.get("*", (req, res) => {
+//     res.setHeader("Access-Control-Allow-Credentials","true")
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+// });
+// }
 
 app.use(notFound);
 app.use(errorHandler);
