@@ -66,7 +66,7 @@ return(
         <h2>Shop By Instagram</h2>
         <div className='flex-container social'>
       <div className="flex-item ins" >
-        <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg"></img>
+        <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg" crossOrigin='anonymous'></img>
         <div className='instagram-content'>
           <a> <i className='icon'><BsHeart/></i>550</a>
        <a><i className='icon'><GoCommentDiscussion/></i>50</a>

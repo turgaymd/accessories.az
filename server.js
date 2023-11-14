@@ -28,10 +28,15 @@ app.use("/api/config/paypal", (req,res)=>{
 
 const path=require("path")
 if (process.env.NODE_ENV === 'production'){
-app.use(express.static(path.resolve(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "client", "build")))
+
+app.use("/images", (req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/accessories");
+    next();
+});
 app.get("*", (req, res) => {
     res.setHeader("Access-Control-Allow-Credentials","true")
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 }
 
