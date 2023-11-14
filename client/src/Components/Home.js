@@ -72,7 +72,7 @@ const Home=({})=>{
         <div className='row products'>
           <div className='col-md-3'>
             <div className='best1'>
-              <div className='img_frame'> <img src="https://d-themes.com/react_asset_api/molla/uploads/product_5_c7ed2cd058.jpg" alt="product_5"></img></div>
+              <div className='img_frame'> <img src="silver_gold.webp" alt="product_5"></img></div>
               <div className="media">
               <div className='best_title'>Silver Gold Tone Waves Drop Pendant</div>
               <div className='best_price'>$331.00</div>
@@ -85,7 +85,7 @@ const Home=({})=>{
           <div className='col-md-3'>
             <div className='best1'>
             <div className='img_frame'>
-              <img src="https://d-themes.com/react_asset_api/molla/uploads/product_6_5923626931.jpg" alt="product_6"></img></div>
+              <img src="silver_earrings.jfif" alt="product_6"></img></div>
               <div className="media">
               <div className='best_title'>Sterling Silver Tassel Drop Earrings</div>
               <div className='best_price'>$355.00</div>
@@ -98,7 +98,7 @@ const Home=({})=>{
           <div className='col-md-3'>
             <div className='best1'>
             <div className='img_frame'>
-              <img src="https://d-themes.com/react_asset_api/molla/uploads/product_8_488732ddff.jpg" alt="product_8"></img></div>
+              <img src="nude_earrings.jpg" alt="product_8"></img></div>
               <div className="media">
               <div className='best_title'>Nude Statement Tassel Drop Earrings</div>
               <div className='best_price'>$265.00</div>
@@ -111,7 +111,7 @@ const Home=({})=>{
           <div className='col-md-3'>
             <div className='best1'>
             <div className='img_frame'>
-              <img src="https://d-themes.com/react_asset_api/molla/uploads/product_9_32068f7ca1.jpg"  alt="product_9"></img></div>
+              <img src="star_ring.jpg" crossOrigin="anonymous" alt="product_9"></img></div>
               <div className="media">
               <div className='best_title'>Sterling Silver Star Ring</div>
               <div className='best_price'>$370.00</div>
