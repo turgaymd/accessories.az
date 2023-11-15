@@ -52,7 +52,7 @@ const Footer=()=>{
                 <h4>Contact</h4>
             </div>
                 <ul>
-                <li><strong>Email:   </strong>Accessorize@gmail.com</li>
+                <li><strong>Email:   </strong>memmedovturqay871@gmail.com</li>
                 <li><strong>  Phone:   </strong>+994(70)5110677</li>
                 </ul>
                 <div className="social-media">
@@ -64,7 +64,7 @@ const Footer=()=>{
             </div>
             </div>
             <div className="footer-bottom mt-4">
-            <p>© 2022 ACCESSORIZE BRANDS LTD. All rights reserved.</p>
+            <p>© 2023 Accessories. All rights reserved.</p>
         </div>
             </div>
             </div>
