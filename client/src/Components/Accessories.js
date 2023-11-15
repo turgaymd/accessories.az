@@ -22,7 +22,7 @@ return(
   <>
     <div className='desc'>
       <h2 className='page-title'>Accessories</h2>
-      <p>Define your outfits with on-trend women's jewellery from Accessorize.</p>
+      <p>Define your outfits with on-trend women's jewellery from Accessories.</p>
       </div>
       <div className='card'>
         <section className='py-4 container'>
