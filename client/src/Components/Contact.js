@@ -60,7 +60,7 @@ return(
       </div>
       </div>
       <div className="col-md-6 mt-5">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48627.62268861599!2d49.78739417910156!3d40.38167419999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307df041db0e89%3A0xc10506025e79ca02!2sAmelie%20couture!5e0!3m2!1saz!2s!4v1651352292518!5m2!1saz!2s"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.4462172340304!2d49.93281867571179!3d40.42111727143889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4030638f7157b94f%3A0xfa384fc53b0cf3d6!2sRizvan%20Teymurov%2063!5e0!3m2!1saz!2saz!4v1700066580271!5m2!1saz!2saz" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       </div>
       </div>
