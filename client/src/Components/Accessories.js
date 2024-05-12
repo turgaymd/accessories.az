@@ -24,9 +24,8 @@ return(
       <h2 className='page-title'>Accessories</h2>
       <p>Define your outfits with on-trend women's jewellery from Accessories.</p>
       </div>
-      <div className='card'>
         <section className='py-4 container'>
-          <div className='row justify-content-center'>
+          <div className='row  justify-content-center'>
           {
               loading ?
               (<Loading/>) : error ? (
@@ -39,7 +38,7 @@ return(
         return (
           <>
 <div className='col-lg-3 col-12 yess' key={product._id}>
-<img src={`${product.mainImage}`} className="card-img img-responsive"></img>
+<img src={`${product.mainImage}`} className="card-img"></img>
 <div className='hidden'>
   <Link to={`/products/${product._id}`}> <button className='btn text-center'><MdAddShoppingCart fontSize={24}/>Add to Cart</button></Link>
   </div>
@@ -51,6 +50,7 @@ return(
   </div>
   
 </div>
+
           </>
         )
       })}
@@ -60,13 +60,13 @@ return(
 }
 
       </div>
+      
       </section>
-      </div>
       <section className="instagram">
         <h2>Shop By Instagram</h2>
         <div className='flex-container social'>
       <div className="flex-item ins" >
-        <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg" crossOrigin='anonymous'></img>
+        <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg" ></img>
         <div className='instagram-content'>
           <a> <i className='icon'><BsHeart/></i>550</a>
        <a><i className='icon'><GoCommentDiscussion/></i>50</a>

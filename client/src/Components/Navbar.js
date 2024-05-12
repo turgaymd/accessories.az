@@ -27,18 +27,17 @@ if(keyword.trim()){
 dispatch(logout())
    }
 return (
-    <>
-    <div className='topnavbar' style={{color:"black"}}>
- <Navbar bg="" expand="lg" className='navv'>
+
+ <Navbar expand="lg" className='bg-body-tertiary navv' >
     <Container>
+    <Navbar.Brand href="#brand"></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link href="/" className='ydb'>Home</Nav.Link>
           <Nav.Link href="/accessories" className='ydb'>Accessories</Nav.Link>
-          <Nav.Link href="/about" className='ydb'>About</Nav.Link>
-          {/* <Nav.Link href="/holiday_shop" className='ydb'>Holiday shop</Nav.Link> */}
-          <Nav.Link href="/contact" className='ydb'>Contact us</Nav.Link>
+          <Nav.Link href="/about" className='ydb'>About us</Nav.Link>
+          <Nav.Link href="/contact" className='ydb'>Contact</Nav.Link>
           {
             userInfo ? (
               <>
@@ -69,8 +68,6 @@ return (
       </Navbar.Collapse>
     </Container> 
    </Navbar>
-  </div>
-  </>
 )
 }
 export default NavbarComp;

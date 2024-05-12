@@ -2,6 +2,7 @@ import React from "react";
 import {BsInstagram,BsFacebook,BsPinterest} from 'react-icons/bs'
 import {FaTwitter} from 'react-icons/fa'
 const Footer=()=>{
+    let currentDate=new Date().getFullYear()
  return(
     <div>
         <footer className="footer">
@@ -64,7 +65,7 @@ const Footer=()=>{
             </div>
             </div>
             <div className="footer-bottom mt-4">
-            <p>© 2023 Accessories. All rights reserved.</p>
+            <p>© {currentDate} Accessories. All rights reserved.</p>
         </div>
             </div>
             </div>
