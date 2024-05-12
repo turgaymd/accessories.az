@@ -160,8 +160,8 @@ const Details = ({ history, match }) => {
                             <strong>Comment</strong>
                             <textarea rows="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
                           </div>
-                          <div className='my-3'>
-                            <button disabled={loadingReview} className='col-12 bg-black border-0 p-3 rounded text-white' type='submit'>Submit</button>
+                          <div className='my-3 text-center'>
+                            <button disabled={loadingReview} className='bg-black border-0 p-3 rounded text-white btn-comment' type='submit'>Submit</button>
                           </div>
                           <div className='row'>
                             {comment ? <SweetAlert2 {...showSwal}/> : null }

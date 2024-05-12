@@ -396,19 +396,23 @@ h5{
   color: aliceblue;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.yess{
+.product{
   position:relative;
   padding:20px;
 }
+/* .product:hover{
+  box-shadow: 1px 25px 54px rgba(0, 0, 0, .12);
+} */
+
 .hidden{
+  position: absolute;
   text-align: center;
-  left:0;
-  right:0;  
-  margin-top: 20px;
+  right:10px; 
+  top: 10px;
 }
 
-.hidden a{
-/* visibility: visible; */
+/* .hidden a{
+
 margin-top:10px;
 margin-bottom: 20px;
 width: 100%;
@@ -417,6 +421,9 @@ color:white;
 letter-spacing: 2px;
 border-style: none;
 font-size: 14px;
+} */
+.btn-comment{
+  width: 10rem;
 }
 .hidden a button{
   background-color: #d69f7e;
