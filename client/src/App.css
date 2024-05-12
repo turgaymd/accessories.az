@@ -383,7 +383,7 @@ h5{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .desc{
-  background-color:  #ae7c7c;
+  background-color:  darkseagreen ;
   margin-top: -20px;
 }
 .desc h2{
@@ -843,7 +843,7 @@ margin-bottom:40px;
   background-image:url("https://iephosting.com/app/views/client/bootstrap/images/graphic8.svg") ;
 }
 .page-title{
-  color:#ff8a80;
+  color:white;
   letter-spacing: 2px;
 }
 .paypal{
@@ -863,7 +863,7 @@ margin-bottom:40px;
   color:#ffff;
 }
 .des{
-  background-color: #dcdcde;
+  background-color: darkseagreen !important;
   padding-top:20px;
   padding-bottom:15px;
 }

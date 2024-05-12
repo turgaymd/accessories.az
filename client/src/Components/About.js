@@ -17,7 +17,7 @@ const About=()=>{
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
-<h2 className="text-info mt-3">About us</h2>
+<h2 className=" mt-3">About us</h2>
 <p> 
 Accessories are more than adornments; they're storytellers. From the subtle elegance of a well-crafted watch to the bold statement of statement jewelry, each piece is a brushstroke in the canvas of personal style. 
    We believe that accessories are the bridge between fashion and individuality, elevating every look and defining your unique narrative. 
