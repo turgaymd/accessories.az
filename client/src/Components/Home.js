@@ -3,30 +3,8 @@ import { Link } from "react-router-dom";
 import Card from "./Card";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-// const Carousel=()=>{
-//   var settings = {
-//     dots: false,
-//     infinite: true,
-//     speed: 3000,
-//     autoplay:true,
-//     breaking:1400,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
- 
-//   };
 
-//   const slider = React.useRef(null);
 
-//   return (
-//     <div className='carouselCards'>
-//        <div className='carousel__slider'>
-//       <Carousel  >
-//         
-//       </Carousel> 
-//     </div>
-//     </div>
-//   )
-// }
 
 const Home=({})=>{
  const  imagestyle ={
@@ -35,10 +13,10 @@ const Home=({})=>{
     return (
 <>
 <div className="home">
-<Carousel autoPlay={true} infiniteLoop={true} interval={2000} showStatus= {false} showArrows={false}>
-<div> <Card title='Trend bags' description='IBPS PO & SBI PO live coaching in English Batc...' image='home1.webp' /></div>
-<div> <Card title='Awesome Accessories' description='Civil Junior Engineer Live Coaching Batch 2' image='home4.webp'/></div>
-<div> <Card title='Dream Jewellery'  description='UPSC CSS - 2 2021 Live Coaching Batch 3' image='home3.webp' /></div>
+<Carousel autoPlay={true} infiniteLoop={true} interval={2000} showStatus= {false} showArrows={false} showThumbs={false}>
+<div> <Card title='Trend bags' description='IBPS PO & SBI PO live coaching in English Batc...' image='home1.webp' alt="bags"/></div>
+<div> <Card title='Awesome Accessories' description='Civil Junior Engineer Live Coaching Batch 2' image='home4.webp' alt="accessories" /></div>
+<div> <Card title='Dream Jewellery'  description='UPSC CSS - 2 2021 Live Coaching Batch 3' image='home3.webp' alt="jewellery"  /></div>
 </Carousel>
 </div>
 

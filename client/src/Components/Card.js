@@ -7,7 +7,7 @@ const Card = ({title, description,image}) => {
          <h2 className="text-white pt-3 pb-3">{title}</h2>
 
         <img
-          src={image}
+          src={image} loading="lazy" 
         />
     </div>
   );

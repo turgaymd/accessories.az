@@ -48,7 +48,7 @@ border: 1px solid whitesmoke;
 
 }
 .home img{
-  object-fit: cover;
+  max-height: 700px;
 }
 
 .navbar-light .navbar-toggler-icon{
