@@ -6,16 +6,23 @@
         "use": "@vercel/node"
       },
       {
-        "src": "./client/build",
-        "use": "@vercel/static"
+        "src": "client/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "client/build"
+        }
       }
 
     ],
-  "rewrites": [
-  {
-    "source": "/(.*)",
-    "destination": "server.js"
-  }
-]
+  "routes":[
+    {
+      "src":"/api/(.*)",
+      "dest":"/server.js"
+    },
+    {
+      "src":"/(.*)",
+      "dest":"/client/build/$1"
+    }
+  ]
   }
   

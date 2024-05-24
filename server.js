@@ -20,7 +20,8 @@ connectDatabase({
 app.use(express.json())
 
 app.use(cors({
-    origin:'https://accessories-az.vercel.app/'
+    origin:'http://localhost:3000',
+    credentials:true
 }));
 
 
@@ -37,6 +38,7 @@ app.use("/api/config/paypal", (req,res)=>{
 
 if (process.env.NODE_ENV === 'production'){
 const buildPath=path.join(__dirname, "client", "build")
+console.log(`Serving static files from ${buildPath}`)
 app.use(express.static(buildPath))
 
 // app.use("/images", (req, res, next) => {
