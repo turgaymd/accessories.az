@@ -20,7 +20,7 @@ connectDatabase({
 app.use(express.json())
 
 app.use(cors({
-    origin:'https://accessoriesazz-turqay667s-projects.vercel.app/'
+    origin:'https://accessories-az.vercel.app/'
 }));
 
 
