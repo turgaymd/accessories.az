@@ -16,9 +16,9 @@ connectDatabase({
 const app=express();
 app.use(express.json())
 app.use(cors())
-// app.use(cors({
-//     origin:'https://accessories-az.vercel.app'
-// }));
+app.use(cors({
+    origin:'https://accessories-azd.vercel.app'
+}));
 app.use("/api/import", ImportData);
 app.use("/api/products", productRouter)
 app.use("/api/users", userRouter)
