@@ -16,9 +16,9 @@ connectDatabase({
 const app=express();
 app.use(express.json())
 app.use(cors())
-// app.use(cors({
-//     origin:'https://accessories-azd.vercel.app'
-// }));
+app.use(cors({
+    origin:'https://accessories-az.vercel.app'
+}));
 // app.use("/api/import", ImportData);
 // app.use("/api/products", productRouter)
 // app.use("/api/users", userRouter)
@@ -46,7 +46,7 @@ app.use(cors())
 // app.use(notFound);
 // app.use(errorHandler);
 
-app.get("/yes",(req,res)=>{
+app.get("/",(req,res)=>{
     res.send("API is running on this port")
 })
 const PORT=process.env.PORT || 1000;
