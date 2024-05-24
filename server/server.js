@@ -38,10 +38,10 @@ if (process.env.NODE_ENV === 'production'){
 const buildPath=path.resolve(__dirname,'..', "client", "build")
 app.use(express.static(buildPath))
 
-// app.use("/images", (req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/accessories");
-//     next();
-// });
+app.use("/images", (req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://accessories_azz.vercel.app/accessories");
+    next();
+});
 app.get("*", (req, res) => {
     res.setHeader("Access-Control-Allow-Credentials","true")
     res.sendFile(path.resolve(buildPath, "index.html"));
