@@ -19,32 +19,32 @@ app.use(cors())
 app.use(cors({
     origin:'https://accessories-az.vercel.app'
 }));
-// app.use("/api/import", ImportData);
-// app.use("/api/products", productRouter)
-// app.use("/api/users", userRouter)
-// app.use("/api/orders",orderRouter)
-// app.use("/api/shop", shopRouter)
-// app.use("/api/config/paypal", (req,res)=>{
-//     res.send(process.env.PAYPAL_CLIENT_ID)
-// })
+app.use("/api/import", ImportData);
+app.use("/api/products", productRouter)
+app.use("/api/users", userRouter)
+app.use("/api/orders",orderRouter)
+app.use("/api/shop", shopRouter)
+app.use("/api/config/paypal", (req,res)=>{
+    res.send(process.env.PAYPAL_CLIENT_ID)
+})
 
 
-// const path=require("path")
-// if (process.env.NODE_ENV === 'production'){
-// app.use(express.static(path.join(__dirname,'..', "client", "build")))
+const path=require("path")
+if (process.env.NODE_ENV === 'production'){
+app.use(express.static(path.join(__dirname,'..', "client", "build")))
 
 // app.use("/images", (req, res, next) => {
 //     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000/accessories");
 //     next();
 // });
-// app.get("*", (req, res) => {
-//     res.setHeader("Access-Control-Allow-Credentials","true")
-//     res.sendFile(path.join(__dirname,'..', "client", "build", "index.html"));
-// });
-// }
+app.get("*", (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true")
+    res.sendFile(path.join(__dirname,'..', "client", "build", "index.html"));
+});
+}
 
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 app.get("/",(req,res)=>{
     res.send("API is running on this port")
