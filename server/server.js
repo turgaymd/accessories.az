@@ -24,14 +24,14 @@ app.use(cors({
 }));
 
 
-app.use("/api/import", ImportData);
-app.use("/api/products", productRouter)
-app.use("/api/users", userRouter)
-app.use("/api/orders",orderRouter)
-app.use("/api/shop", shopRouter)
-app.use("/api/config/paypal", (req,res)=>{
-    res.send(process.env.PAYPAL_CLIENT_ID)
-})
+// app.use("/api/import", ImportData);
+// app.use("/api/products", productRouter)
+// app.use("/api/users", userRouter)
+// app.use("/api/orders",orderRouter)
+// app.use("/api/shop", shopRouter)
+// app.use("/api/config/paypal", (req,res)=>{
+//     res.send(process.env.PAYPAL_CLIENT_ID)
+// })
 
 
 
@@ -49,8 +49,8 @@ app.use("/api/config/paypal", (req,res)=>{
 // });
 // }
 
-app.use(notFound);
-app.use(errorHandler);
+// app.use(notFound);
+// app.use(errorHandler);
 
 app.get("/",(req,res)=>{
     res.send("API is running on this port")
