@@ -20,7 +20,7 @@ connectDatabase({
 app.use(express.json())
 
 app.use(cors({
-    origin:'https://accessories-az.vercel.app/'
+    origin:'https://client-ql32je30i-turqay667s-projects.vercel.app/'
 }));
 
 
@@ -39,8 +39,8 @@ app.use("/api/config/paypal", (req,res)=>{
  const buildPath=path.resolve(__dirname,'..', "client", "build")
  app.use(express.static(buildPath))
 
- app.use("/images", (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://accessoriesazz-turqay667s-projects.vercel.app/");
+  app.use("/images", (req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://client-ql32je30i-turqay667s-projects.vercel.app/");
     next();
 });
 app.get("*", (req, res) => {
