@@ -8,9 +8,8 @@ const userRouter=express.Router();
 userRouter.post(
    "/login",
    asyncHandler(async (req,res)=>{
-    const {email, password}=req.body
-    const user = await User.findOne({ email });
-    
+    const {username, password}=req.body
+    const user = await User.findOne({ username });
     if (user && (await user.matchPassword(password))){
         res.json({
                 _id:user._id,
@@ -21,7 +20,7 @@ userRouter.post(
                 createdAt:user.createdAt,
 })
 } else{
-    res.status(401);
+    res.status(401)
     throw new Error("Invalid Email or Password")
 
 }
