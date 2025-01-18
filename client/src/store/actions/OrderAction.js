@@ -15,7 +15,7 @@ export const showOrders=(order)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const{data}=await axios.post(`/api/orders`, order,config)
+        const{data}=await axios.post(`https://accessories-az-turqay.vercel.app/api/orders`, order,config)
         dispatch({type:Order_success,payload:data});
         dispatch({type:Clear_cart,payload:data});
         localStorage.removeItem("cartItems");
@@ -46,7 +46,7 @@ export const orderDetails=(id)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const{data}=await axios.get(`/api/orders/${id}`, config);
+        const{data}=await axios.get(`https://accessories-az-turqay.vercel.app/api/orders/${id}`, config);
         dispatch({type:Order_details_success,payload:data});
     }
     catch(error){
@@ -76,7 +76,7 @@ export const PayOrder=(orderId,paymentResult)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const {data}=await axios.put(`/api/orders/${orderId}/pay`,paymentResult, config);
+        const {data}=await axios.put(`https://accessories-az-turqay.vercel.app/api/orders/${orderId}/pay`,paymentResult, config);
         dispatch({type:Pay_success,payload:data});
     }
     catch(error){
