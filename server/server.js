@@ -20,7 +20,9 @@ connectDatabase({
 app.use(express.json())
 
 app.use(cors({
-    origin:['https://client-five-snowy-20.vercel.app', 'http://localhost:3000']
+    credentials:true,
+    origin:['http://localhost:3000','https://client-five-snowy-20.vercel.app']
+    
 }));
 
 
