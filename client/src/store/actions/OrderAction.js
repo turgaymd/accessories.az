@@ -14,7 +14,7 @@ export const showOrders=(order,apiUrl)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const{data}=await axios.post(`${apiUrl}/api/orders`, order,config)
+        const{data}=await axios.post(`${apiUrl}/orders`, order,config)
         dispatch({type:Order_success,payload:data});
         dispatch({type:Clear_cart,payload:data});
         localStorage.removeItem("cartItems");
@@ -45,7 +45,7 @@ export const orderDetails=(id,apiUrl)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const{data}=await axios.get(`${apiUrl}/api/orders/${id}`, config);
+        const{data}=await axios.get(`${apiUrl}/orders/${id}`, config);
         dispatch({type:Order_details_success,payload:data});
     }
     catch(error){
@@ -75,7 +75,7 @@ export const PayOrder=(orderId,paymentResult,apiUrl)=>async(dispatch,getState)=>
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const {data}=await axios.put(`${apiUrl}/api/orders/${orderId}/pay`,paymentResult, config);
+        const {data}=await axios.put(`${apiUrl}/orders/${orderId}/pay`,paymentResult, config);
         dispatch({type:Pay_success,payload:data});
     }
     catch(error){

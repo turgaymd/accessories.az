@@ -33,7 +33,7 @@ export const showProducts=(keyword=" ", apiUrl)=>async(dispatch)=>{
 export const showProductss=(apiUrl)=>async(dispatch)=>{
     try{
         dispatch({type:Pro_req})
-        const{data}=await axios.get(`${apiUrl}/api/shop`)
+        const{data}=await axios.get(`${apiUrl}/shop`)
         dispatch({type:Pro_success,payload:data});
     }
     catch(error){
@@ -49,7 +49,7 @@ export const showProductss=(apiUrl)=>async(dispatch)=>{
 export const showDetails=(id,apiUrl)=>async(dispatch)=>{
     try{
         dispatch({type:Pro_det_req})
-        const{data}=await axios.get(`${apiUrl}/api/products/${id}`);
+        const{data}=await axios.get(`${apiUrl}/products/${id}`);
         dispatch({type:Pro_det_success,payload:data});
     }
     catch(error){

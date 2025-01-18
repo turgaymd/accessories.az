@@ -14,7 +14,7 @@ export const login=(email,password)=>async(dispatch)=>{
                 "Content-Type":"application/json",
             },
         };
-        const {data}=await axios.post(`${apiUrl}/api/users/login`,{email,password},
+        const {data}=await axios.post(`${apiUrl}/users/login`,{email,password},
         config
         );
         dispatch({type:User_log_suc,payload:data});
@@ -39,7 +39,7 @@ export const register=(name,email,password)=>async(dispatch)=>{
                 "Content-Type":"application/json",
             },
         };
-        const {data}=await axios.post(`${apiUrl}/api/users`,{name,email,password},
+        const {data}=await axios.post(`${apiUrl}/users`,{name,email,password},
         config
         );
         dispatch({type:User_reg_suc,payload:data});
@@ -73,7 +73,7 @@ export const getUserDetails=(id)=>async (dispatch,getState)=>{
                 Authorization:`Bearer ${userInfo.token}`,
             },
         };
-        const {data}=await axios.get(`${apiUrl}/api/users/${id}`,config);
+        const {data}=await axios.get(`${apiUrl}/users/${id}`,config);
         dispatch({type:User_det_suc,payload:data});
 }catch(error){
     const message= error.response && error.response.data.message
