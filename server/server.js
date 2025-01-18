@@ -49,11 +49,12 @@ app.use("/api/config/paypal", (req,res)=>{
 // });
 
 //  }
-app.use(notFound);
-app.use(errorHandler);
+
 
 app.get("/",(req,res)=>{
     res.send("API is running on this port")
 })
+app.use(notFound);
+app.use(errorHandler);
 const PORT=process.env.PORT || 1000;
 app.listen(PORT,console.log(`server is running on ${PORT}`))
