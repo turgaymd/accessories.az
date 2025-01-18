@@ -1,11 +1,16 @@
-
 {
-  "buildCommand": "cd client && npm install && npm run build",
-  "outputDirectory": "client/build",
-  "rewrites": [
+    "version": 2,
+    "builds": [
       {
-          "source": "/(.*)",
-          "destination": "/server.js"
+        "src": "server.js",
+        "use": "@vercel/node"
       }
-  ]
-}
+    ],
+    "routes": [
+      {
+        "src": "/.*",
+        "dest": "server.js"
+      }
+    ]
+  }
+  
