@@ -9,13 +9,16 @@ import { Pro_rev_reset } from '../store/constants/Productsconstant';
 import moment from "moment"
 import Rating from './Rating';
 import SweetAlert2 from "react-sweetalert2"
-import showSwal from "react-swal"
+import showSwal from "react-swal";
+import { APiContext } from '../ApiContext';
+import { useContext } from 'react';
 const Details = ({ history, match }) => {
 
   const [alertShow,setAlertShow]=useState(false)
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
+  const {apiUrl}=useContext(APiContext)
 
   const productId = match.params.id;
   const dispatch = useDispatch()
@@ -37,8 +40,8 @@ const Details = ({ history, match }) => {
       dispatch({ type: Pro_rev_reset });
     
     }
-    dispatch(showDetails(productId));
-  }, [dispatch, productId, successReview]);
+    dispatch(showDetails(productId,apiUrl));
+  }, [dispatch, productId, successReview,apiUrl]);
 
   const handleCart = (e) => {
     e.preventDefault()

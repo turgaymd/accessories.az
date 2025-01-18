@@ -4,6 +4,8 @@ import {useState,useEffect} from "react"
 import{VscChromeClose} from "react-icons/vsc"
 import { Link } from 'react-router-dom'
 import { addToCart,remove_Cart } from '../store/actions/CartAction'
+import { useContext } from 'react';
+import { APiContext } from '../ApiContext'
 const Cart=({match,location})=>{
     
     window.scrollTo(0,0);
@@ -11,6 +13,7 @@ const Cart=({match,location})=>{
     const qty=location.search ? Number(location.search.split("=")[1]) : 1;
     const cart=useSelector((state)=>state.cart);
     const {cartItems} =cart;
+    const {apiUrl}=useContext(APiContext)
     const total =cartItems.reduce((a,i)=>a+ i.qty * i.price, 0).toFixed(2);
     const dispatch=useDispatch();
 
@@ -19,9 +22,9 @@ const Cart=({match,location})=>{
 
     useEffect(()=>{
         if(productId){
-            dispatch(addToCart(productId,qty))
+            dispatch(addToCart(productId,qty,apiUrl))
         }
-    },[dispatch,productId,qty])
+    },[dispatch,productId,qty,apiUrl])
   
     const removecart=(id)=>{
         dispatch(remove_Cart(id))
@@ -58,7 +61,9 @@ const Cart=({match,location})=>{
             </thead>
             <tbody key={item._id}>
                 <tr>
-                    <td className='product-col'> <div className="product"><figure className='product-media'>
+                    <td className='product-col'>
+                         <div >
+                        <figure className='product-media'>
 <a className='product-image'>
                     <img src={`${item.mainImage}`} alt={item.name}/>
                     </a>

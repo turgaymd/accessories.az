@@ -1,11 +1,13 @@
 import React,{useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShipping } from "../store/actions/CartAction";
+import { useContext } from "react";
+import { APiContext } from "../ApiContext";
 const Checkout=({history})=>{
     
     const cart=useSelector((state)=>state.cart)
     const {shippingAddress}=cart;
-
+   const {apiUrl}=useContext(APiContext)
     const [country,setCountry]=useState(shippingAddress.country);
     const [city,setCity]=useState(shippingAddress.city);
     const [street,setStreet]=useState(shippingAddress.street);
@@ -14,7 +16,7 @@ const Checkout=({history})=>{
   
     const submitHandler=(e)=>{
         e.preventDefault();
-        dispatch(saveShipping({country,city,street,zipcode}));
+        dispatch(saveShipping({country,city,street,zipcode,apiUrl}));
         history.push("/placeorder");
        
     }
