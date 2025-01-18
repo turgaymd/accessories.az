@@ -21,7 +21,7 @@ app.use(express.json())
 
 app.use(cors({
     credentials:true,
-    origin:['http://localhost:3000','https://client-five-snowy-20.vercel.app']
+    origin:['http://localhost:3000','https://accessories-turqay.netlify.app']
     
 }));
 
@@ -42,7 +42,7 @@ app.use("/api/config/paypal", (req,res)=>{
 //  app.use(express.static(buildPath))
 
    app.use("/images", (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://client-five-snowy-20.vercel.app/");
+    res.setHeader("Access-Control-Allow-Origin", "");
    next();
 });
 // app.get("*", (req, res) => {
