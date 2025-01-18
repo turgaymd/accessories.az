@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 import { register } from "../store/actions/UserAction";
 import Message from "./LoadingError/error";
 import Loading from "./LoadingError/Loading";
+import { useContext } from "react";
+import { APiContext } from "../ApiContext";
 const Register=({location,history})=>{
+ const {apiUrl}=useContext(APiContext)
 const[name,setName]=useState("")
 const[email,setEmail]=useState("")
 const[password,setPassword]=useState("")
@@ -20,7 +23,7 @@ useEffect(()=>{
 },[userInfo,history,redirect]);
 const submitHandler=(e)=>{
     e.preventDefault();
-    dispatch(register(name,email,password));
+    dispatch(register(name,email,password,apiUrl));
 };
 return (
 <div className="registers">

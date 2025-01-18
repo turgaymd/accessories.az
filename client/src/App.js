@@ -17,9 +17,11 @@ import Order from './Components/OrderDetail';
 import PrivateRouter from './PrivateRouter';
 import About from './Components/About';
 import NotFound from './Components/NotFound';
+import ApiProvider from './ApiContext.js';
 const App=()=>{
   return (
     <>
+<ApiProvider>
 <NavbarComp/>
 <Switch>
 <Route exact path="/" component={Home}/> 
@@ -40,7 +42,7 @@ const App=()=>{
 <Route path="/order/:id" component={Order}/>
 </Switch>
 <Footer/> 
-
+</ApiProvider>
  </>
   );
 }

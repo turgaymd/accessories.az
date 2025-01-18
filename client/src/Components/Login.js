@@ -6,12 +6,15 @@ import { Link } from "react-router-dom";
 import Loading from "./LoadingError/Loading";
 import Message from "./LoadingError/error";
 import { login } from "../store/actions/UserAction";
+import { useContext } from "react";
+import { APiContext } from "../ApiContext";
 const Login=({location,history})=>{
 const[email,setEmail]=useState("")
 const[password,setPassword]=useState("")
 const dispatch=useDispatch();
 const redirect = location.search ? location.search.split("=")[1] : "/";
 const userLogin=useSelector((state)=>state.userLogin);
+const {apiUrl}=useContext(APiContext)
 const {error,loading,userInfo}=userLogin
 useEffect(()=>{
     if(userInfo){
@@ -20,7 +23,7 @@ useEffect(()=>{
 },[userInfo,history,redirect]);
 const submitHandler=(e)=>{
     e.preventDefault();
-    dispatch(login(email,password));
+    dispatch(login(email,password,apiUrl));
 };
 return (
 <div className="container d-flex flex-column justify-content-center align-items-center mt-5 mb-5">

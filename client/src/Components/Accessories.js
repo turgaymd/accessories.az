@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { useContext }  from 'react'
 import  { useEffect, useState }  from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {showProducts} from '../store/actions/ProductAction';
@@ -9,15 +9,17 @@ import {GoCommentDiscussion} from "react-icons/go"
 import Loading from './LoadingError/Loading';
 import Message from './LoadingError/error';
 import Pagination from './Pagination';
+import ApiProvider, { APiContext } from '../ApiContext';
 const Accessories=({match})=>{
   const keyword=match.params.keyword;
+  const {apiUrl}=useContext(APiContext)
   // const pagenumber=match.params.pagenumber;
   const dispatch=useDispatch()
   const productList=useSelector((state)=>state.productList)
   const{loading,error,products}=productList;
 useEffect(()=>{
-  dispatch(showProducts(keyword));
-},[dispatch,keyword]);
+  dispatch(showProducts(keyword, apiUrl));
+},[dispatch,keyword,apiUrl]);
 return(
   <>
     <div className='desc'>

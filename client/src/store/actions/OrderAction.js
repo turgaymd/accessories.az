@@ -2,8 +2,7 @@ import { Order_req,Order_success,Order_fail, Order_details_req, Order_details_su
 import axios from "axios";
 import { Clear_cart } from "../constants/Cartconstant";
 import { logout } from "./UserAction";
-
-export const showOrders=(order)=>async(dispatch,getState)=>{
+export const showOrders=(order,apiUrl)=>async(dispatch,getState)=>{
     try{
         dispatch({type:Order_req})
         const {
@@ -15,7 +14,7 @@ export const showOrders=(order)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const{data}=await axios.post(`https://accessories-az-turqay.vercel.app/api/orders`, order,config)
+        const{data}=await axios.post(`${apiUrl}/api/orders`, order,config)
         dispatch({type:Order_success,payload:data});
         dispatch({type:Clear_cart,payload:data});
         localStorage.removeItem("cartItems");
@@ -35,7 +34,7 @@ export const showOrders=(order)=>async(dispatch,getState)=>{
 
     }
 };
-export const orderDetails=(id)=>async(dispatch,getState)=>{
+export const orderDetails=(id,apiUrl)=>async(dispatch,getState)=>{
     try{
         dispatch({type:Order_details_req})
         const {
@@ -46,7 +45,7 @@ export const orderDetails=(id)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const{data}=await axios.get(`https://accessories-az-turqay.vercel.app/api/orders/${id}`, config);
+        const{data}=await axios.get(`${apiUrl}/api/orders/${id}`, config);
         dispatch({type:Order_details_success,payload:data});
     }
     catch(error){
@@ -63,7 +62,7 @@ export const orderDetails=(id)=>async(dispatch,getState)=>{
     }
 }
 
-export const PayOrder=(orderId,paymentResult)=>async(dispatch,getState)=>{
+export const PayOrder=(orderId,paymentResult,apiUrl)=>async(dispatch,getState)=>{
     try{
         dispatch({type:Pay_req})
         const {
@@ -76,7 +75,7 @@ export const PayOrder=(orderId,paymentResult)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        const {data}=await axios.put(`https://accessories-az-turqay.vercel.app/api/orders/${orderId}/pay`,paymentResult, config);
+        const {data}=await axios.put(`${apiUrl}/api/orders/${orderId}/pay`,paymentResult, config);
         dispatch({type:Pay_success,payload:data});
     }
     catch(error){

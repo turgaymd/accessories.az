@@ -2,7 +2,11 @@ import axios from "axios";
 import {User_log_req,User_log_suc,User_log_fail} from "../constants/Userconstant"
 import {User_reg_req,User_reg_suc,User_reg_fail,user_logout} from "../constants/Userconstant"
 import { User_det_req,User_det_suc,User_det_fail } from "../constants/Userconstant";
+import { useContext } from "react";
+import { APiContext } from "../../ApiContext";
+
 export const login=(email,password)=>async(dispatch)=>{
+    const {apiUrl}=useContext(APiContext)
     try{
         dispatch({type:User_log_req});
         const config={
@@ -10,7 +14,7 @@ export const login=(email,password)=>async(dispatch)=>{
                 "Content-Type":"application/json",
             },
         };
-        const {data}=await axios.post(`https://accessories-az-turqay.vercel.app/api/users/login`,{email,password},
+        const {data}=await axios.post(`${apiUrl}/api/users/login`,{email,password},
         config
         );
         dispatch({type:User_log_suc,payload:data});
@@ -27,6 +31,7 @@ dispatch({
 }
 };
 export const register=(name,email,password)=>async(dispatch)=>{
+    const {apiUrl}=useContext(APiContext)
     try{
         dispatch({type:User_reg_req});
         const config={
@@ -34,7 +39,7 @@ export const register=(name,email,password)=>async(dispatch)=>{
                 "Content-Type":"application/json",
             },
         };
-        const {data}=await axios.post(`https://accessories-az-turqay.vercel.app/api/users`,{name,email,password},
+        const {data}=await axios.post(`${apiUrl}/api/users`,{name,email,password},
         config
         );
         dispatch({type:User_reg_suc,payload:data});
@@ -51,11 +56,13 @@ dispatch({
 }
 };
 export const logout=()=>(dispatch)=>{
+    
     localStorage.removeItem("userInfo");
     dispatch({type:user_logout})
     document.location.href="/login"  
 }
 export const getUserDetails=(id)=>async (dispatch,getState)=>{
+    const {apiUrl}=useContext(APiContext)
     try{
         dispatch({type:User_det_req});
         const {
@@ -66,7 +73,7 @@ export const getUserDetails=(id)=>async (dispatch,getState)=>{
                 Authorization:`Bearer ${userInfo.token}`,
             },
         };
-        const {data}=await axios.get(`https://accessories-az-turqay.vercel.app/api/users/${id}`,config);
+        const {data}=await axios.get(`${apiUrl}/api/users/${id}`,config);
         dispatch({type:User_det_suc,payload:data});
 }catch(error){
     const message= error.response && error.response.data.message
