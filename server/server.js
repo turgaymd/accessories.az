@@ -20,7 +20,7 @@ connectDatabase({
 app.use(express.json())
 
 app.use(cors({
-    origin:'https://accessories-az-turqay.vercel.app/'
+    origin:'https://client-five-snowy-20.vercel.app/'
 }));
 
 

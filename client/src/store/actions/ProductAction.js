@@ -16,7 +16,7 @@ import { logout } from "./UserAction";
 export const showProducts=(keyword=" ")=>async(dispatch)=>{
     try{
         dispatch({type:Pro_req})
-        const{data}=await axios.get(`https://accessories-az-turqay.vercel.app/api/products?keyword=${keyword}`);
+        const{data}=await axios.get(`https://accessories-az-ten.vercel.app/api/products?keyword=${keyword}`);
         dispatch({type:Pro_success,payload:data});
     }
     catch(error){
@@ -48,7 +48,7 @@ export const showProductss=()=>async(dispatch)=>{
 export const showDetails=(id)=>async(dispatch)=>{
     try{
         dispatch({type:Pro_det_req})
-        const{data}=await axios.get(`https://accessories-az-turqay.vercel.app/api/products/${id}`);
+        const{data}=await axios.get(`https://accessories-az-ten.vercel.app/api/products/${id}`);
         dispatch({type:Pro_det_success,payload:data});
     }
     catch(error){
@@ -94,7 +94,7 @@ export const showReviews=(productId,review)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        await axios.post(`https://accessories-az-turqay.vercel.app/api/products/${productId}/review`,review,config);
+        await axios.post(`https://accessories-az-ten.vercel.app/api/products/${productId}/review`,review,config);
         dispatch({type:Pro_rev_success});
     }
     catch(error){
