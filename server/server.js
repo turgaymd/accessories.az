@@ -39,10 +39,10 @@ app.use("/api/config/paypal", (req,res)=>{
 //  const buildPath=path.resolve(__dirname,'..', "client", "build")
 //  app.use(express.static(buildPath))
 
-//   app.use("/images", (req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "https://client-five-snowy-20.vercel.app/");
-//     next();
-// });
+   app.use("/images", (req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://client-five-snowy-20.vercel.app/");
+   next();
+});
 // app.get("*", (req, res) => {
 //     res.setHeader("Access-Control-Allow-Credentials","true")
 //     res.sendFile(path.resolve(buildPath, "index.html"));
