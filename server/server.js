@@ -21,7 +21,7 @@ app.use(express.json())
 
 app.use(cors({
     credentials:true,
-    origin:['http://localhost:3000','https://accessories-turqay.netlify.app']
+    origin:['http://localhost:3000','https://accessories-az.onrender.com']
     
 }));
 
@@ -37,20 +37,20 @@ app.use("/api/config/paypal", (req,res)=>{
 
 
 
-//  if (process.env.NODE_ENV === 'production'){
-//  const buildPath=path.resolve(__dirname,'..', "client", "build")
-//  app.use(express.static(buildPath))
+ if (process.env.NODE_ENV === 'production'){
+ const buildPath=path.resolve(__dirname,'..', "client", "build")
+ app.use(express.static(buildPath))
 
    app.use("/images", (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "");
+    res.setHeader("Access-Control-Allow-Origin", "https://accessories-az.onrender.com");
    next();
 });
-// app.get("*", (req, res) => {
-//     res.setHeader("Access-Control-Allow-Credentials","true")
-//     res.sendFile(path.resolve(buildPath, "index.html"));
-// });
+ app.get("*", (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true")
+    res.sendFile(path.resolve(buildPath, "index.html"));
+ });
 
-//  }
+ }
 
 
 app.get("/",(req,res)=>{
