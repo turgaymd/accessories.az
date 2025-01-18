@@ -20,7 +20,7 @@ connectDatabase({
 app.use(express.json())
 
 app.use(cors({
-    origin:'https://client-ql32je30i-turqay667s-projects.vercel.app/'
+    origin:'https://client-five-snowy-20.vercel.app/'
 }));
 
 
@@ -35,20 +35,20 @@ app.use("/api/config/paypal", (req,res)=>{
 
 
 
- if (process.env.NODE_ENV === 'production'){
- const buildPath=path.resolve(__dirname,'..', "client", "build")
- app.use(express.static(buildPath))
+//  if (process.env.NODE_ENV === 'production'){
+//  const buildPath=path.resolve(__dirname,'..', "client", "build")
+//  app.use(express.static(buildPath))
 
-  app.use("/images", (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://client-ql32je30i-turqay667s-projects.vercel.app/");
-    next();
-});
-app.get("*", (req, res) => {
-    res.setHeader("Access-Control-Allow-Credentials","true")
-    res.sendFile(path.resolve(buildPath, "index.html"));
-});
+//   app.use("/images", (req, res, next) => {
+//     res.setHeader("Access-Control-Allow-Origin", "https://client-five-snowy-20.vercel.app/");
+//     next();
+// });
+// app.get("*", (req, res) => {
+//     res.setHeader("Access-Control-Allow-Credentials","true")
+//     res.sendFile(path.resolve(buildPath, "index.html"));
+// });
 
- }
+//  }
 app.use(notFound);
 app.use(errorHandler);
 
