@@ -60,7 +60,6 @@ return (
           aria-label='Search'
           onChange={(e)=>setKeyword(e.target.value)}
           />
-    <Button variant="outline-success">Search</Button>
         </Form>
   <span className='basket'>
   <Link to="/cart" style={{color:"black"}}><BsHandbag/></Link><span className="quant">{cartItems.length}</span>

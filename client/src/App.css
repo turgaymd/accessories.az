@@ -48,7 +48,8 @@ border: 1px solid whitesmoke;
 
 }
 .home img{
-  max-height: 700px;
+  max-height: 600px;
+  width: 100%;
 }
 
 .navbar-light .navbar-toggler-icon{
@@ -233,7 +234,7 @@ font-size:2rem;
 
 footer{
  background-color: #F5F5F7;
- margin-top:100px;
+ margin-top:3rem;
 
 }
 @media screen  and (max-width:768px){
@@ -303,7 +304,7 @@ font-size:20px;
 } */
 
 .footer-bottom{
-  background-color:darkseagreen !important;
+  background-color:darkslategrey !important;
   padding-top: 20px;
   color: white;
 }
@@ -312,6 +313,8 @@ font-size:20px;
 }
 .bestt{
   margin-top:10px;
+}.best_price{
+  text-align: center;
 }
 .bestt img{
   width:100%;
@@ -329,9 +332,20 @@ font-size:20px;
 .col-md-4 {
   text-align: center;
 }
+.products{
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+}
 .featured{
   color: #c1c1c1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 18rem !important;
 }
+.featured:hover{
+  background: 0px 20px 20px rgba(0, 0, 0, 0.3);
+} 
 .best_title{
   padding-top: 20px;
 
@@ -346,12 +360,13 @@ font-size:20px;
 
 .product_bootom{
   margin-bottom:10px;
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
-.product_bootom button{
+.product_bootom a{
+  font-size: 1.5rem;
   border-style: none;
   border-radius: 0%;
   border-radius:75px;
@@ -391,10 +406,15 @@ h5{
 }
 .desc{
   background-color:  darkseagreen ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:7rem;
 }
 .desc h2{
   padding-top:15px;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color:whitesmoke;
 }
@@ -777,7 +797,7 @@ text-align: center;
   color: #c96;
 }
 .page-title{
-  margin-top:20px;
+  /* margin-top:20px; */
   font-weight: 500;
 }
 label{
@@ -985,10 +1005,22 @@ border: 1px solid #c1c1c1;
   color:#777;
 }
 
-.hero-about{
-  height:350px;
-  background-image: url("https://images.unsplash.com/photo-1486308510493-aa64833637bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1229&q=80");
-}
+/* .hero-about{
+  background-image: url("../public/about_banner.jpg");
+} */
+ .about-container{
+  width: 100%;
+background: #f9f9f9;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+ .about-banner img{
+  object-fit: contain;
+
+ }
+ .about-container p{
+  line-height: 1.6;
+  font-size: 1.1rem;
+ }
 .about-banner h2{
 font-size: 400;
 font-size: 50px;
@@ -999,10 +1031,11 @@ line-height: 1.4;
   width: 100%;
   height: 400px;
 }
-.about p{
-color:#777;
-letter-spacing: 0;
-font-weight: 300;
+.about-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .logos{
   margin-left:18%;

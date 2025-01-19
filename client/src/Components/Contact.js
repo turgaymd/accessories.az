@@ -36,7 +36,7 @@ return(
       <div className="row d-flex justify-content-center">
           <div className="col-md-6">
       <div className='card cardd mt-5'>
-          <h4 className='pt-5'>Get In Touch </h4>
+          <h4 className='pt-3'>Get In Touch </h4>
           <form ref={form} onSubmit={sendEmail}>
               <div className='row d-flex justify-content-center'>       
             <div className='col-lg-6'>
@@ -49,7 +49,7 @@ return(
           </div>    
           </div> 
           <label className="mt-2">Message</label>
-        <textarea className="form-control mt-3" name="message"/>
+        <textarea className="form-control mt-2" name="message"/>
           <div className='text-center'>
       <button className="submit" type="submit" onClick={handleClick}>Send</button>
           </div>

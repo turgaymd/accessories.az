@@ -68,7 +68,7 @@ return(
       
       </section>
       <section className="instagram">
-        <h2>Shop By Instagram</h2>
+        <h2 className='text-muted pb-5'>Shop By Instagram</h2>
         <div className='flex-container social'>
       <div className="flex-item ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg" ></img>
