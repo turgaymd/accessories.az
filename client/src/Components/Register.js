@@ -27,18 +27,20 @@ const submitHandler=(e)=>{
 };
 return (
 <div className="registers">
-<div className="container d-flex flex-column justify-content-center align-items-center mt-5 register">
-<h2 className="page-title">Register </h2>
+<div className='page-header'>
+      <h2 className='page-title'>Register</h2>
+      {/* <p>Define your outfits with on-trend women's jewellery from Accessories.</p> */}
+      </div>
+<div className="container d-flex flex-column justify-content-center align-items-center register mt-4">
 {error && <Message variant="alert-danger">{error}</Message>}
 {loading && <Loading/>}
 <form className="Login col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
-<input type="text" placeholder="First name" value={name} onChange={(e)=>setName(e.target.value)}></input>
-<input type="text" placeholder="Last Name"></input>
+<input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}></input>
 <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
 <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
 <input type="password" placeholder="Confirm Password"></input>
-<button type="submit">Register</button><br></br>
-<a><Link to={redirect ? `/login?redirect=${redirect}`: "/login"}>Already have an account? Login</Link></a>
+<div className="pb-3"><button type="submit">Register</button></div>
+<Link to={redirect ? `/login?redirect=${redirect}`: "/login"}>Already have an account? Login</Link>
 </form>
 </div>
 </div>

@@ -29,7 +29,7 @@ function handleClick(){
 
 return(
   <>
-     <div className='des'>
+     <div className='page-header'>
       <h2 className='page-title'>Contact Us</h2>
       </div>
       <div className="container contact mt-4">

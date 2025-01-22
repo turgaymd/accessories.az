@@ -26,16 +26,22 @@ const submitHandler=(e)=>{
     dispatch(login(email,password,apiUrl));
 };
 return (
+    <>
+   <div className='page-header'>
+      <h2 className='page-title'>Login</h2>
+      {/* <p>Define your outfits with on-trend women's jewellery from Accessories.</p> */}
+      </div>
 <div className="container d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
 {error && <Message variant="alert-danger">{error}</Message>}
 {loading && <Loading/>}
 <form className="Login col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
 <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
 <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
-<button type="submit">Login</button><br></br>
-<a><Link to={redirect ? `/register?redirect=${redirect}`: "/register"}>Create an account</Link></a>
+<div className="pb-2"><button type="submit">Login</button></div>
+<Link  to={redirect ? `/register?redirect=${redirect}`: "/register"}>Create an account</Link>
 </form>
 </div>
+ </>
 )
 }
 export default Login;

@@ -33,13 +33,24 @@ a{
   font-size: calc(10px + 1.8vmin);
   color: white;
 }
-.featured{
-border: 1px solid whitesmoke;
-
+.form-control{
+  box-shadow: none !important;
 }
-body{
-  background:  #F5F5F7;
+.products .col-md-3{
+border: 1px solid #ddd;
+border-radius: 8px;
+cursor: pointer;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.products .col-md-3:hover{
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.featured .product-bottom{
+  margin-top: 3rem;
+}
+/* body{
+  background:  whitesmoke !important;
+} */
 .home .card{
   background-color: darkseagreen;
   border: none;
@@ -60,7 +71,7 @@ body{
 }
 .navbar-nav a{
   color:#181818;
-  font-weight: 600;
+  font-weight: 400;
 }
 .navbar-collapse{
   gap: 10px;
@@ -165,6 +176,9 @@ font-size:24px;
   font-style: normal;
   font-weight: 400;
 
+}
+.page-header h2{
+  color: #ff6a3d;
 }
 .page-header span{
 color:#c96;
@@ -298,10 +312,9 @@ font-size:24px;
   height:100%;
 }
 .best_sellers{
-  letter-spacing: .8rem;
-  color: rosybrown;
+  letter-spacing: .2rem;
+  color: #ff6a3d;
   line-height:1.35;
- font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .products .col-md-3:hover{
   border:1px solid #eeee;
@@ -316,8 +329,6 @@ font-size:24px;
 }
 .featured{
   color: #c1c1c1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
   width: 18rem !important;
 }
 .featured:hover{
@@ -381,7 +392,7 @@ h5{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .desc{
-  background-color:  darkseagreen ;
+  background-color:  #F9F7F0; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -390,13 +401,7 @@ h5{
 }
 .desc h2{
   padding-top:15px;
-  letter-spacing: 0.2rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color:whitesmoke;
-}
-.desc p{
-  color: aliceblue;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #6c757d !important;
 }
 .product{
   position:relative;
@@ -411,36 +416,14 @@ h5{
   top: 10px;
 }
 
-/* .hidden a{
-
-margin-top:10px;
-margin-bottom: 20px;
-width: 100%;
-max-height: 20px;
-color:white;
-letter-spacing: 2px;
-border-style: none;
-font-size: 14px;
-} */
 .btn-comment{
   width: 10rem;
 }
 .hidden a button{
   color: white;
 }
-.product-title{
-  color:#555;
-  font-style: 'Arial';
-  font-weight: 500;
-  line-height: 1.55;
-}
-.product-titles:hover{
-  color:#c96;
 
-}
-.product-titles{
-  color: #333;
-}
+
 .burger{
  display: none;
   color:black;
@@ -459,17 +442,6 @@ margin-right:20%;
   letter-spacing: -.025em;
   line-height: 1.25;
   font: normal 300 1.4rem/1.86 'Roboto',sans-serif;
-}
-.descr h6{
-  color: #1cc0a0;
-  font-size: 30px;
-}
-.descr p{
-  float: left;
-  line-height:1.5em;
-letter-spacing: 0;
-color: #555;
-font-family: 'Roboto';
 }
 .add{
   margin-top:-20px;
@@ -583,8 +555,9 @@ margin-left: 25px;
 }
 .product-title{
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 1.2rem;
+  font-size: 16px;
   line-height: 1.25;
+  color: #555;
 }
 .arrival .col-3{
   text-align: center;
@@ -596,8 +569,8 @@ margin-left: 25px;
   height: auto;
 }
 .product-prize{
-  font-size: 1.4rem;
-  color: #555;
+  font-size: 1rem;
+  color: #ff6a3d;
 }
 .product-price span{
   font-size: 1.5rem;
@@ -757,6 +730,7 @@ text-align: center;
 }
 .page-title{
   /* margin-top:20px; */
+  color: black;
   font-weight: 500;
 }
 label{
@@ -825,10 +799,6 @@ object-fit: cover;
 margin-bottom:40px;
   background-image:url("https://iephosting.com/app/views/client/bootstrap/images/graphic8.svg") ;
 }
-.page-title{
-  color:white;
-  letter-spacing: 2px;
-}
 .paypal{
   width:20%;
 }
@@ -844,14 +814,6 @@ margin-bottom:40px;
 }
 .ad .btn:hover{
   color:#ffff;
-}
-.des{
-  background-color: darkseagreen !important;
-  padding-top:20px;
-  padding-bottom:15px;
-}
-.contact h4{
-  color:#c1c1c1;
 }
 
 .contact iframe{

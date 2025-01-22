@@ -22,7 +22,7 @@ useEffect(()=>{
 },[dispatch,keyword,apiUrl]);
 return(
   <>
-    <div className='desc'>
+    <div className='page-header'>
       <h2 className='page-title'>Accessories</h2>
       <p>Define your outfits with on-trend women's jewellery from Accessories.</p>
       </div>

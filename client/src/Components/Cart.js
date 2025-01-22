@@ -39,7 +39,7 @@ const Cart=({match,location})=>{
        </div>
 {
     cartItems.length ===0 ?(
-        <div className='alert alert-info text-center'>Your Cart is empty<br/><Link className='btn btn-success' to="/accessories" style={{fontSize:"16px"}}>Shop Now</Link></div>
+        <div className='alert alert-info text-center'>Your Cart is empty<br/><Link className='btn btn-info text-white' to="/accessories" style={{fontSize:"16px"}}>Shop Now</Link></div>
     ) : (
 <>
 <div className='alert alert-info text-center'>Total Cart Products
