@@ -34,19 +34,19 @@ return (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/" className='ydb'>Home</Nav.Link>
-          <Nav.Link href="/accessories" className='ydb'>Accessories</Nav.Link>
-          <Nav.Link href="/about" className='ydb'>About us</Nav.Link>
-          <Nav.Link href="/contact" className='ydb'>Contact</Nav.Link>
+          <Nav.Link href="/" >Home</Nav.Link>
+          <Nav.Link href="/accessories" >Accessories</Nav.Link>
+          <Nav.Link href="/about" >About us</Nav.Link>
+          <Nav.Link href="/contact" >Contact</Nav.Link>
           {
             userInfo ? (
               <>
-               <Nav.Link href="" className='ydb' onClick={logoutHandler}>Log out</Nav.Link>
+               <Nav.Link href=""  onClick={logoutHandler}>Log out</Nav.Link>
               </>
             )
             : (
               <>
-<Nav.Link href="/login" className='ydb'>Login</Nav.Link>
+<Nav.Link href="/login">Login</Nav.Link>
 </>
             )
           }
@@ -61,11 +61,13 @@ return (
           onChange={(e)=>setKeyword(e.target.value)}
           />
         </Form>
-  <span className='basket'>
+        <span className='basket'>
   <Link to="/cart" style={{color:"black"}}><BsHandbag/></Link><span className="quant">{cartItems.length}</span>
   </span>
       </Navbar.Collapse>
+
     </Container> 
+ 
    </Navbar>
 )
 }

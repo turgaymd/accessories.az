@@ -46,13 +46,15 @@ return(
   <Link to={`/products/${product._id}`}> <button className='btn btn-danger'><MdAddShoppingCart fontSize={24}/></button></Link>
   </div>
   </div>
-
-  <div className='product-titlen text-center text-truncate'>
+<div className='product-bottom'>
+<div className='product-title text-truncate'>
     <a>{product.name}</a>
   </div>
-  <div className='product-prize text-center'>
+  <div className='product-prize'>
     ${product.price}
   </div>
+</div>
+
   
 </div>
 
@@ -68,7 +70,8 @@ return(
       
       </section>
       <section className="instagram">
-        <h2 className='text-muted pb-5'>Shop By Instagram</h2>
+        <h2>Shop By Instagram</h2>
+        <p>Discover trendy accessories to elevate your wardrobe.</p>
         <div className='flex-container social'>
       <div className="flex-item ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg" ></img>
