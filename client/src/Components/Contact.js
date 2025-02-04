@@ -40,16 +40,16 @@ return(
           <form ref={form} onSubmit={sendEmail}>
               <div className='row d-flex justify-content-center'>       
             <div className='col-lg-6'>
-              <label className="mb-2">Name</label>
-              <input type="text" className="form-control pb-3" name="user_name" required></input>
+              <label className="mb-2"></label>
+              <input type="text" className="form-control" name="user_name" required placeholder="Your Name"></input>
               </div>            
             <div className='col-lg-6'>
-            <label className="mb-2">Email</label>
-          <input type="email" className="form-control pb-3"  name="user_email" required></input>
+            <label className="mb-2"></label>
+          <input type="email" className="form-control"  name="user_email" required placeholder="Email"></input>
           </div>    
           </div> 
-          <label className="mt-2">Message</label>
-        <textarea className="form-control mt-2" name="message"/>
+          <label className="mt-2"></label>
+        <textarea className="form-control mt-2" name="message" placeholder="Message"/>
           <div className='text-center'>
       <button className="submit" type="submit" onClick={handleClick}>Send</button>
           </div>

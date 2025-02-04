@@ -41,9 +41,12 @@ return(
           <>
 <div className='col-lg-3 col-12 product' key={product._id}>
   <div className='position-relative'>
-  <img src={`${product.mainImage}`} className="card-img"></img>
+  <img src={`${product.mainImage}`} className="card-img"/>
 <div className='hidden'>
-  <Link to={`/products/${product._id}`}> <button className='btn btn-danger'><MdAddShoppingCart fontSize={24}/></button></Link>
+  <Link to={`/products/${product._id}`}> <button className='btn btn-danger'><BsHeart fontSize={24}/></button></Link>
+  </div>
+  <div className='add-btn'>
+  <Link to={`/products/${product._id}`}> Add to cart</Link>
   </div>
   </div>
 <div className='product-bottom'>
@@ -72,7 +75,7 @@ return(
       <section className="instagram">
         <h2>Shop By Instagram</h2>
         <p>Discover trendy accessories to elevate your wardrobe.</p>
-        <div className='flex-container social'>
+        <div className='flex-container social pt-4'>
       <div className="flex-item ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg" ></img>
         <div className='instagram-content'>

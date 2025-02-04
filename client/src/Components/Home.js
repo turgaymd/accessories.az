@@ -5,15 +5,28 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { HiOutlineViewfinderCircle } from "react-icons/hi2";
 import { GrView } from "react-icons/gr";
-
+import { useEffect,useContext } from "react";
+import {useSelector,useDispatch} from 'react-redux'
+import {showProducts} from '../store/actions/ProductAction';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation, Pagination} from "swiper/modules"
+import { APiContext } from "../ApiContext";
 import 'swiper/css';
 import 'swiper/css/autoplay';
-const Home=({})=>{
+import { BsHeart } from "react-icons/bs";
+const Home=({match})=>{
  const  imagestyle ={
   backgroundImage:`url("banner.jpg")`,
 }
+  const {apiUrl}=useContext(APiContext)
+  const keyword=match.params.keyword;
+  const dispatch=useDispatch()
+  const productList=useSelector((state)=>state.productList)
+  const{loading,error,products}=productList;
+
+useEffect(()=>{
+  dispatch(showProducts(keyword, apiUrl));
+},[dispatch,keyword,apiUrl]);
     return (
 <>
 <div className="home">
@@ -38,54 +51,34 @@ autoplay={{
         </div>
         <div className='container bestt mt-4'>
         <div className='row products'>
-          <div className='col-md-3'>
-            <div className ="featured">
-            <div className='img_frame'> <img src="silver_gold.webp" alt="product_5"></img></div>
-            </div>
-            <div className='product-bottom text-center'>
-              <div className='product-title'>Silver Gold  Waves Drop Pendant</div>
-              <div className='product-prize'>$331.00</div>
-              <Link to="/products/6554f2ceba660224070a102b"></Link>
+          {
+            products.slice(-3).map(product=>{
+              return (
+              <div className='col-lg-3 product' key={product._id}>
+              <div className='position-relative'>
+              <img src={`${product.mainImage}`} className="card-img"/>
+            <div className='hidden'>
+              <Link to={`/products/${product._id}`}> <button className='btn btn-danger'><BsHeart fontSize={24}/></button></Link>
               </div>
-          </div>
-
-          <div className='col-md-3'>
-          <div className ="featured">
-            <div className='img_frame'>
-              <img src="silver_earrings.jfif" alt="product_6"></img></div>
-                   
-          </div>
-          <div className='product-bottom text-center'>
-              <div className='product-title'>Sterling Silver Tassel Drop Earrings</div>
-              <div className='product-prize'>$355.00</div>
-              <Link to="/products/6554f2ceba660224070a102a"></Link>
-              </div>
-          </div>
-          <div className='col-md-3'>
-          <div className ="featured">
-            <div className='img_frame'>
-              <img src="nude_earrings.jpg" alt="product_8"></img></div>
-            </div>
-              <div className='product-bottom text-center'>
-              <div className='product-title'>Nude Statement Tassel Drop Earrings</div>
-              <div className='product-prize'>$265.00</div>
-              <Link to="/products/6554f2ceba660224070a102d"></Link>
-              </div>           
-          </div>
-          {/* <div className='col-md-3'>
-            <div className="featured">
-            <div className='img_frame'>
-            <img src="star_ring.jpg" crossOrigin="anonymous" alt="product_9"></img></div>  
-            </div>
-              <div className='product-bottom text-center'>
-              <div className='product-title'>Sterling Silver Star Ring</div>
-              <div className='product-prize'>$370.00</div>
-         <Link to="/products/6554f2ceba660224070a102c"></Link> 
-              </div>
+              {/* <div className='add-btn'>
+              <Link to={`/products/${product._id}`}> Add to cart</Link>
               </div> */}
-              
-       
-       
+              </div>
+            <div className='product-bottom'>
+            <div className='product-title text-truncate'>
+                <a>{product.name}</a>
+              </div>
+              <div className='product-prize'>
+                ${product.price}
+              </div>
+            </div>
+            
+            </div>
+              )
+            })
+          }
+      
+      
        
       </div>
       </div>
