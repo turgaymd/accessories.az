@@ -36,7 +36,7 @@ return(
       <div className="row d-flex justify-content-center">
           <div className="col-md-6">
       <div className='card cardd mt-5'>
-          <h4 className='pt-3'>Get In Touch </h4>
+          <h4 className='pt-3 text-center'>Get In Touch </h4>
           <form ref={form} onSubmit={sendEmail}>
               <div className='row d-flex justify-content-center'>       
             <div className='col-lg-6'>

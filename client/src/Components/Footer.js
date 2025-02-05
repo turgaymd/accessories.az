@@ -64,7 +64,7 @@ const Footer=()=>{
                </div>
             </div>
             </div>
-            <div className="footer-bottom mt-4">
+            <div className="footer-bottom">
             <p>© {currentDate} Accessories. All rights reserved.</p>
         </div>
             </div>

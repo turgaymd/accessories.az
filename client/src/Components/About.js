@@ -2,7 +2,7 @@ import React from "react";
 const About=()=>{
     return (
         <>
-    <div className="container about-container mt-3 mb-5">
+    <div className="container about-container mt-5 mb-5">
         <div className="row">
                     <div className="col-md-6">
                     <img src="https://www.zilliondesigns.com/blog/wp-content/uploads/Perfect-Ecommerce-Sales-Banner.jpg" className="img-fluid"/>

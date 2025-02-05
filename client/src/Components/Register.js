@@ -27,14 +27,15 @@ const submitHandler=(e)=>{
 };
 return (
 <div className="registers">
-<div className='page-header'>
+{/* <div className='page-header'>
       <h2 className='page-title'>Register</h2>
-      {/* <p>Define your outfits with on-trend women's jewellery from Accessories.</p> */}
-      </div>
+
+      </div> */}
 <div className="container d-flex flex-column justify-content-center align-items-center register mt-4">
 {error && <Message variant="alert-danger">{error}</Message>}
 {loading && <Loading/>}
-<form className="Login col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
+<form className="auth col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
+<h2 class="text-center ">Create Account </h2>
 <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}></input>
 <input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
 <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>

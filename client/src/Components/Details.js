@@ -71,7 +71,7 @@ const Details = ({ history, match }) => {
                     {
                           product ? (
                             <>
-                            <div className='row justify-content-center'>       
+                            <div className='row justify-content-center mt-4 pt-4'>       
                             <div className='col-md-5 card-details'>
                             <div className='details-image'>
                             <img src={product.mainImage} alt={product.name}  />
