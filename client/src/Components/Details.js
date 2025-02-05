@@ -59,7 +59,7 @@ const Details = ({ history, match }) => {
 
   return (
       <div className='container mb-5'>
-        <h2 className='page-title'>Cart Details Page</h2>
+        {/* <h2 className='page-title text-center'>Cart Details Page</h2> */}
         {
           loading ?
             (<Loading />) : error ? (
@@ -71,14 +71,13 @@ const Details = ({ history, match }) => {
                     {
                           product ? (
                             <>
-                            <div className='row'>       
-                            <div className='col-md-4 card-details'>
+                            <div className='row justify-content-center'>       
+                            <div className='col-md-5 card-details'>
                             <div className='details-image'>
                             <img src={product.mainImage} alt={product.name}  />
                             </div>
                             </div>
-                            <div className='col-md-3'>
-                            </div>
+                    
    <div className='col-md-5'>
    <div className='product-details'>
      <h4 className='product-name'><strong>{product.name}</strong></h4>
@@ -123,8 +122,8 @@ const Details = ({ history, match }) => {
  </div>
  </div>
  
- <div className='row my-5'>
-                    <div className='col-md-6'>
+ <div className='row my-5 justify-content-center'>
+                    <div className='col-md-5'>
                       <h6 className='mt-2'>Reviews</h6>
                       {product.reviews.length === 0 && (
                         <Message variant={"alert-info mt-3"}>No reviews</Message>
@@ -140,7 +139,7 @@ const Details = ({ history, match }) => {
                         </div>
                       ))}
                     </div>
-                    <div className='col-md-6'>
+                    <div className='col-md-5'>
                       <h6>Write a Customer Review</h6>
                       <div className='my-4'>
                         {loadingReview && <Loading />}
@@ -159,7 +158,7 @@ const Details = ({ history, match }) => {
                               <option value="5">5 - Great</option>
                             </select>
                           </div>
-                          <div className='my-4'>
+                          <div >
                             <strong>Comment</strong>
                             <textarea rows="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
                           </div>
@@ -171,7 +170,7 @@ const Details = ({ history, match }) => {
                           </div>
                         </form>
                       ) : (
-                        <div className='my-3'>
+                        <div>
                           <Message variant={"alert-warning"}>
                             Please{" "}
                             <Link to="/login">

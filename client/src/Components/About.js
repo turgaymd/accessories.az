@@ -9,7 +9,7 @@ const About=()=>{
                     </div>
                  <div className="col-md-6 about-text">
                    <h2 className="text-muted ">Accessories</h2>
-                   <p className="text-muted">Discover timeless trends, exclusive accessories, and fashion-forward essentials that define your unique identity.</p>
+                   <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                    </div>
                
                    <div>
@@ -21,10 +21,10 @@ const About=()=>{
         <div className="container about-container">
             <div className="row">
                 <div className="col-md-6 about-text">
-<h2 className="text-muted mt-3">About us</h2>
+<h2 className="text-muted ">About us</h2>
 <p className="text-muted"> 
-Accessories are more than adornments; they're storytellers. From the subtle elegance of a well-crafted watch to the bold statement of statement jewelry, each piece is a brushstroke in the canvas of personal style. 
-   We believe that accessories are the bridge between fashion and individuality, elevating every look and defining your unique narrative. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
 </p>
                 </div>
                 <div className="col-md-6 about-img">

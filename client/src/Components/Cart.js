@@ -34,7 +34,7 @@ const Cart=({match,location})=>{
         <div> 
             <div className='page-header text-center'>
             <div className='container-fluid text-center'>
-<h1 className='card-title'>Shopping Cart</h1><span>Shop</span>   
+<h1 className='card-title text-center'>Shopping Cart</h1><span>Shop</span>   
 </div>   
        </div>
 {

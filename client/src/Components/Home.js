@@ -14,10 +14,33 @@ import { APiContext } from "../ApiContext";
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { BsHeart } from "react-icons/bs";
+import { FaArrowRight } from "react-icons/fa";
 const Home=({match})=>{
- const  imagestyle ={
-  backgroundImage:`url("banner.jpg")`,
-}
+
+
+
+const slides=[
+  {
+    title:" Luxury accessories",
+    image:"home2.webp"
+  },
+  {
+    title:"Elegant Watches",
+    image:"home4.webp"
+  },
+  
+  {
+    title:"Luxury handbags",
+    image:"home1.webp"
+  },
+
+  
+
+
+]
+
+
+
   const {apiUrl}=useContext(APiContext)
   const keyword=match.params.keyword;
   const dispatch=useDispatch()
@@ -41,20 +64,40 @@ autoplay={{
   disableOnInteraction:false
 }}
 >
-<SwiperSlide><img src="home1.webp"/></SwiperSlide>
-<SwiperSlide><img src="home2.webp"/></SwiperSlide>
-<SwiperSlide><img src="home4.webp"/></SwiperSlide>
+  {
+    slides.map((item,index)=>{
+      return(
+<SwiperSlide key={index}>
+  <div className="row">
+<div className="col-md-6 slide-text">
+  <div className="text-center text">
+<h2>{item.title}</h2>
+<div className="text-center pb-4">
+<Link to={`/accessories/`}><a className="btn btn-dark">Discover now <FaArrowRight/></a></Link>
+</div>
+
+</div>
+</div>
+  <div className="col-md-6">
+  <img src={item.image}/>
+  </div>
+  </div>
+</SwiperSlide>
+      )
+    })
+  }
+
 </Swiper>
 </div>
- <div className="page-header mb-5">
-        <h2 className='best_sellers '>Featured Products</h2>
+ <div className="mb-3 pt-5">
+        <h2 className='best_sellers text-center mt-4'>Featured Products</h2>
         </div>
-        <div className='container bestt mt-4'>
+        <div className='container bestt'>
         <div className='row products'>
           {
             products.slice(-3).map(product=>{
               return (
-              <div className='col-lg-3 product' key={product._id}>
+              <div className='col-lg-3 col-12 product' key={product._id}>
               <div className='position-relative'>
               <img src={`${product.mainImage}`} className="card-img"/>
             <div className='hidden'>
@@ -83,7 +126,7 @@ autoplay={{
       </div>
       </div>
       <section className="banner3 mt-4 pt-4">
-      <div className="banner-content text-center justify-content-center" style={imagestyle}>
+      <div className="banner-content text-center justify-content-center">
         <img src="https://d-themes.com/react/molla/demo-25/images/home/diamond-ring.png"  alt="ring"></img>
         <h3 className="high-title my-4">HIGH QUALITY SINCE 2020</h3>
         <p className="banner3_p">Everything you need to complete the perfect collection</p>
