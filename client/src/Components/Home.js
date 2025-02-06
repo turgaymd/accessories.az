@@ -100,9 +100,9 @@ autoplay={{
               <div className='col-lg-3 col-12 product' key={product._id}>
               <div className='position-relative'>
               <img src={`${product.mainImage}`} className="card-img"/>
-            <div className='hidden'>
+            {/* <div className='hidden'>
               <Link to={`/products/${product._id}`}> <button className='btn btn-danger'><BsHeart fontSize={24}/></button></Link>
-              </div>
+              </div> */}
               {/* <div className='add-btn'>
               <Link to={`/products/${product._id}`}> Add to cart</Link>
               </div> */}

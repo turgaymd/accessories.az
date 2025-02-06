@@ -122,7 +122,7 @@ const Details = ({ history, match }) => {
  </div>
  </div>
  
- <div className='row my-5 justify-content-center'>
+ <div className='row justify-content-center mt-4 pt-4'>
                     <div className='col-md-5'>
                       <h6 className='mt-2'>Reviews</h6>
                       {product.reviews.length === 0 && (
@@ -140,14 +140,14 @@ const Details = ({ history, match }) => {
                       ))}
                     </div>
                     <div className='col-md-5'>
-                      <h6>Write a Customer Review</h6>
-                      <div className='my-4'>
+                      <h6 className='text-center'> Write a Customer Review</h6>
+                      <div className=''>
                         {loadingReview && <Loading />}
                         {errorReview && (<Message variant={"alert-danger"}>{errorReview}</Message>)}
                       </div>
                       {userInfo ? (
                         <form onSubmit={sumbitHandler}>
-                          <div className='my-4 rating'>
+                          <div className=' rating'>
                             <strong>Rating</strong>
                             <select className='col-12 p-2 mt-2 bg-light border-0 rounded' value={rating} onChange={(e) => setRating(e.target.value)}>
                               <option value="">Select ...</option>
@@ -162,7 +162,7 @@ const Details = ({ history, match }) => {
                             <strong>Comment</strong>
                             <textarea rows="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
                           </div>
-                          <div className='my-3 text-center'>
+                          <div className='text-center'>
                             <button disabled={loadingReview} className='bg-black border-0 p-3 rounded text-white btn-comment' type='submit'>Submit</button>
                           </div>
                           <div className='row'>

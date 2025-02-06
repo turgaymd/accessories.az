@@ -10,13 +10,13 @@ const Cart=({match,location})=>{
     
     window.scrollTo(0,0);
     const productId=match.params.id;
-    const qty=location.search ? Number(location.search.split("=")[1]) : 1;
+    // const qty=location.search ? Number(location.search.split("=")[1]) : 1;
     const cart=useSelector((state)=>state.cart);
     const {cartItems} =cart;
     const {apiUrl}=useContext(APiContext)
     const total =cartItems.reduce((a,i)=>a+ i.qty * i.price, 0).toFixed(2);
     const dispatch=useDispatch();
-
+    const [qty, setQty]=useState(1)
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
@@ -54,35 +54,39 @@ const Cart=({match,location})=>{
             <tr>
                 <th>Product</th>
                 <th>Price</th>
-                <th className='text-center'>Quantity</th>
+                <th >Quantity</th>
                 <th>Total</th>
                 <th></th>
             </tr>
             </thead>
             <tbody key={item._id}>
                 <tr>
-                    <td className='product-col'>
-                         <div >
+                    <td className='product-col d-flex'>
+                         <div >                       
                         <figure className='product-media'>
 <a className='product-image'>
-                    <img src={`${item.mainImage}`} alt={item.name}/>
+                <img src={`${item.mainImage}`} alt={item.name}/>
                     </a>
                     </figure>
-                        </div> <h4 className="product-title">
+                        </div> 
+                        {/* <h4 className="product-title">
                             {item.name}
-                            </h4></td>
+                            </h4> */}
+                            </td>
                     <td className='prize-col'>  <div className="product-price">
                            <span className="">{item.price}.00</span>
                              </div></td>
-                    <td className="quantity-col text-center">
+                    <td className="quantity-col">
                          <div className='detailss'>
-                           
-    <select value={item.qty} onChange={(e)=>dispatch(addToCart(item.product, Number(e.target.value)))} >
+                           <button className='btn' onClick={()=>setQty(qty-1)}>-</button>
+                           <input value={qty}/>
+                           <button className='btn' onClick={()=>setQty(qty+1)}>+</button>
+    {/* <select value={item.qty} onChange={(e)=>dispatch(addToCart(item.product, Number(e.target.value)))} >
     {[...Array(item.countInStock).keys()].map((x)=>(
                 <option key={x+1} value={x+1}>{x+1}</option>
                 )
                 )}
- </select>
+ </select> */}
                   
                     </div></td>
                     <td className='total-col'>
@@ -101,10 +105,10 @@ const Cart=({match,location})=>{
                                </>
                              
                 ))}
-                <div className='checkout d-flex justify-content-center'>
-              {userInfo ? <Link to="/checkout"><button className='btn btn-success'>Continue to checkout</button></Link> : (
-                <div> 
-                   <Link to='/login'><button className='btn btn-danger'>Please login to continue</button></Link> 
+                <div className='checkout d-flex justify-content-center mt-3 pt-3 pb-3 mb-3'>
+              {userInfo ? <Link to="/checkout"><button className='btn btn-dark px-3 py-2'>Continue to checkout</button></Link> : (
+                <div className='mt-3 pt-3 pb-3 mb-3'> 
+                   <Link to='/login'><button className='btn btn-dark px-3 py-2'>Login to continue</button></Link> 
                 </div>
               )}   
                 </div>
