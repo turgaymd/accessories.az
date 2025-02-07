@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { addToCart,remove_Cart } from '../store/actions/CartAction'
 import { useContext } from 'react';
 import { APiContext } from '../ApiContext'
+import { BsTrash } from 'react-icons/bs'
 const Cart=({match,location})=>{
     
     window.scrollTo(0,0);
@@ -94,8 +95,8 @@ const Cart=({match,location})=>{
                                {total}
                                 </div>
                     </td>
-                    <td className='remove-col'>    <button className="btn-remove" onClick={()=>removecart(item.product)}>
-                   <VscChromeClose/>
+                    <td className='remove-col'>    <button className="btn-remove text-dark" onClick={()=>removecart(item.product)}>
+                   <BsTrash/>
                                   </button></td>
                               </tr>
                               </tbody>
@@ -106,7 +107,7 @@ const Cart=({match,location})=>{
                              
                 ))}
                 <div className='checkout d-flex justify-content-center mt-3 pt-3 pb-3 mb-3'>
-              {userInfo ? <Link to="/checkout"><button className='btn btn-dark px-3 py-2'>Continue to checkout</button></Link> : (
+              {userInfo ? <Link to="/checkout"><button className='btn btn-dark px-3 py-2'>Checkout</button></Link> : (
                 <div className='mt-3 pt-3 pb-3 mb-3'> 
                    <Link to='/login'><button className='btn btn-dark px-3 py-2'>Login to continue</button></Link> 
                 </div>

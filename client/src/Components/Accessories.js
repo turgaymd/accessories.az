@@ -72,10 +72,10 @@ return(
       </div>
       
       </section>
-      <section className="instagram">
+      <section className="instagram pb-5">
         <h2 className='text-center'>Shop By Instagram</h2>
         <p className='text-center'>Discover trendy accessories to elevate your wardrobe.</p>
-        <div className='flex-container social pt-4'>
+        <div className='flex-container social pt-4 gap-4'>
       <div className="flex-item ins" >
         <img src="https://d-themes.com/react/molla/demo-25/images/home/instagram/instagram-1.jpg" ></img>
         <div className='instagram-content'>

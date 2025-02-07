@@ -1,5 +1,5 @@
 import React from "react";
-import {BsInstagram,BsFacebook,BsPinterest} from 'react-icons/bs'
+import {BsInstagram,BsFacebook,BsPinterest, BsLinkedin} from 'react-icons/bs'
 import {FaTwitter} from 'react-icons/fa'
 const Footer=()=>{
     let currentDate=new Date().getFullYear()
@@ -57,10 +57,11 @@ const Footer=()=>{
                 <li><strong>  Phone:   </strong>+994(70)5110677</li>
                 </ul>
                 <div className="social-media">
+                <a href=""><BsFacebook/></a>
                 <a href=""><BsInstagram/></a>
                <a href=""><FaTwitter/></a>
-               <a href=""><BsFacebook/></a>
-               <a href=""><BsPinterest/></a>
+  
+               {/* <a href=""><BsLinkedin/></a> */}
                </div>
             </div>
             </div>

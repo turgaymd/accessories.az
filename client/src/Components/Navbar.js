@@ -61,7 +61,11 @@ return (
         </Form>
        
         <div className='nav-right d-flex gap-4 align-items-center cursor-pointer'>
+    
         {
+        searched===false ?  <a onClick={handleSearch} ><BsSearch /></a> : <></>
+       }
+           {
             userInfo ? (
               <>
                <Nav.Link href=""  onClick={logoutHandler}><CiLogout/></Nav.Link>
@@ -73,9 +77,6 @@ return (
 </>
             )
           }
-        {
-        searched===false ?  <a onClick={handleSearch} ><BsSearch /></a> : <></>
-       }
     
   <Link to="/cart" style={{color:"black"}} className="basket"><BsHandbag/><span className="quant">{cartItems.length}</span></Link>
         </div>
