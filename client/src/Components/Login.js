@@ -36,9 +36,9 @@ return (
 <form className="auth col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
 <h2 class="text-center ">Sign in</h2>
 <p class="">Sign in to buy accessories</p>
-<input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
-<input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
-<div className="pb-2"><button type="submit">Login</button></div>
+<input type="email" placeholder="Email*" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+<input type="password" placeholder="Password*" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+<div className="pb-2"><button type="submit" className="btn btn-dark">Login</button></div>
 <Link  to={redirect ? `/register?redirect=${redirect}`: "/register"}>Create an account</Link>
 </form>
 </div>

@@ -124,9 +124,9 @@ const Details = ({ history, match }) => {
  
  <div className='row justify-content-center mt-4 pt-4'>
                     <div className='col-md-5'>
-                      <h6 className='mt-2'>Reviews</h6>
+                      <h6 className='pb-3'>Reviews</h6>
                       {product.reviews.length === 0 && (
-                        <Message variant={"alert-info mt-3"}>No reviews</Message>
+                        <Message variant={"alert-info"}>No reviews</Message>
                       )}
                       {product.reviews.map((review) => (
                         <div key={review._id} className="mb-md-3 bg-light p-3 shadow-sm rounded d-flex flex-column">
@@ -140,8 +140,8 @@ const Details = ({ history, match }) => {
                       ))}
                     </div>
                     <div className='col-md-5'>
-                      <h6 className='text-center'> Write a Customer Review</h6>
-                      <div className=''>
+                      <h6 className='pb-3'> Write a Customer Review</h6>
+                      <div>
                         {loadingReview && <Loading />}
                         {errorReview && (<Message variant={"alert-danger"}>{errorReview}</Message>)}
                       </div>

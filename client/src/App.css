@@ -65,7 +65,7 @@ nav{
 }
 .navbar-nav a{
   color: rgb(23 36 48);
-  font-weight: 500;
+  font-weight: 400;
 }
 .nav-right a{
   font-size: 30px;
@@ -373,9 +373,17 @@ font-size:24px;
 .product:hover .add-btn{
   opacity: 1;
  bottom: 20px;
+ box-shadow: 0 4px 6px #777;
+ 
+}
+.add-btn:hover {
+  background: #0d0d0d;
+
   
 }
-
+.add-btn:hover a{
+  color: white !important;
+}
 .hidden{
   position: absolute;
   text-align: center;
@@ -607,23 +615,15 @@ font-size: 1.5rem;
   padding-bottom: 1.7rem;
 }
 
-
-.col-lg-3{
-  flex:0 0 30%;
-  max-width: 30%;
-}
 .banner-content p{
-  margin-top:20px;
   line-height: 1.9;
   color:#666;
   letter-spacing: 0;
   font-size: 0.8rem;
   text-align: center !important;
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top:20px;
   letter-spacing: 1px;
-}.banner-content img{
+}
+.banner-content img{
   margin-top: 40px;
 }
 .banner-content h3{
@@ -633,9 +633,8 @@ line-height: 1.2;
 font-weight: 300;
 }
 .banner-content{
-
+  padding: 20px;
   text-align: center !important;
-  min-height: 400px;
 }
 .banner3{
   background: #F5F7F4;
@@ -784,7 +783,6 @@ border-style: none;
 }
 .auth{
   padding: 35px 30px 30px;
-box-shadow: 0 1px 11px hsl(0deg 0% 66% / 27%);
 border-radius: .375rem;
 }
 .auth input{
@@ -792,10 +790,10 @@ border-radius: .375rem;
   border:1px solid #e4e4e4;
   padding:20px;
   margin-top: 20px;
+  outline: none;
   border-radius: 5px;
 }
 .auth button {
-background-color: #d69f7e;
 padding:10px 50px 10px 50px;
 border-style: none;
 color:white;

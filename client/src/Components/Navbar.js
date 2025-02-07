@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {BsHandbag,BsSearch} from 'react-icons/bs'
-import { CiLogin,CiLogout,CiUser } from "react-icons/ci";
+import { CiLogin,CiLogout,CiSearch,CiShoppingBasket,CiShoppingCart,CiUser } from "react-icons/ci";
 import {Container,Navbar,Nav,NavDropdown, Form,Button} from "react-bootstrap"
 import { logout } from '../store/actions/UserAction';
 var NavbarComp=({match})=>{
@@ -60,10 +60,10 @@ return (
           
         </Form>
        
-        <div className='nav-right d-flex gap-4 align-items-center cursor-pointer'>
+        <div className='nav-right d-flex gap-3 align-items-center cursor-pointer'>
     
         {
-        searched===false ?  <a onClick={handleSearch} ><BsSearch /></a> : <></>
+        searched===false ?  <a onClick={handleSearch} ><CiSearch /></a> : <></>
        }
            {
             userInfo ? (
@@ -78,7 +78,7 @@ return (
             )
           }
     
-  <Link to="/cart" style={{color:"black"}} className="basket"><BsHandbag/><span className="quant">{cartItems.length}</span></Link>
+  <Link to="/cart" style={{color:"black"}} className="basket"><CiShoppingCart/><span className="quant">{cartItems.length}</span></Link>
         </div>
         
       </Navbar.Collapse>

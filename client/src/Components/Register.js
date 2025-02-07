@@ -37,10 +37,10 @@ return (
 <form className="auth col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
 <h2 class="text-center ">Create Account </h2>
 <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}></input>
-<input type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
-<input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
-<input type="password" placeholder="Confirm Password"></input>
-<div className="pb-3"><button type="submit">Register</button></div>
+<input type="email" placeholder="Email*" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
+<input type="password" placeholder="Password*" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+<input type="password" placeholder="Confirm Password*"></input>
+<div className="pb-3"><button type="submit" className="btn btn-dark">Register</button></div>
 <Link to={redirect ? `/login?redirect=${redirect}`: "/login"}>Already have an account? Login</Link>
 </form>
 </div>

@@ -4,7 +4,7 @@ import Card from "./Card";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { HiOutlineViewfinderCircle } from "react-icons/hi2";
-import { GrView } from "react-icons/gr";
+import { GrLinkNext, GrView } from "react-icons/gr";
 import { useEffect,useContext } from "react";
 import {useSelector,useDispatch} from 'react-redux'
 import {showProducts} from '../store/actions/ProductAction';
@@ -100,11 +100,11 @@ autoplay={{
               <div className='col-lg-3 col-12 product' key={product._id}>
               <div className='position-relative'>
               <img src={`${product.mainImage}`} className="card-img"/>
-            {/* <div className='hidden'>
-              <Link to={`/products/${product._id}`}> <button className='btn btn-danger'><BsHeart fontSize={24}/></button></Link>
-              </div> */}
+            <div className='hidden'>
+              <Link to={`/products/${product._id}`}> <button className='btn btn-white'><GrLinkNext fontSize={24}/></button></Link>
+              </div>
               {/* <div className='add-btn'>
-              <Link to={`/products/${product._id}`}> Add to cart</Link>
+              <Link to={`/products/${product._id}`}> </Link>
               </div> */}
               </div>
             <div className='product-bottom'>
@@ -127,13 +127,16 @@ autoplay={{
       </div>
       <section className="banner3 mt-4 pt-4">
       <div className="banner-content text-center justify-content-center">
-        <img src="https://d-themes.com/react/molla/demo-25/images/home/diamond-ring.png"  alt="ring"></img>
-        <h3 className="high-title my-4">HIGH QUALITY SINCE 2020</h3>
+        <h3 className="high-title">HIGH QUALITY SINCE 2020</h3>
         <p className="banner3_p">Everything you need to complete the perfect collection</p>
-     <p className="banner-txt text-center mb-2 mb-lg-3">  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
-malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis
-facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
+    <div className="text-center">
+    <p className="banner-txt text-center mb-2 mb-lg-3">  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam
+malesuada erat ut turpis. </p>
+{/* Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis
+facilisis fermentum. Aliquam porttitor mauris sit amet orci. */}
 <Link to="/about"><button className="seeProducts_button mb-3">See more</button></Link> 
+    </div>
+    
       </div>
       </section>
       </>
