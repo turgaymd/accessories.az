@@ -1,9 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import Card from "./Card";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
-import { HiOutlineViewfinderCircle } from "react-icons/hi2";
 import { GrLinkNext, GrView } from "react-icons/gr";
 import { useEffect,useContext } from "react";
 import {useSelector,useDispatch} from 'react-redux'
@@ -13,11 +9,8 @@ import {Autoplay, Navigation, Pagination} from "swiper/modules"
 import { APiContext } from "../ApiContext";
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import { BsHeart } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
 const Home=({match})=>{
-
-
 
 const slides=[
   {
@@ -34,12 +27,7 @@ const slides=[
     image:"home1.webp"
   },
 
-  
-
-
 ]
-
-
 
   const {apiUrl}=useContext(APiContext)
   const keyword=match.params.keyword;
@@ -86,7 +74,6 @@ autoplay={{
       )
     })
   }
-
 </Swiper>
 </div>
  <div className="mb-3 pt-5">
@@ -103,9 +90,6 @@ autoplay={{
             <div className='hidden'>
               <Link to={`/products/${product._id}`}> <button className='btn btn-white'><GrLinkNext fontSize={24}/></button></Link>
               </div>
-              {/* <div className='add-btn'>
-              <Link to={`/products/${product._id}`}> </Link>
-              </div> */}
               </div>
             <div className='product-bottom'>
             <div className='product-title text-truncate'>
@@ -114,15 +98,11 @@ autoplay={{
               <div className='product-prize'>
                 ${product.price}
               </div>
-            </div>
-            
+            </div>    
             </div>
               )
             })
-          }
-      
-      
-       
+          }     
       </div>
       </div>
       <section className="banner3 mt-4 pt-4">

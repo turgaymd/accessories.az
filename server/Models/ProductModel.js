@@ -60,6 +60,7 @@ productSchema.pre("save",async function(next){
     next()
 })
 const Product=mongoose.model("Product",productSchema)
+
 module.exports= Product;
 
 

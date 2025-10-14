@@ -12,12 +12,9 @@ import Checkout from './Components/Checkout';
 import Login from './Components/Login';
 import Register from './Components/Register.js';
 import Contact from './Components/Contact';
-import Orders from './Components/Orders';
-import Order from './Components/OrderDetail';
-import PrivateRouter from './PrivateRouter';
 import About from './Components/About';
-import NotFound from './Components/NotFound';
 import ApiProvider from './ApiContext.js';
+import Order from './Components/OrderDetail.js';
 const App=()=>{
   return (
     <>
@@ -38,7 +35,7 @@ const App=()=>{
 <Route path="/products/:id" component={Details}/>
 {/* <Route path="*" component={NotFound}/> */}
 <Route path="/checkout" component={Checkout}/>
-<Route path="/placeorder" component={Orders}/>
+{/* <Route path="/placeorder" component={Orders}/> */}
 <Route path="/order/:id" component={Order}/>
 </Switch>
 <Footer/> 

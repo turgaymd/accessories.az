@@ -85,6 +85,7 @@ nav{
 }
 .page-header{
   text-align: center;
+  margin-bottom: 3rem;
  background-color:cadetblue !important;
   color: white !important;
 }
@@ -394,21 +395,17 @@ font-size:24px;
 }
 .add-btn{
   position: absolute;
-display: flex;
 opacity: 0;
-justify-content: center;
-align-items: center;
 background-color: white;
-transition: .3s ease-in-out 0s;
-width: 90%;
+transition: .25s ease-in-out 0s;
 transform: translateX(-50%);
 left: 50%;
-
-border-radius: 44px !important;
+padding: 10px 20px;
+border-radius: 5px !important;
 bottom: 0px;
 }
 .add-btn a{
-  color:  #181818 !important;
+  color:  rgba(0, 0, 0, 0.9) !important;
   padding: 10px;
   text-align: center;
   text-decoration: none;
@@ -500,16 +497,27 @@ justify-content: space-between;
 .total-prize{
 font-size: 1.5rem;
 }
-.detailss{
+.qty-box{
   cursor:pointer;
   display: flex;
+  justify-content: center;
   font-size: 24px;
   align-items: center;
   
 }
-.detailss .btn{
-  font-size: 32px;
-  border: none;
+.qty-box .btn{
+  font-size: 28px;
+  border:1px solid #eee;
+  border-radius:0px;
+}
+.qty-box input{
+  width: 60px;
+  border: 1px solid #eee;
+  outline: none;
+  cursor: pointer;
+}
+.qty-box span{
+  color:#282c34;
 }
 .quant{
   position: absolute;
@@ -570,6 +578,7 @@ font-size: 1.5rem;
 .table{
   width:100%;
   border-collapse: collapse;
+  border: 1px solid #e5e5e5;
 }
 .table td{
   padding-top: 3rem;
@@ -578,10 +587,6 @@ font-size: 1.5rem;
 }
 .table th{
   font-weight: 400;
-  border: 1px solid #e5e5e5;
-}
-.table td{
-  border: 1px solid #e5e5e5;
 }
 .btn-remove{
   display: inline-flex;
@@ -721,14 +726,7 @@ label{
 /* .detailss{
   border: 1px solid #e5e5e5;
 } */
-.detailss input{
-  width: 3rem;
-  border: none;
-  outline: none;
-}
-.detailss span{
-  color:#282c34;
-}
+
 .text{
   display: flex;
   flex-direction: column;
@@ -750,7 +748,6 @@ label{
   padding-bottom: 1.5rem;
   padding-top: 2rem;
   font-weight: 600;
-  initial-letter: -1px;
 }
 .text a{
   font-weight: 600;
@@ -758,13 +755,14 @@ label{
   text-align: center;
   text-transform: uppercase;
 }
-.payp{
+.checkout-btn{
 border-style: none;
   color:white;
   font-size:18px;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
   padding:0.7rem 2rem;
+  border-radius: 15px;
   background-color: #222222;
 }
 .payp:hover{
@@ -872,7 +870,6 @@ border: 1px solid #c1c1c1;
 
 }
 .order-details{
-  background:#e5fee9;
   padding:30px 0;
 }
 .order{
@@ -969,4 +966,44 @@ display: none !important;
 .error img{
   height: 300px;
   object-fit: contain;
+}
+.subtotal{
+  padding-left: 0;
+}
+.subtotal li{
+  display: flex;
+  justify-content: space-between;
+  gap:15px;
+  margin-top: 10px;
+  color:#777;
+  font-size: 16px;
+}
+.checkout-details{
+  box-sizing: 1px solid #eee;
+  background: #f8f8f8;
+  padding: 25px 20px;
+}
+.table th{
+  background: #f8f8f8 !important;
+  color: #222;
+  font-weight: bold;
+}
+.table td, tr{
+  text-align: center;
+}
+.quantity-col btn{
+  border: 1px solid #eee;
+}
+.order-info{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 7px;
+  align-items: center;
+}
+.order-info p{
+  margin-bottom: inherit;
+}
+.order-card{
+  padding: 20px 25px;
 }

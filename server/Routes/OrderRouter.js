@@ -11,7 +11,6 @@ asyncHandler(async (req,res)=>{
 const {
     orderItems,
     shippingAddress,
-    itemsPrice,
     totalPrice,
  
 }=req.body;
@@ -25,13 +24,19 @@ else{
         orderItems,
         user:req.user._id,
         shippingAddress,
-        itemsPrice,
         totalPrice,
       
       
     });
+   
+   try{
     const createOrders=await order.save();
     res.status(201).json(createOrders);
+}
+   catch(err){
+    res.status(400).json({error:err.message})
+    console.error(err)
+   }
 }
 })
 );

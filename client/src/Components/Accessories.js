@@ -3,12 +3,10 @@ import  { useEffect, useState }  from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {showProducts} from '../store/actions/ProductAction';
 import {Link} from "react-router-dom"
-import {MdAddShoppingCart} from "react-icons/md"
 import {BsHeart} from "react-icons/bs"
 import {GoCommentDiscussion} from "react-icons/go"
 import Loading from './LoadingError/Loading';
 import Message from './LoadingError/error';
-import Pagination from './Pagination';
 import ApiProvider, { APiContext } from '../ApiContext';
 const Accessories=({match})=>{
   const keyword=match.params.keyword;
@@ -21,7 +19,8 @@ useEffect(()=>{
   dispatch(showProducts(keyword, apiUrl));
 },[dispatch,keyword,apiUrl]);
 return(
-  <>
+  <article>
+    <title>Accessories</title>
     <div className='page-header'>
       <h2 className='page-title'>Accessories</h2>
       <p>Define your outfits with on-trend women's jewellery from Accessories.</p>
@@ -113,7 +112,7 @@ return(
         </div>
         </div>
         </section>
-      </>  
+      </article>  
 )
 }
 export default Accessories;
