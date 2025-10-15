@@ -8,10 +8,10 @@ import Loading from './LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
 import moment from "moment"
 import Rating from './Rating';
-import SweetAlert2 from "react-sweetalert2"
-import showSwal from "react-swal";
+
 import { APiContext } from '../ApiContext';
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
 const Details = ({ history, match }) => {
 
   const [alertShow,setAlertShow]=useState(false)
@@ -35,6 +35,10 @@ const Details = ({ history, match }) => {
   useEffect(() => {
     if (successReview) {
       alert("Review Submitted");
+      Swal.fire({
+        icon:"success",
+        text:"Review submitted successfully"
+      })
       setRating(0);
       setComment("");
       dispatch({ type: Pro_rev_reset });
@@ -164,9 +168,6 @@ const Details = ({ history, match }) => {
                           </div>
                           <div className='text-center'>
                             <button disabled={loadingReview} className='bg-black border-0 p-3 rounded text-white btn-comment' type='submit'>Submit</button>
-                          </div>
-                          <div className='row'>
-                            {comment ? <SweetAlert2 {...showSwal}/> : null }
                           </div>
                         </form>
                       ) : (

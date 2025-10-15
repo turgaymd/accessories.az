@@ -1,5 +1,5 @@
-import React, { useContext }  from 'react'
-import  { useEffect, useState }  from 'react'
+import { useContext }  from 'react'
+import  { useEffect }  from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import {showProducts} from '../store/actions/ProductAction';
 import {Link} from "react-router-dom"
@@ -7,7 +7,7 @@ import {BsHeart} from "react-icons/bs"
 import {GoCommentDiscussion} from "react-icons/go"
 import Loading from './LoadingError/Loading';
 import Message from './LoadingError/error';
-import ApiProvider, { APiContext } from '../ApiContext';
+import  { APiContext } from '../ApiContext';
 const Accessories=({match})=>{
   const keyword=match.params.keyword;
   const {apiUrl}=useContext(APiContext)

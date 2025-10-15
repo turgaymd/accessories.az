@@ -1,8 +1,8 @@
-import {createStore,combineReducers,applyMiddleware} from "redux";
-import {ProductsReducer,ProductsReducerss,ProductsDetailsReducer,ProductsDetailssReducer, ProductsReviewReducer} from "./reducers/ProductsReducer";
+import {combineReducers,applyMiddleware} from "redux";
+import {configureStore} from "@reduxjs/toolkit"
+import {ProductsReducer,ProductsDetailsReducer, ProductsReviewReducer} from "./reducers/ProductsReducer";
 import CartReducer from "./reducers/CartReducer";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk"
+import {thunk} from "redux-thunk"
 import { userLoginReducer, userRegisterReducer } from "./reducers/UserReducer";
 import { createOrder, paymentOrder, showOrder } from "./reducers/OrderReducer";
 const reducer=combineReducers({
@@ -28,16 +28,18 @@ const addressLocalStorage=localStorage.getItem("shippingAddress")
 ? JSON.parse(localStorage.getItem("shippingAddress"))
 :{};
 
-const initialState={
+const preloadedState={
     cart:{
         cartItems:cartItemsFromLocalStorage,
         shippingAddress:addressLocalStorage
     },
     userLogin:{userInfo:userInfoFromLocalStorage}
 };
-const middleware=[thunk];
-const store=createStore(reducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(...middleware))
+const store=configureStore({
+    reducer,
+    middleware:getDefaltMiddleware=>getDefaltMiddleware(),
+    preloadedState,
+    devTools:true
+}
 );
 export default store;

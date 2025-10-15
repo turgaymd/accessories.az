@@ -1,12 +1,10 @@
 
-import React, { useState } from "react";
+import  { useState } from "react";
 import {useRef } from "react";
 import emailjs from "@emailjs/browser"
-import SweetAlert2 from 'react-sweetalert2';
- 
+import Swal from "sweetalert2"
 const Contact=()=>{
   const [result,showResult]=useState(false)
-  const [swalProps, setSwalProps] = useState({});
   const form=useRef()
   const sendEmail=(e)=>{
     e.preventDefault();
@@ -20,9 +18,9 @@ const Contact=()=>{
   showResult(true);
 }
 function handleClick(){
-  setSwalProps({
-      show: true,
-      title: 'Message sent successfully'
+Swal.fire({
+      icon:"success",
+      text: 'Message sent successfully'
   }); 
 }
 
@@ -51,10 +49,14 @@ return(
           <label className="mt-2"></label>
         <textarea className="form-control mt-2" name="message" placeholder="Message"/>
           <div className='text-center'>
-      <button className="submit" type="submit" onClick={handleClick}>Send</button>
+      <button className="submit" type="submit" >Send</button>
           </div>
           <div className="row">
-            {result ?   <SweetAlert2 {...swalProps}/>: null}
+            {result ?  Swal.fire({
+              icon:"success",
+              text:"Message sent successfully"
+
+            }) : <></>}
           </div>
           </form>
       </div>
