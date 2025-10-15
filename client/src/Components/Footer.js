@@ -6,25 +6,13 @@ const Footer=()=>{
  return(
     <div>
         <footer className="footer">
-            <div className="container-fluid">
+            <div className="container">
             <div className="row">
-            <div className="col-md-3">
-        <div className="footer-menu">
-            <div className="title">
-                <h4>Delivery & Return</h4>
-            </div>
-                <ul>
-                <li><a>Check Order</a></li>
-                <li><a>Delivery & Collection</a></li>
-                <li><a>International Delivery</a></li>
-             <li><a>Returns & Refunds</a></li>
-                </ul>
-            </div>
-            </div>
+           
             <div className="col-md-3">
             <div className="footer-menu">
             <div className="title">
-                <h4>Customer Services</h4>
+                <h5>Customer Services</h5>
             </div>
                 <ul>
               <li><a>Terms & Policies</a></li>
@@ -37,32 +25,41 @@ const Footer=()=>{
           <div className="col-md-3">
             <div className="footer-menu">
             <div className="title">
-                <h4> About</h4>
+                <h5> About us</h5>
                 </div>
                 <ul>
                  <li><a>Our Brand</a> </li>
                <li><a>Charity</a> </li>
-                <li> <a> Carrers</a> </li>
-                  <li><a>Klarna</a></li> 
+                <li> <a> Careers</a> </li>
+                  <li><a>Contact</a></li> 
                 </ul>
             </div>
             </div>
             <div className="col-md-3">
             <div className="footer-menu">
             <div className="title">
-                <h4>Contact</h4>
+                <h5>Follow us</h5>
             </div>
                 <ul className="footer-contact">
-                <li><strong>Email:   </strong>memmedovturqay871@gmail.com</li>
-                <li><strong>  Phone:   </strong>+994(70)5110677</li>
+                <li>  <a href="/about">Instagram</a></li>
+                <li>  <a href="/about">Facebook</a></li>
+                <li>  <a href="/about">Twitter</a></li>
+                <li>  <a href="/about">Youtube</a></li>
+
                 </ul>
-                <div className="social-media">
-                <a href=""><BsFacebook/></a>
-                <a href=""><BsInstagram/></a>
-               <a href=""><FaTwitter/></a>
-  
-               {/* <a href=""><BsLinkedin/></a> */}
-               </div>
+            </div>
+            </div>
+             <div className="col-md-3">
+        <div className="footer-menu">
+            <div className="title">
+                <h5>Subscribe</h5>
+            </div>
+              <div className="subscribe">
+                <p>Get E-mail updates about our latest shop and special offers.</p>
+                <form>
+                    <input type="email" placeholder="Enter your email address..."/>
+                </form>
+              </div>
             </div>
             </div>
             <div className="footer-bottom">

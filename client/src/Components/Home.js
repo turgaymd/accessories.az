@@ -60,10 +60,9 @@ autoplay={{
 <div className="col-md-6 slide-text">
   <div className="text-center text">
 <h2>{item.title}</h2>
-<div className="text-center pb-4">
-<Link to={`/accessories/`}><a className="btn btn-dark">Discover now <FaArrowRight/></a></Link>
+<div className="text-center pb-4 discover">
+<Link to={`/accessories/`}><a className="btn">Shop now </a></Link>
 </div>
-
 </div>
 </div>
   <div className="col-md-6">

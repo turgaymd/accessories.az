@@ -36,14 +36,12 @@ const Cart=({match,location})=>{
         <meta name='description' content='Shopping Cart'/>
         <meta name="keywords" content="Shopping, cart, accessories, handbags, products"/>
         <div> 
-            <div className='page-header text-center'>
-            <div className='container-fluid text-center'>
-<h1 className='card-title '>Shopping Cart</h1>
-</div>   
-       </div>
+              <div className='page-header'>
+      <h2 className='page-title'>Your Cart</h2>
+      </div>
 {
     cartItems.length ===0 ?(
-        <div className='alert  text-center font-bold'>Your Cart is empty<br/><Link className='btn btn-info text-white' to="/accessories" style={{fontSize:"16px"}}>Shop Now</Link></div>
+        <div className='alert  text-center font-bold'>No items in your cart<br/><Link className='btn empty-cart-btn text-white' to="/accessories" style={{fontSize:"16px"}}>Shop Now</Link></div>
     ) : (
 <>
     <div className='container'>

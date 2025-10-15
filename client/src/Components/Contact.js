@@ -11,19 +11,16 @@ const Contact=()=>{
   emailjs.sendForm('service_c2mz4fp', 'template_qlewx5f', form.current, 'wIZ861omrA8UV6ipT')
   .then((result) => {
       console.log(result.text);
+      Swal.fire({
+      icon:"success",
+      text: 'Message sent successfully'
+  }); 
   }, (error) => {
       console.log(error.text);
   });
   e.target.reset();
   showResult(true);
 }
-function handleClick(){
-Swal.fire({
-      icon:"success",
-      text: 'Message sent successfully'
-  }); 
-}
-
 
 return(
   <>
@@ -39,15 +36,15 @@ return(
               <div className='row d-flex justify-content-center'>       
             <div className='col-lg-6'>
               <label className="mb-2"></label>
-              <input type="text" className="form-control" name="user_name" required placeholder="Your Name"></input>
+              <input type="text" className="form-control" name="user_name" required placeholder="Name*"></input>
               </div>            
             <div className='col-lg-6'>
             <label className="mb-2"></label>
-          <input type="email" className="form-control"  name="user_email" required placeholder="Email"></input>
+          <input type="email" className="form-control"  name="user_email" required placeholder="Email*"></input>
           </div>    
           </div> 
           <label className="mt-2"></label>
-        <textarea className="form-control mt-2" name="message" placeholder="Message"/>
+        <textarea className="form-control mt-2" name="message" placeholder="Your Message*"/>
           <div className='text-center'>
       <button className="submit" type="submit" >Send</button>
           </div>
