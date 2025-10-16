@@ -10,22 +10,21 @@ const Cart=({match,location})=>{
     
     window.scrollTo(0,0);
     const productId=match.params.id;
-    // const qty=location.search ? Number(location.search.split("=")[1]) : 1;
+    const qty=location.search ? Number(location.search.split("=")[1]) : 1;
     const cart=useSelector((state)=>state.cart);
     const {cartItems} =cart;
     const {apiUrl}=useContext(APiContext)
     const total =Number(cartItems.reduce((a,i)=>a+ i.qty * i.price, 0).toFixed(2));
     const dispatch=useDispatch();
-    // const [qty, setQty]=useState(1)
+
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
     useEffect(()=>{
         if(productId){
-            dispatch(addToCart(productId,1,apiUrl))
+            dispatch(addToCart(productId,qty,apiUrl))
         }
-    },[dispatch,productId,apiUrl])
-  
+    },[dispatch,productId,qty, apiUrl])
     const removecart=(id)=>{
         dispatch(remove_Cart(id))
     }
@@ -50,8 +49,8 @@ const Cart=({match,location})=>{
     <table className='table' >
         <thead>
             <tr>
-                <th>Product</th>
-                  <th></th>
+                <th>Image</th>
+                  <th>Name</th>
                 <th>Price</th>
                 <th >Quantity</th>
                 <th></th>

@@ -8,7 +8,7 @@ import Loading from './LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
 import moment from "moment"
 import Rating from './Rating';
-
+import { addToCart} from '../store/actions/CartAction'
 import { APiContext } from '../ApiContext';
 import { useContext } from 'react';
 import Swal from 'sweetalert2';
@@ -19,7 +19,7 @@ const Details = ({ history, match }) => {
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
   const {apiUrl}=useContext(APiContext)
-
+ 
   const productId = match.params.id;
   const dispatch = useDispatch()
 
@@ -103,20 +103,20 @@ const Details = ({ history, match }) => {
          }
        </div>
        <div className='flex-box d-flex justify-content-between align-items-center'>
-         <h6>Reviews</h6>
-        <Rating value={product.rating} text={ `${product.numReviews} reviews` } />
+         <h6>Rating</h6>
+        <Rating value={product.rating} />
        </div>
        {
          product.countInStock > 0 ? (
            <>
              <div className='flex-box d-flex justify-content-between align-items-center'>
                <h6>Quantity</h6>
-               <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                 {[...Array(product.countInStock).keys()].map((x) => (
-                   <option key={x + 1} value={x + 1}>{x + 1}</option>
-                 )
-                 )}
-               </select>
+                <div className='qty-box'>
+                                          <button className='btn' onClick={(e)=>setQty(qty-1)}>-</button>
+                                          <input value={qty} />
+                                          <button className='btn' onClick={(e)=>setQty(qty+1)}>+</button>
+                                 
+                                   </div>
              </div>
              <button className='btn btn-dark' onClick={handleCart}><MdAddShoppingCart fontSize={24} /> Add to Cart</button>
            </>
@@ -125,7 +125,6 @@ const Details = ({ history, match }) => {
    </div>
  </div>
  </div>
- 
  <div className='row justify-content-center mt-4 pt-4'>
                     <div className='col-md-5'>
                       <h6 className='pb-3'>Reviews</h6>
@@ -186,22 +185,14 @@ const Details = ({ history, match }) => {
                   </div>
  </>
                             )
-                          
-                          
                           :(
                             <Loading/>
                           )
-                        }
-                      
-                
+                        }               
                 </>
                )}
   
       </div>
-     
-   
-    
-
   )
 }
 
