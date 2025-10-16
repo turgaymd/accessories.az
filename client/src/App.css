@@ -144,6 +144,7 @@ font-weight: 100;
   width:200px;
 }
 input{
+  outline: none;
   padding: 9px 16px !important;
   border-color: #e9e9e9 !important;
    
@@ -303,11 +304,13 @@ font-size:24px;
 } */
 
 .footer-bottom{
-  padding-top: 20px;
+  padding-top: 10px;
   color: #5d5d5d ;
+   border-top:1px solid rgba(1, 15, 28, .1);
 }
 .footer-bottom p{
   text-align: center;
+ 
 }
 .footer .title{
 margin-bottom: 16px;
@@ -490,7 +493,6 @@ bottom: 0px;
 }
 .product-title{
   font-size: 16px;
-  text-align: center;
   color: #000;
   font-weight: 400;
 }
@@ -519,22 +521,33 @@ font-size: 1.5rem;
   display: flex;
   justify-content: center;
   font-size: 24px;
+  background: #f3f5f6;
   align-items: center;
   
 }
 .qty-box .btn{
   font-size: 28px;
-  border:1px solid #eee;
   border-radius:0px;
 }
 .qty-box input{
   width: 50px;
-  border: 1px solid #eee;
   outline: none;
+  border: none;
+  background: #f3f5f6;
   cursor: pointer;
 }
 .qty-box span{
   color:#282c34;
+}
+.add_to_card{
+  background: transparent;
+  border: 1px solid  #e0e2e3 !important;
+  color: #010f1c !important;
+  padding: 9px 30px !important;
+}
+.add_to_card:hover{
+  background: #010f1c !important;
+  color: white !important;
 }
 .quant{
   position: absolute;
@@ -906,13 +919,19 @@ border: 1px solid #c1c1c1;
   border-bottom:2px solid #f3f3f3;
 }
 .product-count{
-  border:2px solid #f3f3f3;
   border-radius: 5px;;
 }
 .product-count .btn{
   width:100%;
 }
-
+.product-price{
+  font-size: 24px;
+  font-weight: 500;
+}
+.product-desc{
+  color: #55585b;
+  margin-bottom: inherit;
+}
 .details{
   border:1px solid #dadada;
 }

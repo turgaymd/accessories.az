@@ -34,7 +34,6 @@ const Details = ({ history, match }) => {
 
   useEffect(() => {
     if (successReview) {
-      alert("Review Submitted");
       Swal.fire({
         icon:"success",
         text:"Review submitted successfully"
@@ -57,7 +56,7 @@ const Details = ({ history, match }) => {
     dispatch(showReviews(productId,{
       rating,
       comment,
-    }))
+    },`${apiUrl}/products`))
    
   }
 
@@ -83,53 +82,36 @@ const Details = ({ history, match }) => {
                             </div>
                     
    <div className='col-md-5'>
-   <div className='product-details'>
+   <div className='product-title'>
      <h4 className='product-name'><strong>{product.name}</strong></h4>
-     <p>{product.desc}</p>
+     <p className='product-desc'>{product.desc}</p>
      <div className='product-count col-md-7'>
-       <div className='flex-box d-flex justify-content-between align-items-center'>
-         <h6>Price</h6>
+       <div className='product-price d-flex justify-content-between align-items-center'>
          <span>${product.price}</span>
        </div>
-       <div className='flex-box d-flex justify-content-between align-items-center'>
-         <h6>Status</h6>
-         {
-           product.countInStock > 0 ? (
-             <span>In Stock</span>
-           ) :
-             (
-               <span>Unavailable</span>
-             )
-         }
-       </div>
-       <div className='flex-box d-flex justify-content-between align-items-center'>
-         <h6>Rating</h6>
-        <Rating value={product.rating} />
-       </div>
-       {
-         product.countInStock > 0 ? (
-           <>
-             <div className='flex-box d-flex justify-content-between align-items-center'>
-               <h6>Quantity</h6>
+        
+             <div className='d-flex justify-content-between mb-4 mt-4'>
+                     {/* <h6>Quantity</h6> */}
                 <div className='qty-box'>
+                  
                                           <button className='btn' onClick={(e)=>setQty(qty-1)}>-</button>
                                           <input value={qty} />
                                           <button className='btn' onClick={(e)=>setQty(qty+1)}>+</button>
                                  
                                    </div>
+
              </div>
-             <button className='btn btn-dark' onClick={handleCart}><MdAddShoppingCart fontSize={24} /> Add to Cart</button>
-           </>
-         ) : null}
+                                             <button className='btn add_to_card' onClick={handleCart}> Add to Cart</button>   
+
      </div>
    </div>
  </div>
  </div>
- <div className='row justify-content-center mt-4 pt-4'>
+ {/* <div className='row justify-content-center mt-4 pt-4'>
                     <div className='col-md-5'>
-                      <h6 className='pb-3'>Reviews</h6>
+                      <h3 className='pb-3'>Reviews</h3>
                       {product.reviews.length === 0 && (
-                        <Message variant={"alert-info"}>No reviews</Message>
+                        <h4>There are no reviews yet</h4>
                       )}
                       {product.reviews.map((review) => (
                         <div key={review._id} className="mb-md-3 bg-light p-3 shadow-sm rounded d-flex flex-column">
@@ -162,8 +144,8 @@ const Details = ({ history, match }) => {
                             </select>
                           </div>
                           <div >
-                            <strong>Comment</strong>
-                            <textarea rows="3" className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
+                          
+                            <textarea rows="3" placeholder='Your Comment' className='col-12 bg-light p-3 mt-2 border-0-rounded' onChange={(e) => setComment(e.target.value)} required></textarea>
                           </div>
                           <div className='text-center'>
                             <button disabled={loadingReview} className='bg-black border-0 p-3 rounded text-white btn-comment' type='submit'>Submit</button>
@@ -182,7 +164,7 @@ const Details = ({ history, match }) => {
 
                       )}
                     </div>
-                  </div>
+                  </div> */}
  </>
                             )
                           :(

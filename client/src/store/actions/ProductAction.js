@@ -76,8 +76,8 @@ export const showReviews=(productId,review,apiUrl)=>async(dispatch,getState)=>{
                 Authorization: `Bearer ${userInfo.token}`,
             }
         };
-        await axios.post(`${apiUrl}/${productId}/review`,review,config);
-        dispatch({type:Pro_rev_success});
+       const {data}= await axios.post(`${apiUrl}/${productId}/review`,review,config);
+        dispatch({type:Pro_rev_success, payload:data});
     }
     catch(error){
         const message= error.response && error.response.data.message
