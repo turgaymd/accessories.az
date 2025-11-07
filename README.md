@@ -6,3 +6,10 @@ https://accessories-az.onrender.com/
 + Product Filtering and Sorting <br>
 + Product Reviews <br>
 + Order Tracking <br>
+# Tech Stack
++ React 
++ Redux
++ Bootstrap
++ Node.js
++ Express.js
++ MongoDB
