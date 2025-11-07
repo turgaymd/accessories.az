@@ -2,7 +2,7 @@
 # Demo
 https://accessories-az.onrender.com/
 # Features
-User Account
-Product Filtering and Sorting
-Product Reviews
-Order Tracking
+User Account <br>
+Product Filtering and Sorting <br>
+Product Reviews <br>
+Order Tracking <br>
