@@ -1,4 +1,5 @@
 # E-commerce Website
+A modern, full responsive e-commerce website built with the MERN stack.
 # Demo
 https://accessories-az.onrender.com/
 # Features
