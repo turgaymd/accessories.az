@@ -1,9 +1,9 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import {Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import {BsHandbag,BsSearch} from 'react-icons/bs'
-import { CiLogin,CiLogout,CiSearch,CiShoppingBasket,CiShoppingCart,CiUser } from "react-icons/ci";
-import {Container,Navbar,Nav,NavDropdown, Form,Button} from "react-bootstrap"
+import {CiLogout,CiSearch,CiShoppingCart,CiUser } from "react-icons/ci";
+import {Container,Navbar,Nav,Form} from "react-bootstrap"
 import { logout } from '../store/actions/UserAction';
 var NavbarComp=({match})=>{
   const dispatch=useDispatch()
@@ -40,14 +40,9 @@ return (
           <Nav.Link href="/accessories" >Accessories</Nav.Link>
           <Nav.Link href="/about" >About us</Nav.Link>
           <Nav.Link href="/contact" >Contact</Nav.Link>
-         
-        
         </Nav> 
         <Form className='d-flex' onSubmit={submitHandler}>
-       
-      
-       {
-       
+       {     
             searched===true ? <Form.Control
             type='search'
             className='me-2'
@@ -55,13 +50,9 @@ return (
             aria-label='Search'
             onChange={(e)=>setKeyword(e.target.value)}
             /> : <></>
-
           }
-          
         </Form>
-       
         <div className='nav-right d-flex gap-3 align-items-center cursor-pointer'>
-    
         {
         searched===false ?  <a onClick={handleSearch} ><CiSearch /></a> : <></>
        }
@@ -77,14 +68,10 @@ return (
 </>
             )
           }
-    
   <Link to="/cart" style={{color:"black"}} className="basket"><CiShoppingCart/><span className="quant">{cartItems.length}</span></Link>
         </div>
-        
       </Navbar.Collapse>
-
     </Container> 
- 
    </Navbar>
 )
 }
