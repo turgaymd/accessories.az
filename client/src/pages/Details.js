@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { MdAddShoppingCart } from "react-icons/md"
-import { Link } from 'react-router-dom';
 import { showDetails, showReviews } from '../store/actions/ProductAction';
-import Message from './LoadingError/error';
-import Loading from './LoadingError/Loading';
+import Message from '../Components/LoadingError/error';
+import Loading from '../Components/LoadingError/Loading';
 import { Pro_rev_reset } from '../store/constants/Productsconstant';
-import moment from "moment"
-import Rating from './Rating';
-import { addToCart} from '../store/actions/CartAction'
 import { APiContext } from '../ApiContext';
 import { useContext } from 'react';
 import Swal from 'sweetalert2';
 const Details = ({ history, match }) => {
 
-  const [alertShow,setAlertShow]=useState(false)
   const [qty, setQty] = useState(1)
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
@@ -26,8 +20,6 @@ const Details = ({ history, match }) => {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
 
   const productReview = useSelector((state) => state.productReview);
   const { loading: loadingReview, error: errorReview, success: successReview } = productReview;

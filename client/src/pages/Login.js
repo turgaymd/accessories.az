@@ -2,8 +2,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Loading from "./LoadingError/Loading";
-import Message from "./LoadingError/error";
+import Loading from "../Components/LoadingError/Loading";
+import Message from "../Components/LoadingError/error";
 import { login } from "../store/actions/UserAction";
 import { useContext } from "react";
 import { APiContext } from "../ApiContext";
@@ -32,8 +32,8 @@ const Login = ({ location, history }) => {
         <form className="auth col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
           <h2 class="text-center ">Sign in</h2>
           <p class="">Sign in to buy accessories</p>
-          <input type="email" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-          <input type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+          <input type="email" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)} required></input>
+          <input type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} required></input>
           <div className="pb-2">
             <button type="submit" className="btn btn-dark">
               Login

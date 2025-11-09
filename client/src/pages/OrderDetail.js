@@ -2,7 +2,7 @@ import {useEffect,useState} from "react";
 import {useDispatch,useSelector} from "react-redux"
 import { orderDetails } from "../store/actions/OrderAction";
 import { Pay_reset } from "../store/constants/Orderconstant";
-import Message from "./LoadingError/error";
+import Message from "../Components/LoadingError/error";
 import axios from "axios";
 import { PayOrder } from "../store/actions/OrderAction";
 

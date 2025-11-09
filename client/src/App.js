@@ -1,19 +1,18 @@
 import "./App.css";
 import Footer from "./Components/Footer";
 import { Switch, Route } from "react-router-dom";
-import Holiday_shop from "./Components/Holiday_shop";
-import Accessories from "./Components/Accessories";
-import Home from "./Components/Home";
+import Accessories from "./pages/Accessories.js";
+import Home from "./pages/Home.js";
 import NavbarComp from "./Components/Navbar";
-import Cart from "./Components/Cart";
-import Details from "./Components/Details";
-import Checkout from "./Components/Checkout";
-import Login from "./Components/Login";
-import Register from "./Components/Register.js";
-import Contact from "./Components/Contact";
-import About from "./Components/About";
+import Cart from "./pages/Cart.js";
+import Details from "./pages/Details.js";
+import Checkout from "./pages/Checkout.js";
+import Login from "./pages/Login";
+import Register from "./pages/Register.js";
+import Contact from "./pages/Contact.js";
+import About from "./pages/About";
 import ApiProvider from "./ApiContext.js";
-import Order from "./Components/OrderDetail.js";
+import Order from "./pages/OrderDetail.js";
 
 const App = () => {
   return (
@@ -27,7 +26,6 @@ const App = () => {
           <Route exact path="/page/:pagenumber" component={Accessories} />
           <Route exact path="/search/:keyword/page/:pageNumber" component={Accessories}/>
           <Route exact path="/accessories" component={Accessories} />
-          <Route path="/holiday_shop" component={Holiday_shop} />
           <Route path="/contact" component={Contact} />
           <Route path="/cart/:id?" component={Cart} />
           <Route path="/login" component={Login} />

@@ -5,8 +5,8 @@ import { showProducts } from "../store/actions/ProductAction";
 import { Link } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
 import { GoCommentDiscussion } from "react-icons/go";
-import Loading from "./LoadingError/Loading";
-import Message from "./LoadingError/error";
+import Loading from "../Components/LoadingError/Loading";
+import Message from "../Components/LoadingError/error";
 import { APiContext } from "../ApiContext";
 const Accessories = ({ match }) => {
   const keyword = match.params.keyword;

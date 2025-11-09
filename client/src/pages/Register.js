@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { register } from "../store/actions/UserAction";
-import Message from "./LoadingError/error";
-import Loading from "./LoadingError/Loading";
+import Message from "../Components/LoadingError/error";
+import Loading from "../Components/LoadingError/Loading";
 import { useContext } from "react";
 import { APiContext } from "../ApiContext";
 const Register = ({ location, history }) => {
