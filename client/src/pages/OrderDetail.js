@@ -75,7 +75,7 @@ setSdkReady(true);
                        return (
                        <div className="row order align-items-center" key={index}>
                            <div className="col-md-3 col-6 order-image mb-3">
-                               <img src={item.mainImage}></img>
+                               <img src={item.mainImage} alt={item.name}></img>
                            </div>
                            <div className="col-md-5 d-flex align-items-center">
                            <h6>{item.name}</h6> 

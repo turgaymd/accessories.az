@@ -52,7 +52,6 @@ return(
             {result ?  Swal.fire({
               icon:"success",
               text:"Message sent successfully"
-
             }) : <></>}
           </div>
           </form>
