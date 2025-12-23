@@ -1,7 +1,5 @@
 const express = require("express");
-const ImportData = require("./DataImport.js");
 const productRouter = require("./Routes/ProductRouter.js");
-const shopRouter = require("./Routes/ShopRouter.js");
 const userRouter = require("./Routes/UserRoute.js");
 const orderRouter = require("./Routes/OrderRouter.js");
 const { notFound, errorHandler } = require("./Middleware/Errors.js");
@@ -25,11 +23,9 @@ app.use(
   })
 );
 
-app.use("/api/import", ImportData);
 app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
-app.use("/api/shop", shopRouter);
 app.use("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID);
 });

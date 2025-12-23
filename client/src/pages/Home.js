@@ -77,7 +77,7 @@ const Home = ({ match }) => {
       </div>
       <div className="container bestt">
         <div className="row products">
-          {products.slice(-3).map((product) => {
+          {products?.slice(-3).map((product) => {
             return (
               <div className="col-lg-3 col-12 product" key={product._id}>
                 <div className="position-relative">

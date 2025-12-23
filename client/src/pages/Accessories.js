@@ -11,13 +11,13 @@ import { APiContext } from "../ApiContext";
 const Accessories = ({ match }) => {
   const keyword = match.params.keyword;
   const { apiUrl } = useContext(APiContext);
-  // const pagenumber=match.params.pagenumber;
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
   useEffect(() => {
     dispatch(showProducts(keyword, apiUrl));
   }, [dispatch, keyword, apiUrl]);
+  console.log(products)
   return (
     <article>
       <title>Accessories</title>
