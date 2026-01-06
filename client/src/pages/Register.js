@@ -26,18 +26,19 @@ const Register = ({ location, history }) => {
     dispatch(register(name, email, password, apiUrl));
   };
   return (
-    <div className="registers">
-      <div className="container d-flex flex-column justify-content-center align-items-center register mt-4">
+    <>
+      <div className="container d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
         {error && <Message variant="alert-danger">{error}</Message>}
         {loading && <Loading />}
-        <form className="auth col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
+        <div className="card">
+        <form className="auth text-center" onSubmit={submitHandler}>
           <h2 class="text-center ">Create Account </h2>
-          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}></input>
-          <input type="email" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
-          <input type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-          <input type="password" placeholder="Confirm Password*"></input>
+          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} name="name"></input>
+          <input type="email" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)} name="email"></input>
+          <input type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} name="password"></input>
+          <input type="password" placeholder="Confirm Password*" name="password"></input>
           <div className="pb-3">
-            <button type="submit" className="btn btn-dark">
+            <button type="submit" className="w-100 btn btn-dark">
               Register
             </button>
           </div>
@@ -45,8 +46,9 @@ const Register = ({ location, history }) => {
             Already have an account? Login
           </Link>
         </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Register;

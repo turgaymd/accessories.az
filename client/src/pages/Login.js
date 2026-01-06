@@ -29,13 +29,14 @@ const Login = ({ location, history }) => {
       <div className="container d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
         {error && <Message variant="alert-danger">{error}</Message>}
         {loading && <Loading />}
-        <form className="auth col-md-8 col-lg-4 col-11 text-center" onSubmit={submitHandler}>
-          <h2 class="text-center ">Sign in</h2>
-          <p class="">Sign in to buy accessories</p>
-          <input type="email" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)} required></input>
-          <input type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} required></input>
+        <div className="card">
+        <form className="auth  text-center" onSubmit={submitHandler}>
+          <h2 className="text-center ">Sign in</h2>
+          <p className="">Sign in to buy accessories</p>
+          <input type="email" placeholder="Email*" value={email} name="email" onChange={(e) => setEmail(e.target.value)} required></input>
+          <input type="password" placeholder="Password*" value={password} name="password" onChange={(e) => setPassword(e.target.value)} required></input>
           <div className="pb-2">
-            <button type="submit" className="btn btn-dark">
+            <button type="submit" className="w-100 btn btn-dark">
               Login
             </button>
           </div>
@@ -43,6 +44,7 @@ const Login = ({ location, history }) => {
             Create an account
           </Link>
         </form>
+      </div>
       </div>
     </>
   );

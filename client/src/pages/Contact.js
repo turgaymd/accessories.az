@@ -45,8 +45,8 @@ return(
           </div> 
           <label className="mt-2"></label>
         <textarea className="form-control mt-2" name="message" placeholder="Your Message*"/>
-          <div className='text-center'>
-      <button className="submit" type="submit" >Send</button>
+          <div className='text-center mt-3'>
+      <button className="btn btn-primary w-100" type="submit" >Send</button>
           </div>
           <div className="row">
             {result ?  Swal.fire({

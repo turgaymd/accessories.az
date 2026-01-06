@@ -141,11 +141,11 @@ const Checkout = ({ history }) => {
         ))}
         <li>Shipping <span>$0</span></li>
         <li>Discount <span> - </span></li>
-        <li>Total <span>${total}</span></li>
+        <li className="fw-bold">Total <span>${total}</span></li>
         
     </ul>
     <div className="checkout text-center mt-3">
-                <button type="button" className="checkout-btn" onClick={placeOrder}>
+                <button type="button" className="checkout-btn w-100" onClick={placeOrder}>
                   Place Order
                 </button>
               </div>

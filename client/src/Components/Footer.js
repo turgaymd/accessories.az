@@ -94,7 +94,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="footer-bottom">
-              <p>© {currentDate} Accessories. All rights reserved.</p>
+              <p>© {currentDate} Accessories.az. All rights reserved.</p>
             </div>
           </div>
         </div>

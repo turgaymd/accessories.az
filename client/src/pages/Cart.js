@@ -30,13 +30,9 @@ const Cart=({match,location})=>{
     }
     return(
         <article>
-        <title>Shopping Cart</title>
-        <meta name='author ' content="Turgay"/>
-        <meta name='description' content='Shopping Cart'/>
-        <meta name="keywords" content="Shopping, cart, accessories, handbags, products"/>
         <div> 
               <div className='page-header'>
-      <h2 className='page-title'>Your Cart</h2>
+      <h2 className='page-title'>Shopping Cart</h2>
       </div>
 {
     cartItems.length ===0 ?(
@@ -45,7 +41,7 @@ const Cart=({match,location})=>{
 <>
     <div className='container'>
         <div className='row'>
-    <div className='col-lg-8'>
+    <div className='col-lg-8 table-responsive'>
     <table className='table' >
         <thead>
             <tr>
@@ -63,11 +59,11 @@ const Cart=({match,location})=>{
                 <tr key={item.product}>
                     <td className='product-col d-flex'>
                          <div className='d-flex'>                       
-                        <figure className='product-media'>
-<a className='product-image'>
+                     
+<a className='product-media'>
                 <img src={`${item.mainImage}`} alt={item.name}/>
                     </a>
-                    </figure>
+                   
               
                         </div> 
                             </td>
@@ -106,7 +102,8 @@ const Cart=({match,location})=>{
                                     
                                   </div>
                                   <div className="col-lg-4">
-                                    <div className='cart-summary'>
+                                    <div className='card'>
+                                        <div className='card-body'>
                                         <h4>Summary</h4>
                                             <ul className="subtotal">
 
@@ -114,21 +111,31 @@ const Cart=({match,location})=>{
         <li>Subtotal<span>${total}</span></li>
         <li>Shipping <span>$0</span></li>
         <li>Discount <span> - </span></li>
-        <li>Total <span>${total}</span></li>
+        <li className='fw-bold'>Total <span>${total}</span></li>
         <hr/>
     </ul>
-                                    </div>
+                                
                                     
-                                             <div className='checkout d-flex justify-content-center mt-3 pt-3 pb-3 mb-3'>
+                                             <div className='checkout mt-3 pt-3 pb-3 mb-3'>
           
-             {userInfo ? <Link to="/checkout"><button className='btn btn-dark px-3 py-2'>Go to checkout</button></Link> : (
+             {userInfo ?
+             
+             <div className='d-flex flex-column  gap-3'>
+             <Link to="/checkout"><button className=' w-100 btn btn-primary px-3 py-2'>Proceed to checkout</button></Link> 
+               <Link to="/accessories"><button className=' w-100 btn btn-dark px-3 py-2'>Continue to shopping</button></Link> 
+           </div>
+             :
+             
+             (
                 <div className='mt-3 pt-3 pb-3 mb-3'> 
-                   <Link to='/login'><button className='btn btn-dark px-3 py-2'>Login to continue</button></Link> 
+                   <Link to='/login'><button className='w-100 btn btn-dark px-3 py-2'>Login to continue</button></Link> 
                 </div>
               )}   
                 </div>
                                   </div>
+                                  </div>
                               </div>
+                                  </div>
                               </div>
                               </>              
     )
