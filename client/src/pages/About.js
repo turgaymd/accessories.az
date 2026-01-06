@@ -7,10 +7,10 @@ const About=()=>{
     <div className="container about-container mt-5">
         <div className="row">
                     <div className="col-md-6">
-                    <img src="https://www.zilliondesigns.com/blog/wp-content/uploads/Perfect-Ecommerce-Sales-Banner.jpg" className="img-fluid"/>
+                    <img src="https://www.zilliondesigns.com/blog/wp-content/uploads/Perfect-Ecommerce-Sales-Banner.jpg" alt="about"   className="img-fluid rounded-4"/>
                     </div>
                  <div className="col-md-6 about-text">
-                   <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                   <p className="text-muted lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                    </div>
                    <div>
                 
@@ -21,13 +21,13 @@ const About=()=>{
         <div className="container about-container">
             <div className="row">
                 <div className="col-md-6 about-text">
-<p className="text-muted"> 
+<p className="text-muted lead"> 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
 
 </p>
                 </div>
                 <div className="col-md-6 about-img">
-                    <img src="about_banner.jpg"/>
+                    <img src="https://media.istockphoto.com/id/1314987155/photo/modern-golden-bracelets-and-ring-on-white-and-blue-background-with-copy-space.jpg?s=612x612&w=0&k=20&c=qF_aT8dD83Vi7IgZvZJZUzWSUInwFDCdr7fmO9RhHtQ=" className="img-fluid rounded-4" alt="about_banner"/>
                 </div>
             </div>
         </div>

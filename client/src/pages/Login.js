@@ -36,11 +36,11 @@ const Login = ({ location, history }) => {
           <input type="email" placeholder="Email*" value={email} name="email" onChange={(e) => setEmail(e.target.value)} required></input>
           <input type="password" placeholder="Password*" value={password} name="password" onChange={(e) => setPassword(e.target.value)} required></input>
           <div className="pb-2">
-            <button type="submit" className="w-100 btn btn-dark">
+            <button type="submit" className="w-100 btn btn-primary">
               Login
             </button>
           </div>
-          <Link to={redirect ? `/register?redirect=${redirect}` : "/register"}>
+          <Link to={redirect ? `/register?redirect=${redirect}` : "/register"} className="text-primary">
             Create an account
           </Link>
         </form>

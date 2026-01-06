@@ -27,7 +27,8 @@ const Register = ({ location, history }) => {
   };
   return (
     <>
-      <div className="container d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+      <div className="container ">
+        <div className="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
         {error && <Message variant="alert-danger">{error}</Message>}
         {loading && <Loading />}
         <div className="card">
@@ -38,14 +39,15 @@ const Register = ({ location, history }) => {
           <input type="password" placeholder="Password*" value={password} onChange={(e) => setPassword(e.target.value)} name="password"></input>
           <input type="password" placeholder="Confirm Password*" name="password"></input>
           <div className="pb-3">
-            <button type="submit" className="w-100 btn btn-dark">
+            <button type="submit" className="w-100 btn btn-primary">
               Register
             </button>
           </div>
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"} >
             Already have an account? Login
           </Link>
         </form>
+        </div>
         </div>
       </div>
     </>

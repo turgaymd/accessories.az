@@ -116,7 +116,7 @@ const Cart=({match,location})=>{
     </ul>
                                 
                                     
-                                             <div className='checkout mt-3 pt-3 pb-3 mb-3'>
+                                             <div className='checkout'>
           
              {userInfo ?
              
@@ -127,7 +127,7 @@ const Cart=({match,location})=>{
              :
              
              (
-                <div className='mt-3 pt-3 pb-3 mb-3'> 
+                <div className=''> 
                    <Link to='/login'><button className='w-100 btn btn-dark px-3 py-2'>Login to continue</button></Link> 
                 </div>
               )}   

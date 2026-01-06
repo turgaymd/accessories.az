@@ -30,7 +30,7 @@ dispatch(logout())
    }
 return (
 
- <Navbar expand="lg" className='bg-body-tertiary navv' >
+ <Navbar expand="lg" className='bg-light  shadow-sm bg-body-tertiary navv' >
     <Container>
     <Navbar.Brand href="#brand"></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
