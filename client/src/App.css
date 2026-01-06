@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,300,700,500');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Dosis:200,300,400');
+
+
 *{
   padding:0;
   margin:0;
   box-sizing:border-box ;
 
 }
-
 img{
   vertical-align: middle;
 }
@@ -516,29 +517,7 @@ justify-content: space-between;
 .total-prize{
 font-size: 1.5rem;
 }
-.qty-box{
-  cursor:pointer;
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-  background: #f3f5f6;
-  align-items: center;
-  
-}
-.qty-box .btn{
-  font-size: 28px;
-  border-radius:0px;
-}
-.qty-box input{
-  width: 50px;
-  outline: none;
-  border: none;
-  background: #f3f5f6;
-  cursor: pointer;
-}
-.qty-box span{
-  color:#282c34;
-}
+
 .add_to_card{
   background: transparent;
   border: 1px solid  #e0e2e3 !important;
@@ -915,10 +894,7 @@ border: 1px solid #c1c1c1;
 .product-count .btn{
   width:100%;
 }
-.product-price{
-  font-size: 24px;
-  font-weight: 500;
-}
+
 .product-desc{
   color: #55585b;
   margin-bottom: inherit;
@@ -1015,13 +991,10 @@ display: none !important;
   padding: 25px 20px;
 }
 .table th{
-  background: #f8f8f8 !important;
   color: #222;
   font-weight: bold;
 }
-.table td, tr{
-  text-align: center;
-}
+
 .quantity-col btn{
   border: 1px solid #eee;
 }

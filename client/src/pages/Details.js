@@ -84,10 +84,10 @@ const Details = ({ history, match }) => {
         
              <div className='d-flex justify-content-between mb-4 mt-4'>
                      {/* <h6>Quantity</h6> */}
-                <div className='qty-box'>
+                <div className='btn-group'>
                   
                                           <button className='btn' onClick={(e)=>setQty(qty-1)}>-</button>
-                                          <input value={qty} />
+                                          <input value={qty} className='form-control' style={{width:"50px"}}/>
                                           <button className='btn' onClick={(e)=>setQty(qty+1)}>+</button>
                                  
                                    </div>

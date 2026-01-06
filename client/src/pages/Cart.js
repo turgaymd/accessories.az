@@ -31,22 +31,21 @@ const Cart=({match,location})=>{
     return(
         <article>
         <div> 
-              <div className='page-header'>
-      <h2 className='page-title'>Shopping Cart</h2>
-      </div>
+  
+
 {
     cartItems.length ===0 ?(
         <div className='alert  text-center font-bold'>No items in your cart<br/><Link className='btn empty-cart-btn text-white' to="/accessories" style={{fontSize:"16px"}}>Shop Now</Link></div>
     ) : (
 <>
-    <div className='container'>
+    <div className='container py-5'>
+            <h2 className='pb-4'>Shopping Cart</h2>
         <div className='row'>
     <div className='col-lg-8 table-responsive'>
     <table className='table' >
         <thead>
             <tr>
-                <th>Image</th>
-                  <th>Name</th>
+                  <th>Product</th>
                 <th>Price</th>
                 <th >Quantity</th>
                 <th></th>
@@ -58,40 +57,31 @@ const Cart=({match,location})=>{
                     {cartItems.map(item=>(
                 <tr key={item.product}>
                     <td className='product-col d-flex'>
-                         <div className='d-flex'>                       
+                         <div className='d-flex align-items-center gap-3'>                       
                      
 <a className='product-media'>
                 <img src={`${item.mainImage}`} alt={item.name}/>
                     </a>
-                   
+                       {item.name}
               
                         </div> 
-                            </td>
-                            <td>
-                                      {item.name}
                             </td>
                     <td className='prize-col'>  <div className="product-price">
                            <span className="">${item.price}.00</span>
                              </div></td>
                     <td className="quantity-col">
-                         <div className='qty-box'>
-                           <button className='btn' onClick={(e)=>dispatch(addToCart(item.product, item.qty-1, apiUrl))}>-</button>
-                           <input value={item.qty} />
+                         <div className='btn-group'>
+                           <button className='btn ' onClick={(e)=>dispatch(addToCart(item.product, item.qty-1, apiUrl))}>-</button>
+                           <input value={item.qty} className='form-control' style={{width:"50px"}}/>
                            <button className='btn' onClick={(e)=>dispatch(addToCart(item.product, item.qty+1, apiUrl))}>+</button>
-    {/* <select value={item.qty} onChange={(e)=>dispatch(addToCart(item.product, Number(e.target.value)))} >
-    {[...Array(item.countInStock).keys()].map((x)=>(
-                <option key={x+1} value={x+1}>{x+1}</option>
-                )
-                )}
- </select> */}
-                  
+
                     </div></td>
                     <td className='total-col'>
                     <div className="total-prize">
                       
                                 </div>
                     </td>
-                    <td className='remove-col'>    <button className="btn-remove text-dark" onClick={()=>removecart(item.product)}>
+                    <td className='remove-col'>    <button className="btn btn-outline-danger " onClick={()=>removecart(item.product)}>
                    <BsTrash/>
                                   </button></td>
                               </tr>
