@@ -256,6 +256,7 @@ max-height: 300px;
 }
 .footer-menu ul{
   list-style: none;
+  text-align: left;
   padding-left: inherit;
   margin-bottom: inherit;
 }
@@ -574,7 +575,6 @@ font-size: 1.5rem;
 }
 .product-prize{
   font-size: 18px;
-  text-align: center;
   color: #0d0d0d;
   font-weight: 600;
 }
@@ -1014,4 +1014,9 @@ display: none !important;
 .empty-cart-btn{
   padding:10px 30px !important;
   background-color: #363f4d !important;
+}
+.slide-text{
+  background-repeat: no-repeat;
+  object-fit: cover;
+  width: 100%;
 }
