@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="title">
                   <h5>Customer Services</h5>
                 </div>
-                <ul>
+                <ul >
                   <li>
                     <a>Terms & Policies</a>
                   </li>
@@ -60,19 +60,27 @@ const Footer = () => {
                 </div>
                 <div className="subscribe">
                   <p>
-                    Get E-mail updates about our latest shop and special offers.
+                    Subscribe to receive updates, access to exclusive deals, and more.
                   </p>
-                  <form>
+                  <form className="d-flex gap-2">
                     <input
                       type="email"
-                      placeholder="Enter your email address..."
+                      placeholder="Enter your email"
                     />
+                    {/* <button type="submit" className="btn btn-dark text-white  text-uppercase   mt-2">
+                      Subscribe
+                    </button> */}
                   </form>
                 </div>
               </div>
             </div>
-            <div className="footer-bottom">
+            <div className="footer-bottom d-flex justify-content-between">
               <p>© {currentDate} Accessories.az. All rights reserved.</p>
+              <div className="d-flex gap-4">
+<p> Privacy Policy</p>
+                  <p> Terms of Service</p>
+              </div>
+               
             </div>
           </div>
         </div>

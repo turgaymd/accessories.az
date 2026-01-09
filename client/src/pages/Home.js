@@ -77,24 +77,17 @@ const Home = ({ match }) => {
           })}
         </div>
       </div>
-      <section className="banner3 mt-4 pt-4">
-        <div className="banner-content text-center justify-content-center">
+      <section className="banner3 mt-4 pt-4 text-center">
+        <div className="mx-auto container-sm">
           <h3 className="high-title">Designed for the Modern Muse</h3>
-        
-          <div className="text-center">
-            <p className="banner-txt text-center mb-2 mb-lg-3">
+            <p className="text-muted fw-light mb-4 mx-auto  fs-5">
               {" "}
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-              turpis.{" "}
+             We believe that true luxury lies in the details. Each piece in our collection is thoughtfully designed and meticulously crafted to accompany you through life's most memorable moments.{" "}
             </p>
-            {/* Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis
-facilisis fermentum. Aliquam porttitor mauris sit amet orci. */}
             <Link to="/about">
-              <button className="btn btn-outline-dark mb-3  more-btn">See more</button>
+              <button className="btn btn-outline-dark mb-3  more-btn">Discover more</button>
             </Link>
           </div>
-        </div>
       </section>
     </>
   );
