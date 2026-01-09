@@ -38,7 +38,8 @@ const Accessories = ({ match }) => {
               {products.map((product) => {
                 return (
                   <>
-                    <div className="col-lg-3 col-12 product" key={product._id}>
+                    <div className="col-lg-3 col-12" key={product._id}>
+                      <div className="product">
                       <div className="position-relative">
                         <img
                           src={`${product.mainImage}`}
@@ -58,6 +59,7 @@ const Accessories = ({ match }) => {
                         </div>
                         <div className="product-prize">${product.price}</div>
                       </div>
+                    </div>
                     </div>
                   </>
                 );

@@ -54,7 +54,8 @@ const Home = ({ match }) => {
         <div className="row">
           {products?.filter((product) => product.isFeatured).map((product) => {
             return (
-              <div className="col-md-3 col-12 product" key={product._id}>
+              <div className="col-md-3 col-12" key={product._id}>
+                <div className="product">
                 <div className="position-relative">
                   <img src={`${product.mainImage}`} className="card-img"  alt={product.name}/>
                   <div className="hidden">
@@ -72,6 +73,7 @@ const Home = ({ match }) => {
                   </div>
                   <div className="product-prize">${product.price}</div>
                 </div>
+              </div>
               </div>
             );
           })}
