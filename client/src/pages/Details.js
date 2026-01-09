@@ -82,8 +82,7 @@ const Details = ({ history, match }) => {
          <span>${product.price}</span>
        </div>
         
-             <div className='d-flex justify-content-between mb-4 mt-4'>
-                     {/* <h6>Quantity</h6> */}
+             <div className='d-flex justify-content-between mb-4 mt-4'>             {/* <h6>Quantity</h6> */}
                 <div className='btn-group'>
                   
                                           <button className='btn' onClick={(e)=>setQty(qty-1)}>-</button>
@@ -92,9 +91,12 @@ const Details = ({ history, match }) => {
                                  
                                    </div>
 
+             
+             <div>
+ <button className='btn add_to_card' onClick={handleCart}> Add to Cart</button>   
              </div>
-                                             <button className='btn add_to_card' onClick={handleCart}> Add to Cart</button>   
-
+                                            
+</div>
      </div>
    </div>
  </div>

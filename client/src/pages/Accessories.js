@@ -66,7 +66,7 @@ const Accessories = ({ match }) => {
           )}
         </div>
       </section>
-      <section className="instagram pb-5">
+      {/* <section className="instagram pb-5">
         <h2 className="text-center">Shop By Instagram</h2>
         <p className="text-center">
           Discover trendy accessories to elevate your wardrobe.
@@ -166,7 +166,7 @@ const Accessories = ({ match }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </article>
   );
 };

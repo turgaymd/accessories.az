@@ -321,9 +321,6 @@ margin-bottom: 16px;
 .products .col-md-3:hover{
   border:1px solid #eeee;
 }
-.col-md-4 {
-  text-align: center;
-}
 .products{
   gap: 1rem;
   display: flex;
@@ -389,6 +386,7 @@ margin-bottom: 16px;
 
 }
 .product:hover .add-btn{
+
   opacity: 1;
  bottom: 20px;
  box-shadow: 0 4px 6px #777;
@@ -414,10 +412,12 @@ margin-bottom: 16px;
 .add-btn{
   position: absolute;
 opacity: 0;
+text-align: center;
 background-color: white;
 transition: .25s ease-in-out 0s;
 transform: translateX(-50%);
 left: 50%;
+width: 90%;
 padding: 10px 20px;
 border-radius: 5px !important;
 bottom: 0px;
@@ -740,18 +740,27 @@ label{
 .swiper-slide{
   background: #F5F7F4 !important;
 }
-.slide-text{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background: rgb(155, 177, 143) !important; */
+
+.slide-text h2{
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .discover .btn{
   background: transparent;
-  color: #000;
+  display: inline-block;
+  color: white;
   padding: 19px 51px 20px;
-  border: 1px solid #333;
+  letter-spacing: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid white;
+  overflow: hidden;
 }
+
 .discover .btn:hover{
   background:#333;
 color:white;
@@ -1017,6 +1026,12 @@ display: none !important;
 }
 .slide-text{
   background-repeat: no-repeat;
-  object-fit: cover;
-  width: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color:white
 }
+

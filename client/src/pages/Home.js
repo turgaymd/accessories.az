@@ -4,27 +4,25 @@ import { GrLinkNext } from "react-icons/gr";
 import { useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { showProducts } from "../store/actions/ProductAction";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { APiContext } from "../ApiContext";
-import "swiper/css";
-import "swiper/css/autoplay";
-const Home = ({ match }) => {
-  const slides = [
-    {
-      title: " Luxury accessories",
-      image: "home2.webp",
-    },
-    {
-      title: "Elegant Watches",
-      image: "home4.webp",
-    },
 
-    {
-      title: "Luxury handbags",
-      image: "home1.webp",
-    },
-  ];
+import { APiContext } from "../ApiContext";
+
+const Home = ({ match }) => {
+  // const slides = [
+  //   {
+  //     title: " Luxury accessories",
+  //     image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop",
+  //   },
+  //   {
+  //     title: "Elegant Watches",
+  //     image: "home4.webp",
+  //   },
+
+  //   {
+  //     title: "Luxury handbags",
+  //     image: "home1.webp",
+  //   },
+  // ];
 
   const { apiUrl } = useContext(APiContext);
   const keyword = match.params.keyword;
@@ -37,39 +35,17 @@ const Home = ({ match }) => {
   }, [dispatch, keyword, apiUrl]);
   return (
     <>
-      <div className="home">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          slidesPerView={1}
-          spaceBetween={50}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-        >
-          {slides.map((item, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <div className="row">
-                  <div className="slide-text" style={{backgroundImage:`url(${item.image})`}}>
-                    <div className="text-center text" >
-                      <h2>{item.title}</h2>
-                      <div className="text-center pb-4 discover">
+      <div className="home">   
+                  <div className="slide-text" style={{backgroundImage:`url(https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop)`}}>
+                    <div className="p-3" >
+                      <h2>Timeless elegance</h2>
+                      <div className=" pb-4 discover">
                         <Link to={`/accessories/`} className="btn">
                           Shop now 
                         </Link>
                       </div>
                     </div>
-                  </div>
-              
-         
                 </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
       </div>
       <div className="mb-3 pt-5">
         <h2 className="best_sellers text-center mt-4">Featured Products</h2>
