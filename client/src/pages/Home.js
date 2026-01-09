@@ -51,10 +51,10 @@ const Home = ({ match }) => {
         <h2 className="best_sellers text-center mt-4">Featured Products</h2>
       </div>
       <div className="container bestt">
-        <div className="row products">
-          {products?.slice(-3).map((product) => {
+        <div className="row">
+          {products?.filter((product) => product.isFeatured).map((product) => {
             return (
-              <div className="col-lg-3 col-12 product" key={product._id}>
+              <div className="col-md-3 col-12 product" key={product._id}>
                 <div className="position-relative">
                   <img src={`${product.mainImage}`} className="card-img"  alt={product.name}/>
                   <div className="hidden">
@@ -79,10 +79,8 @@ const Home = ({ match }) => {
       </div>
       <section className="banner3 mt-4 pt-4">
         <div className="banner-content text-center justify-content-center">
-          <h3 className="high-title">HIGH QUALITY SINCE 2020</h3>
-          <p className="banner3_p">
-            Everything you need to complete the perfect collection
-          </p>
+          <h3 className="high-title">Designed for the Modern Muse</h3>
+        
           <div className="text-center">
             <p className="banner-txt text-center mb-2 mb-lg-3">
               {" "}
@@ -93,7 +91,7 @@ const Home = ({ match }) => {
             {/* Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis
 facilisis fermentum. Aliquam porttitor mauris sit amet orci. */}
             <Link to="/about">
-              <button className="seeProducts_button mb-3">See more</button>
+              <button className="btn btn-outline-dark mb-3  more-btn">See more</button>
             </Link>
           </div>
         </div>
